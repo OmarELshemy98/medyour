@@ -1,44 +1,76 @@
-// app/components/layout/Footer.tsx
-// TODO: The lucide-react import causes a module error during linting or build.
-// Please ensure 'lucide-react' is installed: run 'npm install lucide-react' or 'yarn add lucide-react'.
-// If you do not intend to use these icons or want to prevent build errors, comment out or remove this import line as appropriate.
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
-const Footer = () => {
+type Props = {
+  lang?: 'ar' | 'en';
+};
+
+const Footer = ({ lang = 'ar' }: Props) => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    company: {
-      title: 'الشركة',
-      links: [
-        { href: '/about-us', label: 'من نحن' },
-        { href: '/why-medyour', label: 'لماذا ميديور' },
-        { href: '/challenges', label: 'التحديات' },
-        { href: '/contact', label: 'اتصل بنا' }
-      ]
-    },
-    services: {
-      title: 'الخدمات',
-      links: [
-        { href: '/services', label: 'خدماتنا' },
-        { href: '/services#telemedicine', label: 'الاستشارات عن بُعد' },
-        { href: '/services#appointments', label: 'حجز المواعيد' },
-        { href: '/services#records', label: 'السجلات الطبية' }
-      ]
-    },
-    support: {
-      title: 'الدعم',
-      links: [
-        { href: '/faqs', label: 'الأسئلة الشائعة' },
-        { href: '/privacy', label: 'سياسة الخصوصية' },
-        { href: '/terms', label: 'الشروط والأحكام' },
-        { href: '/contact', label: 'المساعدة' }
-      ]
-    }
-  };
+  const base = lang === 'en' ? '/en' : '';
+
+  const footerLinks = lang === 'en'
+    ? {
+        company: {
+          title: 'Company',
+          links: [
+            { href: `${base}/about-us`, label: 'About Us' },
+            { href: `${base}/why-medyour`, label: 'Why Medyour' },
+            { href: `${base}/challenges`, label: 'Challenges' },
+            { href: `${base}/contact`, label: 'Contact' },
+          ],
+        },
+        services: {
+          title: 'Services',
+          links: [
+            { href: `${base}/services`, label: 'Our Services' },
+            { href: `${base}/services#telemedicine`, label: 'Telemedicine' },
+            { href: `${base}/services#appointments`, label: 'Appointments' },
+            { href: `${base}/services#records`, label: 'Medical Records' },
+          ],
+        },
+        support: {
+          title: 'Support',
+          links: [
+            { href: `${base}/faqs`, label: 'FAQs' },
+            { href: `${base}/privacy`, label: 'Privacy Policy' },
+            { href: `${base}/terms`, label: 'Terms & Conditions' },
+            { href: `${base}/contact`, label: 'Help' },
+          ],
+        },
+      }
+    : {
+        company: {
+          title: 'الشركة',
+          links: [
+            { href: `${base}/about-us`, label: 'من نحن' },
+            { href: `${base}/why-medyour`, label: 'لماذا ميديور' },
+            { href: `${base}/challenges`, label: 'التحديات' },
+            { href: `${base}/contact`, label: 'اتصل بنا' },
+          ],
+        },
+        services: {
+          title: 'الخدمات',
+          links: [
+            { href: `${base}/services`, label: 'خدماتنا' },
+            { href: `${base}/services#telemedicine`, label: 'الاستشارات عن بُعد' },
+            { href: `${base}/services#appointments`, label: 'حجز المواعيد' },
+            { href: `${base}/services#records`, label: 'السجلات الطبية' },
+          ],
+        },
+        support: {
+          title: 'الدعم',
+          links: [
+            { href: `${base}/faqs`, label: 'الأسئلة الشائعة' },
+            { href: `${base}/privacy`, label: 'سياسة الخصوصية' },
+            { href: `${base}/terms`, label: 'الشروط والأحكام' },
+            { href: `${base}/contact`, label: 'المساعدة' },
+          ],
+        },
+      };
 
   return (
-    <footer className="bg-gradient-to-br from-[#001218] to-[#002D3A] text-white" dir="rtl">
+    <footer className="bg-gradient-to-br from-[#001218] to-[#002D3A] text-white" dir={lang === 'en' ? 'ltr' : 'rtl'}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
@@ -47,10 +79,12 @@ const Footer = () => {
               <div className="w-12 h-12 bg-gradient-to-br from-[#00CFC5] to-[#0099CC] rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold text-xl">M</span>
               </div>
-              <span className="text-2xl font-bold font-cairo">ميديور</span>
+              <span className="text-2xl font-bold font-cairo">{lang === 'en' ? 'Medyour' : 'ميديور'}</span>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
-              منصتك الموثوقة للحصول على أفضل رعاية صحية في الإمارات. نربطك بأفضل الأطباء والمراكز الطبية.
+              {lang === 'en'
+                ? 'Your trusted platform for top-tier healthcare. We connect you to leading doctors and medical centers.'
+                : 'منصتك الموثوقة للحصول على أفضل رعاية صحية في الإمارات. نربطك بأفضل الأطباء والمراكز الطبية.'}
             </p>
             
             {/* Social Media */}
@@ -112,8 +146,8 @@ const Footer = () => {
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm text-gray-400">العنوان</p>
-                <p className="text-white">دبي، الإمارات العربية المتحدة</p>
+                <p className="text-sm text-gray-400">{lang === 'en' ? 'Address' : 'العنوان'}</p>
+                <p className="text-white">{lang === 'en' ? 'Dubai, United Arab Emirates' : 'دبي، الإمارات العربية المتحدة'}</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -121,7 +155,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm text-gray-400">الهاتف</p>
+                <p className="text-sm text-gray-400">{lang === 'en' ? 'Phone' : 'الهاتف'}</p>
                 <a href="tel:800633968 7" className="text-white hover:text-[#00CFC5] transition-colors">
                   800-MEDYOUR
                 </a>
@@ -132,7 +166,7 @@ const Footer = () => {
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm text-gray-400">البريد الإلكتروني</p>
+                <p className="text-sm text-gray-400">{lang === 'en' ? 'Email' : 'البريد الإلكتروني'}</p>
                 <a href="mailto:info@medyour.com" className="text-white hover:text-[#00CFC5] transition-colors">
                   info@medyour.com
                 </a>
@@ -144,7 +178,9 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
           <p className="text-gray-400">
-            © {currentYear} ميديور. جميع الحقوق محفوظة.
+            {lang === 'en'
+              ? `© ${currentYear} Medyour. All rights reserved.`
+              : `© ${currentYear} ميديور. جميع الحقوق محفوظة.`}
           </p>
         </div>
       </div>

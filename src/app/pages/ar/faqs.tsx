@@ -1,27 +1,20 @@
 // pages/faqs.tsx (الإصدار النهائي)
-import Head from 'next/head';
 // Layout Imports
 // Section Imports
 
 // Content Import - (افتراضي)
 import { faqsContent as faqsPageContent } from '../../content/ar/faqs'; 
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import FAQSection from '../../components/sections/faqs/FAQSection';
 
 const FAQsPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة
-    const { seo, hero, faqItems, sectionTitle, sectionSubtitle } = faqsPageContent as any;
+    const { hero, sections } = faqsPageContent as any;
     
     return (
         <>
-            <Head>
-                <title>{seo.title}</title>
-                <meta name="description" content={seo.description} />
-                <html lang="ar" dir="rtl" />
-            </Head>
-
-            <Navbar /> 
+            <HtmlNavbarAr /> 
             
             <main className="min-h-screen">
                 
@@ -39,14 +32,14 @@ const FAQsPage: React.FC = () => {
                 
                 {/* 2. FAQ Section - الأسئلة والأجوبة */}
                 <FAQSection
-                    items={faqItems} 
-                    sectionTitle={sectionTitle || "أسئلة شائعة"} // استخدام قيمة افتراضية في حال عدم وجودها
-                    sectionSubtitle={sectionSubtitle || "ابحث عن إجابة استفسارك هنا."}
+                    items={(sections || []).flatMap((s: any) => s.faqs || [])}
+                    sectionTitle={hero.title}
+                    sectionSubtitle={hero.subtitle}
                 />
                 
             </main>
 
-            <Footer /> 
+            <HtmlFooterAr /> 
         </>
     );
 };

@@ -18,7 +18,7 @@ type ContactFormProps = {
 };
 
 const ContactFormSection = ({ formConfig }: ContactFormProps) => {
-  const { title, subtitle, fields, submitButton } = formConfig;
+  const { title = '', subtitle = '', fields = [], submitButton = 'إرسال' } = formConfig;
 
   return (
     <div className="bg-white rounded-2xl border-2 border-gray-200 p-8">
@@ -30,7 +30,7 @@ const ContactFormSection = ({ formConfig }: ContactFormProps) => {
       </p>
 
       <form className="space-y-6">
-        {fields.map((field, index) => (
+        {(fields || []).map((field, index) => (
           <div key={index}>
             <label className="block text-sm font-semibold text-[#001218] mb-2">
               {field.label}

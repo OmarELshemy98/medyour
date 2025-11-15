@@ -1,26 +1,17 @@
-import Head from 'next/head';
-
-
 // Content Import - (افتراضي)
 import {challengesContent as challengesPageContent } from '../../content/ar/challenges'; 
 
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import ChallengesSection from '../../components/sections/challenges/ChallengesSection';
 
 const ChallengesPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة
-    const { seo, hero, challengesList } = challengesPageContent as any;
+    const { hero, challenges } = challengesPageContent as any;
     
     return (
         <>
-            <Head>
-                <title>{seo.title}</title>
-                <meta name="description" content={seo.description} />
-                <html lang="ar" dir="rtl" />
-            </Head>
-
-            <Navbar /> 
+            <HtmlNavbarAr /> 
             
             <main className="min-h-screen">
                 
@@ -37,11 +28,15 @@ const ChallengesPage: React.FC = () => {
                 </section>
                 
                 {/* 2. Challenges List (قائمة التحديات) */}
-                <ChallengesSection challenges={challengesList} />
+                <ChallengesSection challenges={(challenges || []).map((c: any) => ({
+                  title: c.title,
+                  problem: c.description,
+                  solution: Array.isArray(c.details) ? c.details.join(' ') : ''
+                }))} />
                 
             </main>
 
-            <Footer /> 
+            <HtmlFooterAr /> 
         </>
     );
 };

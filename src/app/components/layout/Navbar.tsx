@@ -1,40 +1,61 @@
-// app/components/layout/Navbar.tsx
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher';
 
 type NavbarProps = {
   isHome?: boolean;
+  lang?: 'ar' | 'en';
 };
 
-const Navbar = ({ isHome = false }: NavbarProps) => {
-  const navLinks = [
-    { href: '/', label: 'الرئيسية' },
-    { href: '/about-us', label: 'من نحن' },
-    { href: '/services', label: 'خدماتنا' },
-    { href: '/why-medyour', label: 'لماذا ميديور' },
-    { href: '/challenges', label: 'التحديات' },
-    { href: '/faqs', label: 'الأسئلة الشائعة' },
-    { href: '/contact', label: 'اتصل بنا' }
-  ];
+const Navbar = ({ isHome = false, lang = 'ar' }: NavbarProps) => {
+  const base = lang === 'en' ? '/en' : '';
+  const navLinks = lang === 'en'
+    ? [
+        { href: `${base}/`, label: 'Home' },
+        { href: `${base}/about-us`, label: 'About Us' },
+        { href: `${base}/services`, label: 'Services' },
+        { href: `${base}/why-medyour`, label: 'Why Medyour' },
+        { href: `${base}/challenges`, label: 'Challenges' },
+        { href: `${base}/faqs`, label: 'FAQs' },
+        { href: `${base}/contact`, label: 'Contact' },
+      ]
+    : [
+        { href: `${base}/`, label: 'الرئيسية' },
+        { href: `${base}/about-us`, label: 'من نحن' },
+        { href: `${base}/services`, label: 'خدماتنا' },
+        { href: `${base}/why-medyour`, label: 'لماذا ميديور' },
+        { href: `${base}/challenges`, label: 'التحديات' },
+        { href: `${base}/faqs`, label: 'الأسئلة الشائعة' },
+        { href: `${base}/contact`, label: 'اتصل بنا' },
+      ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 ${
         isHome ? 'bg-transparent' : 'bg-white/95 backdrop-blur-md shadow-md'
       } transition-all duration-300`}
-      dir="rtl"
+      dir={lang === 'en' ? 'ltr' : 'rtl'}
+      style={
+        isHome
+          ? {}
+          : {
+              backgroundImage: 'url(/images/navbar-background.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }
+      }
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
-            href="/"
+            href={base || '/'}
             className="flex items-center gap-2 group"
           >
             <div className="w-12 h-12 bg-gradient-to-br from-[#00CFC5] to-[#0099CC] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-white font-bold text-xl">M</span>
             </div>
             <span className={`text-2xl font-bold font-cairo ${isHome ? 'text-[#001218]' : 'text-[#001218]'}`}>
-              ميديور
+              {lang === 'en' ? 'Medyour' : 'ميديور'}
             </span>
           </a>
 
@@ -56,17 +77,12 @@ const Navbar = ({ isHome = false }: NavbarProps) => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="/contact"
+              href={`${base}/contact`}
               className="bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-2 px-6 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-              احجز الآن
+              {lang === 'en' ? 'Book Now' : 'احجز الآن'}
             </a>
-            
-            {/* Language Switcher */}
-            <button className="flex items-center gap-1 text-gray-700 hover:text-[#00CFC5] transition-colors">
-              <span className="font-semibold">EN</span>
-              <ChevronDown className="w-4 h-4" />
-            </button>
+            <LanguageSwitcher lang={lang} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,10 +105,10 @@ const Navbar = ({ isHome = false }: NavbarProps) => {
             </a>
           ))}
           <a
-            href="/contact"
+            href={`${base}/contact`}
             className="block text-center bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-3 px-6 rounded-full hover:shadow-xl transition-all duration-300"
           >
-            احجز الآن
+            {lang === 'en' ? 'Book Now' : 'احجز الآن'}
           </a>
         </div>
       </div>

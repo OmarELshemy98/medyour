@@ -1,5 +1,4 @@
 // pages/terms.tsx
-import Head from 'next/head';
 
 // Content Import
 import { termsContent } from '../../content/ar/terms';
@@ -8,21 +7,15 @@ import { termsContent } from '../../content/ar/terms';
 
 // Section Imports
 import TermsContentSection from '../../components/sections/legal/TermsContent';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 
 const TermsPage: React.FC = () => {
     const { seo, hero, sections } = termsContent as any;
     
     return (
         <>
-            <Head>
-                <title>{seo.title}</title>
-                <meta name="description" content={seo.description} />
-                <html lang="ar" dir="rtl" />
-            </Head>
-
-            <Navbar /> 
+            <HtmlNavbarAr /> 
             
             <main className="min-h-screen bg-white">
                 
@@ -43,7 +36,7 @@ const TermsPage: React.FC = () => {
                 
             </main>
 
-            <Footer /> 
+            <HtmlFooterAr /> 
         </>
     );
 };

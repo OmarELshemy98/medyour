@@ -1,11 +1,8 @@
 // pages/about-us.tsx (الإصدار النهائي)
-import Head from 'next/head';
-// Layout Imports
-// Section Imports
 // Content Import
 import { aboutUsContent } from '../../content/ar/about-us';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import OurStorySection from '../../components/sections/about-us/OurStory';
 import VisionMissionSection from '../../components/sections/about-us/VisionMission';
 import TeamSection from '../../components/sections/about-us/Team';
@@ -17,13 +14,7 @@ const AboutUsPage: React.FC = () => {
     
     return (
         <>
-            <Head>
-                <title>{seo.title}</title>
-                <meta name="description" content={seo.description} />
-                <html lang="ar" dir="rtl" />
-            </Head>
-
-            <Navbar/> 
+            <HtmlNavbarAr/>
             
             <main className="min-h-screen">
                 
@@ -53,7 +44,7 @@ const AboutUsPage: React.FC = () => {
 
             </main>
 
-            <Footer /> 
+            <HtmlFooterAr /> 
         </>
     );
 };

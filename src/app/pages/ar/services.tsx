@@ -1,31 +1,20 @@
 // pages/services.tsx (الإصدار النهائي)
-import Head from 'next/head';
-// Layout Imports
 // Section Imports
 
 // Content Import - (افتراضي)
 import { servicesContent as servicesPageContent } from '../../content/ar/services'; 
 
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
-import ServiceCategoriesSection from '../../components/sections/services/ServiceCategories';
-import CoreServicesSection from '../../components/sections/services/CoreServices';
-import PartnersSection from '../../components/sections/services/Partners';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import CtaSection from '../../components/sections/home/CtaSection';
 
 const ServicesPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة
-    const { seo, hero, serviceCategories, coreServices, partners, cta } = servicesPageContent as any;
+    const { pageHero, serviceCategories, coreServices, partners, cta } = servicesPageContent as any;
     
     return (
         <>
-            <Head>
-                <title>{seo.title}</title>
-                <meta name="description" content={seo.description} />
-                <html lang="ar" dir="rtl" />
-            </Head>
-
-            <Navbar /> 
+            <HtmlNavbarAr /> 
             
             <main className="min-h-screen">
                 
@@ -33,29 +22,36 @@ const ServicesPage: React.FC = () => {
                 <section className="pt-24 md:pt-32 pb-16 bg-[#F8F9FA]" dir="rtl">
                     <div className="container mx-auto px-4 text-center max-w-4xl">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-[#001218] font-cairo mb-4">
-                            {hero.title}
+                            {pageHero.mainTitle}
                         </h1>
                         <p className="text-xl text-gray-600">
-                            {hero.subtitle}
+                            {pageHero.description}
                         </p>
                     </div>
                 </section>
                 
-                {/* 2. Service Categories (فئات الخدمات) */}
-                <ServiceCategoriesSection content={serviceCategories} />
+                {/* 2. Main Services Grid (الخدمات الأساسية من المحتوى) */}
+                <section className="py-12">
+                  <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" dir="rtl">
+                    {(servicesPageContent.mainServices?.list || []).map((s: any, idx: number) => (
+                      <div key={idx} className="p-6 rounded-xl border border-gray-200 bg-white shadow-sm">
+                        <h3 className="text-2xl font-bold mb-2">{s.title}</h3>
+                        <p className="text-gray-700">{s.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
 
-                {/* 3. Core Services (الخدمات الأساسية) */}
-                <CoreServicesSection content={coreServices} />
-
-                {/* 4. Partners Section (شركاؤنا) */}
-                <PartnersSection content={partners} />
-                
-                {/* 5. Cta Section (الدعوة للعمل) */}
-                <CtaSection content={cta} />
+                {/* 3. CTA Section (الدعوة للعمل) */}
+                <CtaSection content={{
+                  title: servicesPageContent.cta.title,
+                  subtitle: '',
+                  primaryButton: { text: servicesPageContent.cta.buttonText, link: servicesPageContent.cta.buttonLink }
+                }} />
                 
             </main>
 
-            <Footer /> 
+            <HtmlFooterAr /> 
         </>
     );
 };

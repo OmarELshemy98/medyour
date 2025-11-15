@@ -1,5 +1,4 @@
 // pages/privacy.tsx
-import Head from 'next/head';
 
 // Content Import
 import { privacyContent } from '../../content/ar/privacy';
@@ -8,21 +7,15 @@ import { privacyContent } from '../../content/ar/privacy';
 
 // Section Imports
 import PrivacyContentSection from '../../components/sections/legal/PrivacyContent';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 
 const PrivacyPage: React.FC = () => {
     const { seo, hero, sections } = privacyContent as any;
     
     return (
         <>
-            <Head>
-                <title>{seo.title}</title>
-                <meta name="description" content={seo.description} />
-                <html lang="ar" dir="rtl" />
-            </Head>
-
-            <Navbar /> 
+            <HtmlNavbarAr /> 
             
             <main className="min-h-screen bg-white">
                 
@@ -43,7 +36,7 @@ const PrivacyPage: React.FC = () => {
                 
             </main>
 
-            <Footer /> 
+            <HtmlFooterAr /> 
         </>
     );
 };

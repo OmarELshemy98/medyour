@@ -1,10 +1,9 @@
 // pages/index.tsx (الإصدار النهائي للصفحة الرئيسية)
-import Head from 'next/head';
 // Content Import
 import { homePageContent } from '../../content/ar/index';
 
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import HeroSection from '../../components/sections/home/HeroSection';
 import ProvidersSection from '../../components/sections/home/Providers';
 import BenefitsSection from '../../components/sections/home/Benefits';
@@ -32,17 +31,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
-        {/* إعداد اتجاه القراءة للغة العربية */}
-        {/* 
-          ملاحظة هامة: لا تضع عنصر <html> داخل <Head> 
-          بل يمكنك ضبط اللغة والاتجاه في _document.tsx أو عبر خاصية dir/lang في العنصر الجذر أو body 
-        */}
-      </Head>
-
-      <Navbar isHome={true} />
+      <HtmlNavbarAr />
 
       <main className="min-h-screen">
         {/* 1. قسم الهيرو */}
@@ -73,7 +62,7 @@ const HomePage: React.FC = () => {
         <CtaSection content={cta as any} />
       </main>
 
-      <Footer />
+      <HtmlFooterAr />
     </>
   );
 };

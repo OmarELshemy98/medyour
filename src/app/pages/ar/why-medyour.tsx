@@ -1,5 +1,4 @@
 // pages/why-medyour.tsx
-import Head from 'next/head';
 
 // Content Import
 import { whyMedyourContent } from '../../content/ar/why-medyour';
@@ -11,21 +10,15 @@ import KeyFeaturesSection from '../../components/sections/why-medyour/KeyFeature
 import ComparisonSection from '../../components/sections/why-medyour/Comparison';
 import DifferenceSection from '../../components/sections/why-medyour/Difference';
 import CtaSection from '../../components/sections/home/CtaSection';
-import Footer from '../../components/layout/Footer';
-import Navbar from '../../components/layout/Navbar';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 
 const WhyMedyourPage: React.FC = () => {
     const { seo, hero, keyFeatures, comparison, difference, cta } = whyMedyourContent as any;
     
     return (
         <>
-            <Head>
-                <title>{seo.title}</title>
-                <meta name="description" content={seo.description} />
-                <html lang="ar" dir="rtl" />
-            </Head>
-
-            <Navbar /> 
+            <HtmlNavbarAr /> 
             
             <main className="min-h-screen">
                 
@@ -55,7 +48,7 @@ const WhyMedyourPage: React.FC = () => {
                 
             </main>
 
-            <Footer /> 
+            <HtmlFooterAr /> 
         </>
     );
 };

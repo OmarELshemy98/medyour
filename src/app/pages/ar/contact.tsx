@@ -1,26 +1,29 @@
 // pages/contact.tsx
-import Head from 'next/head';
 
 // Content Import - (افتراضي)
 import { contactContent as contactPageContent } from '../../content/ar/contact';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
+import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
+import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import ContactInfoSection from '../../components/sections/contact/ContactInfoSection';
 import ContactFormSection from '../../components/sections/contact/ContactFormSection';
 
 const ContactPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة
-    const { seo, hero, contactInfo, formConfig } = contactPageContent as any;
+    const { hero, contactInfo, form } = contactPageContent as any;
+    const infoMapped = {
+        title: 'معلومات الاتصال',
+        subtitle: hero.subtitle,
+        items: [
+            { icon: 'MapPin', title: 'العنوان', value: contactInfo.address },
+            { icon: 'Phone', title: 'الهاتف', value: contactInfo.phone, link: `tel:${contactInfo.phone}` },
+            { icon: 'Mail', title: 'البريد الإلكتروني', value: contactInfo.email, link: `mailto:${contactInfo.email}` },
+            { icon: 'Clock', title: 'ساعات العمل', value: contactInfo.workingHours },
+        ],
+    };
     
     return (
         <>
-            <Head>
-                <title>{seo.title}</title>
-                <meta name="description" content={seo.description} />
-                <html lang="ar" dir="rtl" />
-            </Head>
-
-            <Navbar/> 
+            <HtmlNavbarAr/> 
             
             <main className="min-h-screen">
                 
@@ -43,12 +46,12 @@ const ContactPage: React.FC = () => {
                             
                             {/* العمود الأول: معلومات الاتصال */}
                             <div className="lg:col-span-1">
-                                <ContactInfoSection content={contactInfo} />
+                                <ContactInfoSection content={infoMapped} />
                             </div>
                             
                             {/* العمود الثاني: نموذج التواصل */}
                             <div className="lg:col-span-2">
-                                <ContactFormSection formConfig={formConfig} />
+                                <ContactFormSection formConfig={form} />
                             </div>
                         </div>
                     </div>
@@ -56,7 +59,7 @@ const ContactPage: React.FC = () => {
                 
             </main>
 
-            <Footer /> 
+            <HtmlFooterAr /> 
         </>
     );
 };

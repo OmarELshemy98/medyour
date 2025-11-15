@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+  <title>مديور | شبكة رعاية صحية متكاملة وحلول طبية للأفراد والشركات - خدمات وحلول الرعاية الصحية</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'float-delay': 'float 3s ease-in-out infinite 0.5s',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)', opacity: '0.8' },
+                            '50%': { transform: 'translateY(-10px)', opacity: '1' },
+                        }
+                    },
+                }
+            }
+        }
+    </script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <meta name="description"
+    content="استكشف خدمات ميديور للرعاية الصحية الذكية: تغطية صحية، شبكة مقدمي خدمة، تطبيق جوال، منصات إلكترونية، حلول للأفراد والشركات." />
+  <meta name="description" content="احصل على رعاية صحية متكاملة مع ميديور. شبكة طبية واسعة تضم أفضل الأطباء، المعامل، والصيدليات. حمل التطبيق الآن لخدمة طبية أسهل وأسرع.">
+  <meta name="keywords"
+    content="ميديور, خدمات الرعاية الصحية, تغطية صحية, شبكة مقدمي الخدمة, تطبيق صحي, حلول رقمية, شركات, أفراد, مصر" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.medyour.com/ar/services.html" />
+  <link rel="alternate" hreflang="ar" href="https://www.medyour.com/ar/services.html" />
+  <link rel="alternate" hreflang="en" href="https://www.medyour.com/en/services.html" />
+  <link rel="alternate" hreflang="ar" href="https://www.medyour.com" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="خدمات ميديور للرعاية الصحية الذكية" />
+  <meta property="og:description" content="مجموعة متكاملة من الخدمات الصحية الذكية للأفراد والشركات عبر منصة ميديور." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.medyour.com/ar/services.html" />
+  <meta property="og:image" content="https://www.medyour.com/images/logo-medyour-ar.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="خدمات ميديور للرعاية الصحية الذكية" />
+  <meta name="twitter:description"
+    content="مجموعة متكاملة من الخدمات الصحية الذكية للأفراد والشركات عبر منصة ميديور." />
+  <meta name="twitter:image" content="https://www.medyour.com/images/logo-medyour-ar.png" />
+  <style>
+    html,
+    body,
+    p,
+    span * {
+      font-family: 'Sans-serif', sans-serif !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Cairo' !important;
+    }
+  </style>
+
+</head>
+
+<body class="min-h-screen bg-white relative font-sans">
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 z-50 w-full text-white transition-all duration-500 ease-in-out">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between">
+
+      <!-- Mobile: Row for hamburger, logo, and placeholder for alignment -->
+      <div class="flex items-center justify-between w-full lg:hidden">
+        <!-- Left Hamburger -->
+        <button id="menu-toggle" class="text-white focus:outline-none text-2xl">
+          ☰
+        </button>
+        <!-- Center Logo -->
+        <a href="../index.html" class="flex items-center justify-center">
+          <img src="/images/logo-medyour-ar.png" alt="مديور" class="w-[150px] sm:w-[170px] md:w-[200px]"
+            loading="lazy" />
+        </a>
+        <!-- Right: Balance column -->
+        <div class="w-8"></div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu"
+        class="hidden lg:hidden bg-[#001218] text-white p-6 sm:p-8 space-y-4 sm:space-y-6 fixed top-0 right-0 w-full h-full z-[60] overflow-y-auto">
+        <button id="close-menu" class="absolute top-4 left-4 text-white text-3xl"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')">&times;</button>
+        <div class="container mx-auto pt-16 space-y-8 sm:space-y-12">
+          <a href="/ar/about-us.html"
+            class="block text-lg font-light leading-6 text-white hover:text-gray-200 hover:font-bold transition-all text-center">من
+            نحن</a>
+          <a href="/ar/services.html"
+            class="block text-lg font-light leading-6 text-white hover:text-gray-200 hover:font-bold transition-all text-center">خدماتنا</a>
+          <a href="/ar/challenges.html"
+            class="block text-lg font-light leading-6 text-white hover:text-gray-200 hover:font-bold transition-all text-center">تحديات
+            الرعاية الصحية</a>
+          <a href="/ar/why-medyour.html"
+            class="block text-lg font-light leading-6 text-white hover:text-gray-200 hover:font-bold transition-all text-center">لماذا
+            ميديور؟</a>
+          <a href="/ar/faqs.html"
+            class="block text-lg font-light leading-6 text-white hover:text-gray-200 text-center">الاسئله الشائعة</a>
+          <div class="w-full sm:w-3/5 space-y-4 sm:space-y-6 mx-auto">
+            <a href="/en/contact.html"
+              class="block bg-white text-[#005071] text-lg sm:text-xl px-6 py-3 rounded-full text-center">تواصل معنا</a>
+            <a href="../en/services.html"
+              class="block text-white text-lg sm:text-xl px-6 py-3 rounded-full text-center">English</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop: All navbar in one flex row, aligned center, spaced with justify-between -->
+      <div class="hidden lg:flex items-center justify-between w-full">
+        <!-- Logo right (rtl) -->
+
+        <!-- Center nav links -->
+        <div class="flex flex-1 items-center  justify-between mx-auto max-w-7xl pb-4 gap-24 flex-row">
+          <div class="flex flex-1 pt-8 justify-between">
+            <a href="../index.html">
+              <img src="/images/logo-medyour-ar.png" alt="مديور" class="w-[170px] xl:w-[190px]" loading="lazy" />
+            </a>
+            <a href="/ar/about-us.html"
+              class="text-[1.125rem] font-normal leading-[1.5rem] text-white hover:text-gray-200 transition-colors">من
+              نحن</a>
+            <a href="/ar/services.html"
+              class="text-[1.125rem] font-normal leading-[1.5rem] text-white hover:text-gray-200 transition-colors">خدماتنا</a>
+            <a href="/ar/challenges.html"
+              class="text-[1.125rem] font-normal leading-[1.5rem] text-white hover:text-gray-200 transition-colors">تحديات
+              الرعاية الصحية</a>
+            <a href="/ar/why-medyour.html"
+              class="text-[1.125rem] font-normal leading-[1.5rem] text-white hover:text-gray-200 transition-colors">لماذا
+              ميديور؟</a>
+            <a href="/ar/faqs.html"
+              class="text-[1.125rem] font-normal leading-[1.5rem] text-white hover:text-gray-200 transition-colors">الاسئله
+              الشائعة</a>
+          </div>
+          <div class="flex flex-col items-end gap-2 justify-center">
+            <a href="../en/services.html"
+              class="text-white text-base font-normal leading-6 rounded hover:bg-gray-800 transition-colors text-center">English</a>
+            <a href="/ar/contact.html"
+              class="bg-white text-[#005071] text-base font-normal leading-6 px-5 py-1 rounded hover:bg-gray-100 transition-colors text-center whitespace-nowrap">تواصل
+              معنا</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main class="">
+    <!-- Page Header (مطابق لستايل about-us EN) -->
+    <div class="relative  w-full overflow-hidden  
+      bg-[url('../images/background-img.png')] bg-cover bg-center bg-no-repeat
+      h-auto pt-20 
+      flex flex-col justify-center">
+      <div class="absolute inset-0 bg-black/50"></div>
+
+      <div class="relative pt-20 pb-24 z-10 text-white w-full max-w-[90rem] mx-auto
+          px-4 sm:px-8 md:px-12 lg:px-16
+          flex flex-col items-center justify-center gap-4 ">
+
+        <h1 class="text-center font-extrabold
+            text-[1.5rem] xs:text-[1.75rem] sm:text-[2rem]
+            leading-tight break-words max-w-4xl">
+          كل ما تحتاجه… في مكانٍ واحد
+        </h1>
+
+        <p class="text-center font-light
+            text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[1.5rem] 
+            leading-normal sm:leading-[2.1rem] md:leading-[2.4rem] lg:leading-[2.8rem] 
+            w-full max-w-3xl sm:max-w-4xl md:max-w-5xl px-1 overflow-hidden text-ellipsis">
+          توفر ميديور منظومة رقمية متكاملة تُعيد تعريف تجربة الرعاية الصحية بأسلوب يجمع بين السلاسة، الأمان، والدقة. من
+          خلال تطبيق رقمي سهل الاستخدام، يتيح للأفراد الوصول إلى شبكة واسعة من مقدمي الرعاية الصحية وتلقي الخدمات بسرعة
+          وسلاسة ودون تعقيد، بينما تتيح المنصات الإلكترونية المتطورة للمؤسسات إدارة اشتراكات موظفيها ومتابعة التقارير
+          بكفاءة، وتمكّن مقدمي الخدمة من إدارة عملياتهم والتواصل المباشر مع المشتركين بكل سهولة. يجمع هذا التكامل جميع
+          الأطراف ضمن تجربة رقمية موحّدة ومتزامنة، تجعل الوصول إلى الرعاية الصحية أكثر سهولة وفاعلية من أي وقتٍ مضى.
+
+        </p>
+      </div>
+    </div>
+
+    <section class="mobile-app-section py-[2rem] md:py-[3rem] bg-[rgba(0,255,212,0.11)] rounded-lg relative">
+      <div class="flex flex-col items-center md:gap-[2rem] w-full px-[1rem] md:px-[1.5rem] lg:px-[2rem]">
+        <h2
+          class="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]">
+          تطبيق الهاتف المحمول
+        </h2>
+
+        <div class="w-full flex justify-center relative py-[2rem] md:py-[3rem]">
+          <div class="relative sm:w-[13.75rem] md:w-[17.5rem] lg:w-[28.125rem] transform">
+            <img src="../images/services-images/mobile-app.png" alt="تطبيق الجوال" loading="lazy"
+              class="object-contain w-full h-auto" />
+            <div
+              class="hidden md:block absolute -top-[1rem] -left-[1.5rem] w-[1.25rem] h-[1.25rem] bg-yellow-300 animate-float opacity-80">
+            </div>
+            <div
+              class="hidden md:block absolute top-1/3 -left-[2rem] w-[1.5rem] h-[1.5rem] bg-green-400 animate-float-delay opacity-80">
+            </div>
+            <div
+              class="hidden md:block absolute bottom-1/4 -left-[1.5rem] w-[1rem] h-[1rem] bg-[#8CE2FF] animate-float blur-[2px] opacity-80">
+            </div>
+
+            <div
+              class="hidden md:block absolute -top-[2rem] -right-[2rem] w-[1.25rem] h-[1.25rem] bg-[#FF00FB] animate-float opacity-80">
+            </div>
+            <div
+              class="hidden md:block absolute top-1/2 -right-[2.5rem] w-[1.5rem] h-[1.5rem] bg-[#00FF90] animate-float-delay blur-[0.0625rem] opacity-80">
+            </div>
+            <div
+              class="hidden md:block absolute -bottom-[1rem] -right-[1.5rem] w-[1rem] h-[1rem] bg-[#8CE2FF] animate-float-delay opacity-80">
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="text-[#00313B] text-center  text-[1rem] md:text-[1.125rem] font-normal leading-[1.25rem] md:leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0">
+          يقدّم تطبيق ميديور تجربة رعاية صحية رقمية متكاملة تضع كل ما تحتاجه بين يديك. من خلال واجهة استخدام سهلة وسلسة،
+          حيث يمكنك الاشتراك مباشرة في البرنامج دون أي إجراءات إدارية معقدة، والوصول إلى جميع الخدمات الطبية التي
+          تحتاجها دون أي تعقيد.
+          يتيح لك التطبيق تحديد أقرب مقدّمي الخدمة ضمن الشبكة حسب موقعك الجغرافي، ويوفّر خيارات دفع إلكتروني آمنة سواء
+          لقيمة الاشتراك السنوي أو لنسبة التحمل الخاصة بالخدمات الطبية.
+          ايضاً امكانية استلام نتائج التحاليل والفحوصات الطبية مباشرة عبر التطبيق دون الحاجة إلى زيارة مقدم الخدمة.
+          تجربة متكاملة تمنحك متابعة دائمة لخدماتك الصحية وملفاتك الطبية في أي وقت ومن أي مكان، مع دعم مستمر في كل خطوة
+          من رحلتك الصحية.
+
+        </p>
+
+        <!-- <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-[1rem] sm:gap-[1.5rem] mt-[1.5rem]"
+          >
+            <a
+              href="#"
+              class="flex items-center justify-center gap-[0.75rem] border-2 border-[#123D46] rounded-full px-[1.5rem] sm:px-[2rem] py-[0.625rem] sm:py-[0.75rem] text-[#123D46] hover:bg-[#123D46] hover:text-white transition-all duration-300 group w-[12.5rem] sm:w-auto"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="24"
+                viewBox="0 0 30 37"
+                fill="none"
+                class="group-hover:fill-white"
+              >
+                <path
+                  d="M27.5221 31.9375C26.035 34.1592 24.4584 36.3271 22.0575 36.363C19.6567 36.4167 18.8863 34.9475 16.1629 34.9475C13.4217 34.9475 12.5796 36.3271 10.3041 36.4167C7.95705 36.5063 6.1833 34.0517 4.6783 31.8838C1.61455 27.4584 -0.732529 19.3063 2.4208 13.8238C3.97955 11.1005 6.77456 9.38046 9.80247 9.32671C12.0959 9.29087 14.2817 10.8855 15.6971 10.8855C17.0946 10.8855 19.7463 8.96837 22.5234 9.25504C23.6879 9.30879 26.9488 9.72087 29.045 12.8025C28.8838 12.91 25.1571 15.0959 25.1929 19.6288C25.2467 25.0396 29.9409 26.8492 29.9946 26.8671C29.9409 26.9925 29.2421 29.4471 27.5221 31.9375ZM17.2917 3.27087C18.5996 1.78379 20.7675 0.655041 22.5592 0.583374C22.7921 2.67962 21.95 4.79379 20.6959 6.29879C19.4596 7.82171 17.4171 9.00421 15.4104 8.84296C15.1417 6.78254 16.145 4.63254 17.2917 3.27087Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="text-[0.9375rem] font-medium">متجر التطبيقات</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center justify-center gap-[0.75rem] border-2 border-[#123D46] rounded-full px-[1.5rem] sm:px-[2rem] py-[0.625rem] sm:py-[0.75rem] text-[#123D46] hover:bg-[#123D46] hover:text-white transition-all duration-300 group w-[12.5rem] sm:w-auto"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 35 35"
+                fill="none"
+                class="group-hover:fill-white"
+              >
+                <path
+                  d="M6.92858 0.889583L26.0677 11.8942L21.9655 15.9965L6.92858 0.889583ZM2.96337 0L20.5319 17.5L2.96483 35C2.07087 34.6048 1.45837 33.7254 1.45837 32.7031C1.45837 32.6696 1.45837 32.636 1.45983 32.604V32.6083V2.39313C1.45837 2.36542 1.45837 2.33188 1.45837 2.29833C1.45837 1.27604 2.07087 0.396667 2.94879 0.00729167L2.96483 0.00145833L2.96337 0ZM32.0163 15.4496C32.62 15.8973 33.0065 16.609 33.0065 17.4096C33.0065 17.4417 33.0065 17.4723 33.005 17.5044V17.5C33.0109 17.5627 33.0152 17.6371 33.0152 17.7115C33.0152 18.464 32.6507 19.1319 32.0877 19.546L32.0819 19.5504L27.9796 21.8735L23.5375 17.5L27.9811 13.0565L32.0163 15.4496ZM6.92858 34.1104L21.9669 19.0035L26.0692 23.1058L6.92858 34.1104Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span class="text-[0.9375rem] font-medium">جوجل بلاي</span>
+            </a>
+          </div> -->
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <div class="flex items-center w-[80%] mx-auto">
+          <div class="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40"></div>
+
+          <div class="flex items-center">
+            <div class="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+            <div class="w-[12.5rem] sm:w-[30.8125rem] border-t-2 border-[#3A6070]"></div>
+            <div class="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+          </div>
+
+          <div class="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex flex-col items-center w-full py-[2rem] md:py-[3rem]">
+      <div
+        class="flex flex-col items-center gap-[1.5rem] md:gap-[2rem] w-full max-w-[75rem] px-[1rem] md:px-[1.5rem] lg:px-[2rem]">
+        <h2
+          class="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]">
+          التغطية الصحية
+        </h2>
+        <div class="w-full flex justify-center">
+          <div class="relative w-full sm:w-3/4 md:w-4/5 lg:w-3/4 transform">
+            <img src="../images/services-images/healthcare-coverage.png" alt="تغطية الرعاية الصحية" loading="lazy"
+              class="object-contain w-full h-auto" />
+            <div
+              class="hidden md:block absolute top-[0.5rem] left-[0.5rem] w-[1rem] h-[1rem] bg-[#00FBFF] animate-float opacity-80">
+            </div>
+            <div
+              class="hidden md:block absolute top-1/4 left-[2rem] w-[1.25rem] h-[1.25rem] bg-[#00FF90] animate-float-delay opacity-80">
+            </div>
+            <div
+              class="hidden md:block absolute bottom-[0.5rem] left-[1rem] w-[1.5rem] h-[1.5rem] bg-[#8CE2FF] animate-float opacity-80">
+            </div>
+
+            <div
+              class="hidden md:block absolute top-[0.5rem] right-[0.5rem] w-[1rem] h-[1rem] bg-[#FF00FB] animate-float-delay opacity-80">
+            </div>
+            <div
+              class="hidden md:block absolute top-2/3 right-[2rem] w-[1.25rem] h-[1.25rem] bg-[#00FF90] animate-float opacity-80">
+            </div>
+            <div
+              class="hidden md:block absolute bottom-[0.5rem] right-[1rem] w-[1.5rem] h-[1.5rem] bg-[#8CE2FF] animate-float-delay opacity-80">
+            </div>
+          </div>
+        </div>
+        <p
+          class="text-[#00313B] text-center  text-[1.125rem] font-normal leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0">
+          نقدّم برامج رعاية صحية مرنة وشاملة تناسب الأفراد والمؤسسات، من خلال اشتراك سنوي بأسعار مخفضة ومنافسة تلائم
+          جميع الفئات، وشفافة دون أي رسوم إضافية.
+          تتيح ميديور إمكانية إضافة جميع أفراد الأسرة والوالدين دون حد أقصى لعددهم، كما لا يوجد حد أقصى للخدمات المغطاة
+          أو لعدد مرات الاستفادة من الخدمة.
+          تركّز ميديور على تقديم تغطية طبية متكاملة تضمن راحة المشتركين وجودة الخدمات في كل زيارة، لتجعل الرعاية الصحية
+          أكثر سهولة وفي متناول الجميع.
+
+        </p>
+      </div>
+    </section>
+    <div class="flex items-center w-[80%] mx-auto mt-[2rem]">
+      <div
+        class="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40 bg-[length:1.25rem_0.125rem] bg-[position:top] h-[0.125rem]">
+      </div>
+
+      <div class="flex items-center">
+        <div class="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+        <div class="w-[12.5rem] sm:w-[30.8125rem] border-t-2 border-[#3A6070]"></div>
+        <div class="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+      </div>
+
+      <div
+        class="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40 bg-[length:1.25rem_0.125rem] bg-[position:top] h-[0.125rem]">
+      </div>
+    </div>
+    <section>
+      <div class="flex flex-col items-center w-full py-[2rem] md:py-[3rem]">
+        <div
+          class="flex flex-col items-center gap-[1.5rem] md:gap-[2rem] w-full max-w-[75rem] px-[1rem] md:px-[1.5rem] lg:px-[2rem]">
+          <h2
+            class="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]">
+            شبكة مقدمي الخدمة
+          </h2>
+          <div class="w-full flex justify-center">
+            <div class="relative w-full md:w-4/5 lg:w-3/4 transform">
+              <img src="../images/services-images/provider-network.png" alt="شبكة مقدمي الرعاية الصحية"
+                class="object-contain w-full h-auto" loading="lazy" />
+              <div
+                class="hidden md:block absolute top-0 -left-[0.5rem] w-[1.25rem] h-[1.25rem] bg-yellow-300 animate-float opacity-80">
+              </div>
+              <div
+                class="hidden md:block absolute top-1/2 -translate-y-[2.5rem] -left-[2rem] w-[1.5rem] h-[1.5rem] bg-[#00FF90] animate-float-delay opacity-80">
+              </div>
+              <div
+                class="hidden md:block absolute left-[2rem] w-[1rem] h-[1rem] bg-[#8CE2FF] animate-float blur-[2px] opacity-80">
+              </div>
+
+              <div
+                class="hidden md:block absolute top-[3.75rem] -right-[2rem] w-[1.25rem] h-[1.25rem] bg-[#FF00FB] animate-float-delay opacity-80">
+              </div>
+              <div
+                class="hidden md:block absolute top-2/3 -right-[2rem] w-[1.5rem] h-[1.5rem] bg-[#8CE2FF] animate-float opacity-80">
+              </div>
+            </div>
+          </div>
+          <p
+            class="text-[#00313B] text-center  text-[1rem] md:text-[1.125rem] font-normal leading-[1.25rem] md:leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0">
+            شبكة طبية واسعة تضم أكثر من 2500 مقدم خدمة معتمد تشمل معامل التحاليل، مراكز الأشعة، المستشفيات، المراكز
+            الطبية، العيادات، والصيدليات في مختلف المحافظات.
+            نضمن لك وصولًا سريعًا إلى خدمات موثوقة تغطي جميع التخصصات الطبية بأعلى معايير الجودة والاحترافية.
+
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="flex items-center w-[80%] mx-auto mt-[2rem]">
+      <div
+        class="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40 bg-[length:1.25rem_0.125rem] bg-[position:top] h-[0.125rem]">
+      </div>
+
+      <div class="flex items-center">
+        <div class="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+        <div class="w-[12.5rem] sm:w-[30.8125rem] border-t-2 border-[#3A6070]"></div>
+        <div class="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+      </div>
+
+      <div
+        class="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40 bg-[length:1.25rem_0.125rem] bg-[position:top] h-[0.125rem]">
+      </div>
+    </div>
+
+    <section>
+      <div class="flex flex-col items-center justify-center text-center w-[80%] mx-auto py-[3rem]">
+        <h2 class="text-[#123D46]  text-[2.0625rem] font-normal leading-[4.375rem]">
+          منصاتنا الإلكترونية
+        </h2>
+        <p
+          class="text-[#00313B] text-center  text-[1rem] md:text-[1.125rem] font-normal leading-[1.25rem] md:leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0 mb-3">
+          توفر منصات ميديور الإلكترونية التواصل المباشر والفوري بين جميع أطراف منظومة الرعاية الصحية من خلال نظام رقمي
+          متكامل ومتزامن.
+          تُتيح للمؤسسات إدارة اشتراكات موظفيها ومتابعة استخدام الخدمات وتحليل البيانات الصحية بسهولة ودقة، كما تُمكّن
+          مقدّمي الخدمة من إدارة عملياتهم والتواصل المباشر والفعال مع المشتركين ومتابعة خدماتهم الطبية في الوقت الفعلي.
+          ويكتمل هذا التكامل عبر الربط المباشر مع تطبيق ميديور الذي يوفّر تحديثات لحظية للمعلومات وتزامنًا مستمرًا بين
+          جميع الأطراف، مما يجعل تجربة الرعاية الصحية أسهل وأسرع وأكثر كفاءة، ويوفّر الوقت والجهد دون الحاجة إلى إجراءات
+          إدارية معقدة.
+          تعتمد المنصات على تقنيات تشفير سحابية متقدمة تضمن حماية الملفات الطبية وخصوصية البيانات، مع سهولة الوصول إليها
+          عند الحاجة.
+
+        </p>
+
+
+      </div>
+    </section>
+    <footer class="bg-[#003439] text-white py-6">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Desktop Layout -->
+        <div class="hidden md:flex md:flex-row md:items-center md:justify-between">
+          <!-- Navigation Links -->
+          <div class="flex items-center space-x-6">
+            <a href="/ar/about-us.html" class="text-[#FFF] text-right  text-[1rem] font-normal leading-[1.5rem] ml-6">من
+              نحن</a>
+            <a href="/ar/services.html"
+              class="text-[#FFF] text-right  text-[1rem] font-normal leading-[1.5rem]">خدماتنا</a>
+            <a href="/ar/faqs.html" class="text-[#FFF] text-right text-[1rem] font-normal leading-[1.5rem]">الأسئلة
+              الشائعة</a>
+            <a href="/ar/contact.html" class="text-[#FFF] text-right text-[1rem] font-normal leading-[1.5rem]">تواصل
+              معنا</a>
+          </div>
+
+          <!-- Copyright for Desktop -->
+          <div class="text-sm">
+            جميع الحقوق محفوظة © ٢٠٢٥.
+            <a href="/ar/terms.html" class="hover:text-gray-300 ml-1 underline">الشروط والأحكام</a>
+            <span class="mx-1">|</span>
+            <a href="/ar/privacy.html" class="hover:text-gray-300 underline">سياسة الخصوصية</a>
+          </div>
+        </div>
+
+        <!-- Mobile Layout -->
+        <div class="flex flex-col items-center md:hidden">
+          <p class="text-sm text-center">جميع الحقوق محفوظة © 2025</p>
+          <div class="text-sm flex items-center gap-2">
+            <a href="/ar/terms.html" class="hover:text-gray-300 underline">الشروط والأحكام</a>
+            <span>|</span>
+            <a href="/ar/privacy.html" class="hover:text-gray-300 underline">سياسة الخصوصية</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>
