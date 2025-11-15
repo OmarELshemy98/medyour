@@ -4,10 +4,10 @@ import Head from 'next/head';
 // Section Imports
 
 // Content Import - (افتراضي)
-import { faqsContent as faqsPageContent } from '@/app/content/ar/faqs'; 
-import Navbar from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/Footer';
-import FAQSection from '@/app/components/sections/faqs/FAQSection';
+import { faqsContent as faqsPageContent } from '../../content/ar/faqs'; 
+import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
+import FAQSection from '../../components/sections/faqs/FAQSection';
 
 const FAQsPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة
@@ -38,7 +38,7 @@ const FAQsPage: React.FC = () => {
                 </section>
                 
                 {/* 2. FAQ Section - الأسئلة والأجوبة */}
-                <FAQSection 
+                <FAQSection
                     items={faqItems} 
                     sectionTitle={sectionTitle || "أسئلة شائعة"} // استخدام قيمة افتراضية في حال عدم وجودها
                     sectionSubtitle={sectionSubtitle || "ابحث عن إجابة استفسارك هنا."}

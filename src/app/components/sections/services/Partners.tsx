@@ -1,56 +1,68 @@
-// components/sections/services/Partners.tsx
-import Image from 'next/image';
+// app/components/sections/services/Partners.tsx
 
-// تحديد نوع المحتوى المتوقع
-interface PartnerLogo {
-    logo: string; // مسار شعار الشريك
-    name: string;
-}
-
-interface PartnersContent {
-    title: string;
-    subtitle: string;
-    logos: PartnerLogo[];
-}
-
-interface PartnersSectionProps {
-    content: PartnersContent;
-}
-
-const PartnersSection: React.FC<PartnersSectionProps> = ({ content }) => {
+type PartnersProps = {
+    content: {
+      title: string;
+      subtitle: string;
+      partners: Array<{
+        name: string;
+        logo?: string;
+      }>;
+    };
+  };
+  
+  const PartnersSection = ({ content }: PartnersProps) => {
+    const { title, subtitle, partners } = content;
+  
     return (
-        <section className="py-16 md:py-24 bg-white" dir="rtl">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                
-                {/* عنوان القسم */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-[#001218] font-cairo mb-3">
-                        {content.title}
-                    </h2>
-                    <p className="text-lg font-light text-gray-600">
-                        {content.subtitle}
+      <section className="py-16 md:py-24 bg-white" dir="rtl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#001218] font-cairo mb-4">
+              {title}
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600">
+              {subtitle}
+            </p>
+          </div>
+  
+          {/* Partners Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {partners.map((partner, index) => (
+              <div
+                key={index}
+                className="group bg-gradient-to-br from-white to-[#F8F9FA] rounded-xl p-8 border border-gray-100 hover:border-[#00CFC5] hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+              >
+                {partner.logo ? (
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-300"
+                  />
+                ) : (
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#00CFC5] to-[#0099CC] rounded-full flex items-center justify-center text-white text-2xl font-bold mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      {partner.name.charAt(0)}
+                    </div>
+                    <p className="text-sm font-semibold text-[#001218] font-cairo">
+                      {partner.name}
                     </p>
-                </div>
-
-                {/* شبكة الشركاء */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center">
-                    {content.logos.map((partner, index) => (
-                        <div key={index} className="opacity-70 hover:opacity-100 transition-opacity duration-300">
-                            <Image 
-                                src={partner.logo} 
-                                alt={partner.name} 
-                                width={120} 
-                                height={60} 
-                                style={{ width: 'auto', height: '60px' }} // للحفاظ على نسبة العرض/الارتفاع للشعار
-                                className="object-contain"
-                            />
-                        </div>
-                    ))}
-                </div>
-
-            </div>
-        </section>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+  
+          {/* Trust Badge */}
+          <div className="mt-12 text-center">
+            <p className="text-lg text-gray-600">
+              نفخر بالشراكة مع أفضل مقدمي الخدمات الصحية في الإمارات
+            </p>
+          </div>
+        </div>
+      </section>
     );
-};
-
-export default PartnersSection;
+  };
+  
+  export default PartnersSection;

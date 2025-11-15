@@ -1,110 +1,103 @@
-// components/layout/Navbar.tsx
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState } from 'react';
-import { NavLink } from '../../types/common'; // افتراض أن المسار هو types/common
-// استدعاء محتوى الروابط من الملف العالمي العربي
-import { navigationLinks, actionLink } from '../../content/ar/global'; 
+// app/components/layout/Navbar.tsx
+import { Menu, X, ChevronDown } from 'lucide-react';
 
-// يجب أن يتم وضع هذه المكونات في مجلد assets/icons أو assets/images 
-// بناءً على هيكل ملفاتك، سنستخدم مسارات افتراضية الآن.
-const Logo = '/images/logo.svg'; 
-const MenuIcon = '/images/icons/menu.svg'; 
-const CloseIcon = '/images/icons/close.svg'; 
+type NavbarProps = {
+  isHome?: boolean;
+};
 
-interface NavbarProps {
-    // تحديد ما إذا كانت الصفحة الرئيسية (لها تصميم Navbar مختلف قليلاً)
-    isHome?: boolean;
-}
+const Navbar = ({ isHome = false }: NavbarProps) => {
+  const navLinks = [
+    { href: '/', label: 'الرئيسية' },
+    { href: '/about-us', label: 'من نحن' },
+    { href: '/services', label: 'خدماتنا' },
+    { href: '/why-medyour', label: 'لماذا ميديور' },
+    { href: '/challenges', label: 'التحديات' },
+    { href: '/faqs', label: 'الأسئلة الشائعة' },
+    { href: '/contact', label: 'اتصل بنا' }
+  ];
 
-// سنستخدم هذا المكون كـ Layout أساسي (لجميع الصفحات غير الرئيسية)
-const Navbar: React.FC<NavbarProps> = ({ isHome = false }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
-    // لتبسيط العرض، سنستخدم الروابط العربية كافتراض
-    const navLinks: NavLink[] = navigationLinks;
-    const actionLinkObj = actionLink;
-
-    // التصميم الأساسي للـ Navbar (الخلفية الداكنة) المأخوذ من about-us.html
-    const navClasses = `fixed top-0 w-full z-50 ${isHome ? 'bg-transparent' : 'bg-[#001218] shadow-lg'}`;
-    const linkClasses = "text-white text-[1rem] font-light hover:text-[#06D6A0] transition-colors p-2";
-    const activeLinkClasses = "font-bold border-b-2 border-[#06D6A0] text-[#06D6A0]";
-    // يفترض هنا أن الصفحة الحالية هي 'home' (فقط كمثال)
-    const activePath = '/'; 
-
-    return (
-        <nav className={navClasses} dir="rtl">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                
-                {/* Logo */}
-                <Link href="/" className="flex items-center space-x-2">
-                    <Image src={Logo} alt="Medyour Logo" width={120} height={30} priority />
-                </Link>
-
-                {/* Desktop Links and Action Button */}
-                <div className="hidden md:flex items-center space-x-6">
-                    {navLinks.map((link) => (
-                        <Link 
-                            key={link.href} 
-                            href={link.href} 
-                            className={`${linkClasses} ${link.href === activePath ? activeLinkClasses : ''}`}
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
-
-                    <Link 
-                        href={actionLink.href} 
-                        className="bg-[#06D6A0] text-[#001218] text-center text-sm font-bold py-2 px-4 rounded-full hover:bg-[#04C791] transition-colors"
-                    >
-                        {actionLink.label}
-                    </Link>
-                </div>
-
-                {/* Mobile Menu Button */}
-                <button 
-                    id="menu-toggle" 
-                    className="md:hidden p-2 text-white" 
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-expanded={isMenuOpen}
-                    aria-controls="mobile-menu"
-                >
-                    <Image 
-                        src={isMenuOpen ? CloseIcon : MenuIcon} 
-                        alt="Menu" 
-                        width={24} 
-                        height={24} 
-                    />
-                </button>
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 ${
+        isHome ? 'bg-transparent' : 'bg-white/95 backdrop-blur-md shadow-md'
+      } transition-all duration-300`}
+      dir="rtl"
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <a
+            href="/"
+            className="flex items-center gap-2 group"
+          >
+            <div className="w-12 h-12 bg-gradient-to-br from-[#00CFC5] to-[#0099CC] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span className="text-white font-bold text-xl">M</span>
             </div>
+            <span className={`text-2xl font-bold font-cairo ${isHome ? 'text-[#001218]' : 'text-[#001218]'}`}>
+              ميديور
+            </span>
+          </a>
 
-            {/* Mobile Menu */}
-            <div 
-                id="mobile-menu" 
-                className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-[#001218] absolute w-full top-full shadow-xl`}
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`font-semibold transition-colors hover:text-[#00CFC5] ${
+                  isHome ? 'text-[#001218]' : 'text-gray-700'
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center gap-4">
+            <a
+              href="/contact"
+              className="bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-2 px-6 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
-                <div className="flex flex-col items-stretch p-4 space-y-2">
-                    {navLinks.map((link) => (
-                        <Link 
-                            key={link.href} 
-                            href={link.href} 
-                            className={`${linkClasses} block text-center py-3 px-4 rounded-lg hover:bg-[#102430] ${link.href === activePath ? 'font-bold text-[#06D6A0]' : 'font-light'}`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
-                    <Link 
-                        href={actionLink.href} 
-                        className="bg-[#06D6A0] text-[#001218] text-center text-base font-bold py-3 px-4 rounded-full mt-4 hover:bg-[#04C791] transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
-                    >
-                        {actionLink.label}
-                    </Link>
-                </div>
-            </div>
-        </nav>
-    );
+              احجز الآن
+            </a>
+            
+            {/* Language Switcher */}
+            <button className="flex items-center gap-1 text-gray-700 hover:text-[#00CFC5] transition-colors">
+              <span className="font-semibold">EN</span>
+              <ChevronDown className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button className="lg:hidden p-2 text-gray-700 hover:text-[#00CFC5] transition-colors">
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu (Hidden by default - would need JavaScript to toggle) */}
+      <div className="hidden lg:hidden bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4 py-4 space-y-2">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="block py-2 px-4 text-gray-700 hover:bg-[#F8F9FA] hover:text-[#00CFC5] rounded-lg transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="/contact"
+            className="block text-center bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-3 px-6 rounded-full hover:shadow-xl transition-all duration-300"
+          >
+            احجز الآن
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

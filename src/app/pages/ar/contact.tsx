@@ -2,11 +2,11 @@
 import Head from 'next/head';
 
 // Content Import - (افتراضي)
-import { contactContent as contactPageContent } from '@/app/content/ar/contact';
-import Navbar from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/Footer';
-import ContactInfoSection from '@/app/components/sections/contact/ContactInfoSection';
-import ContactFormSection from '@/app/components/sections/contact/ContactFormSection';
+import { contactContent as contactPageContent } from '../../content/ar/contact';
+import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
+import ContactInfoSection from '../../components/sections/contact/ContactInfoSection';
+import ContactFormSection from '../../components/sections/contact/ContactFormSection';
 
 const ContactPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة

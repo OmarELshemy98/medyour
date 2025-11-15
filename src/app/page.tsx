@@ -1,6 +1,10 @@
+import HomePage from "./pages/ar";
 
 export default function Home() {
   return (
-  <h1>omar</h1>
+    <>
+    <HomePage/>
+    </>
   );
-} 
+}
+

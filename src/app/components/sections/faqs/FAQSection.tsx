@@ -1,115 +1,78 @@
-// components/sections/faqs/FAQSection.tsx
-import React from 'react';
+// app/components/sections/faqs/FAQSection.tsx
+import { ChevronDown } from 'lucide-react';
 
-// تحديد نوع محتوى السؤال
-interface FAQItem {
+type FAQSectionProps = {
+  items: Array<{
     question: string;
     answer: string;
-}
-
-interface FAQSectionProps {
-    items: FAQItem[];
-    sectionTitle: string;
-    sectionSubtitle: string;
-}
-
-// عنصر بطاقة FAQ (تفاعلي لكن بدون هوكس/react hooks، pure static SSG)
-const FAQCard: React.FC<FAQItem & { index: number }> = ({ question, answer, index }) => {
-    return (
-        <div className="border-b border-gray-200 py-4">
-            {/* السؤال (زر يمكن الضغط عليه) */}
-            <button
-                type="button"
-                className="faq-button flex justify-between items-center w-full text-right py-3 focus:outline-none"
-                aria-expanded="false"
-                data-faq-index={index}
-            >
-                <span className="text-xl font-bold text-[#001218] transition-colors font-cairo">
-                    {question}
-                </span>
-                {/* أيقونة الفتح/الإغلاق */}
-                <svg
-                    className="w-6 h-6 text-[#001218] transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            {/* الإجابة (محتوى مخفي/ظاهر حسب الزر) */}
-            <div className="faq-answer overflow-hidden max-h-0 transition-all duration-300">
-                <p className="pt-2 pb-4 text-lg text-gray-700 leading-relaxed pr-6">
-                    {answer}
-                </p>
-            </div>
-        </div>
-    );
+    category?: string;
+  }>;
+  sectionTitle: string;
+  sectionSubtitle: string;
 };
 
-// إدخال كود JS الخام مباشرة في الصفحة (بشكل inline SSG) عن طريق dangerouslySetInnerHTML
-const faqScript = `
-document.addEventListener('DOMContentLoaded', function () {
-    const faqButtons = document.querySelectorAll('.faq-button');
+const FAQSection = ({ items, sectionTitle, sectionSubtitle }: FAQSectionProps) => {
+  return (
+    <section className="py-16 md:py-24 bg-white" dir="rtl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#001218] font-cairo mb-4">
+            {sectionTitle}
+          </h2>
+          <p className="text-lg text-gray-600">
+            {sectionSubtitle}
+          </p>
+        </div>
 
-    faqButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
-            const answerElement = button.nextElementSibling; // div.faq-answer
-
-            if (isExpanded) {
-                button.setAttribute('aria-expanded', 'false');
-                answerElement.classList.remove('open');
-                answerElement.style.maxHeight = null;
-                button.querySelector('span').classList.remove('text-[#06D6A0]');
-            } else {
-                closeAllFaqs();
-                button.setAttribute('aria-expanded', 'true');
-                answerElement.classList.add('open');
-                answerElement.style.maxHeight = answerElement.scrollHeight + 'px';
-                button.querySelector('span').classList.add('text-[#06D6A0]');
-            }
-        });
-    });
-
-    function closeAllFaqs() {
-        faqButtons.forEach(btn => {
-            const answer = btn.nextElementSibling;
-            btn.setAttribute('aria-expanded', 'false');
-            answer.classList.remove('open');
-            answer.style.maxHeight = null;
-            btn.querySelector('span').classList.remove('text-[#06D6A0]');
-        });
-    }
-});
-`;
-
-const FAQSection: React.FC<FAQSectionProps> = ({ items, sectionTitle, sectionSubtitle }) => {
-    return (
-        <section className="py-16 md:py-24 bg-white" dir="rtl">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-                {/* عنوان القسم */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-[#001218] font-cairo mb-3">
-                        {sectionTitle}
-                    </h2>
-                    <p className="text-lg font-light text-gray-600">
-                        {sectionSubtitle}
-                    </p>
+        {/* FAQ Accordion */}
+        <div className="space-y-4">
+          {items.map((item, index) => (
+            <details
+              key={index}
+              className="group bg-gradient-to-br from-white to-[#F8F9FA] rounded-xl border border-gray-200 hover:border-[#00CFC5] transition-all duration-300"
+            >
+              <summary className="flex items-center justify-between cursor-pointer p-6 font-bold text-[#001218] font-cairo text-lg">
+                <span className="flex-1">{item.question}</span>
+                <ChevronDown className="w-6 h-6 text-[#00CFC5] flex-shrink-0 ml-4 group-open:rotate-180 transition-transform duration-300" />
+              </summary>
+              <div className="px-6 pb-6">
+                <div className="pt-4 border-t border-gray-200">
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    {item.answer}
+                  </p>
                 </div>
+              </div>
+            </details>
+          ))}
+        </div>
 
-                {/* قائمة الأسئلة */}
-                <div className="bg-white rounded-xl shadow-2xl p-6 md:p-10">
-                    {items.map((item, index) => (
-                        <FAQCard key={index} {...item} index={index} />
-                    ))}
-                </div>
-            </div>
-            {/* تضمين الكود جافاسكريبت مباشرة لشيفرة FAQ بشكل SSG بدون React ولا هوكس */}
-            <script dangerouslySetInnerHTML={{ __html: faqScript }} />
-        </section>
-    );
+        {/* Still Have Questions */}
+        <div className="mt-16 text-center bg-gradient-to-br from-[#E6F9F7] to-white p-8 rounded-2xl border-2 border-[#00CFC5]">
+          <h3 className="text-2xl font-bold text-[#001218] font-cairo mb-4">
+            لم تجد إجابة لسؤالك؟
+          </h3>
+          <p className="text-lg text-gray-600 mb-6">
+            فريق الدعم لدينا جاهز لمساعدتك على مدار الساعة
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="inline-block bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-3 px-8 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
+            >
+              اتصل بنا
+            </a>
+            <a
+              href="tel:800-633-9687"
+              className="inline-block bg-white text-[#00CFC5] font-bold py-3 px-8 rounded-full border-2 border-[#00CFC5] hover:bg-[#00CFC5] hover:text-white hover:shadow-xl transition-all duration-300"
+            >
+              اتصل: 800-MEDYOUR
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default FAQSection;

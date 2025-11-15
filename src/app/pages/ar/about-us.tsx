@@ -3,13 +3,13 @@ import Head from 'next/head';
 // Layout Imports
 // Section Imports
 // Content Import
-import Navbar from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/Footer';
-import OurStorySection from '@/app/components/sections/about-us/OurStory';
-import VisionMissionSection from '@/app/components/sections/about-us/VisionMission';
-import TeamSection from '@/app/components/sections/about-us/Team';
-import CtaSection from '@/app/components/sections/home/CtaSection';
-import { aboutUsContent } from '@/app/content/ar/about-us';
+import { aboutUsContent } from '../../content/ar/about-us';
+import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
+import OurStorySection from '../../components/sections/about-us/OurStory';
+import VisionMissionSection from '../../components/sections/about-us/VisionMission';
+import TeamSection from '../../components/sections/about-us/Team';
+import CtaSection from '../../components/sections/home/CtaSection';
 
 const AboutUsPage: React.FC = () => {
     // تم استخدام as any لتجنب الحاجة لتعريف الواجهة الكاملة هنا
@@ -23,7 +23,7 @@ const AboutUsPage: React.FC = () => {
                 <html lang="ar" dir="rtl" />
             </Head>
 
-            <Navbar /> 
+            <Navbar/> 
             
             <main className="min-h-screen">
                 

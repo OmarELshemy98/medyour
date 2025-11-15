@@ -2,11 +2,11 @@ import Head from 'next/head';
 
 
 // Content Import - (افتراضي)
-import {challengesContent as challengesPageContent } from '@/app/content/ar/challenges'; 
+import {challengesContent as challengesPageContent } from '../../content/ar/challenges'; 
 
-import Navbar from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/Footer';
-import ChallengesSection from '@/app/components/sections/challenges/ChallengesSection';
+import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
+import ChallengesSection from '../../components/sections/challenges/ChallengesSection';
 
 const ChallengesPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة

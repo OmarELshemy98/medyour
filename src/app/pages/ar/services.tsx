@@ -4,14 +4,14 @@ import Head from 'next/head';
 // Section Imports
 
 // Content Import - (افتراضي)
-import { servicesContent as servicesPageContent } from '@/app/content/ar/services'; 
+import { servicesContent as servicesPageContent } from '../../content/ar/services'; 
 
-import Navbar from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/Footer';
-import CtaSection from '@/app/components/sections/home/CtaSection';
-import ServiceCategoriesSection from '@/app/components/sections/services/ServiceCategories';
-import CoreServicesSection from '@/app/components/sections/services/CoreServices';
-import PartnersSection from '@/app/components/sections/services/Partners';
+import Navbar from '../../components/layout/Navbar';
+import Footer from '../../components/layout/Footer';
+import ServiceCategoriesSection from '../../components/sections/services/ServiceCategories';
+import CoreServicesSection from '../../components/sections/services/CoreServices';
+import PartnersSection from '../../components/sections/services/Partners';
+import CtaSection from '../../components/sections/home/CtaSection';
 
 const ServicesPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة

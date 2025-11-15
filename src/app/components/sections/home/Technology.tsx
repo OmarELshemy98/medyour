@@ -1,94 +1,88 @@
-// components/sections/home/Technology.tsx
-import Image from 'next/image';
-import Link from 'next/link';
+// app/components/sections/home/Technology.tsx
+import { Smartphone, Lock, Zap, RefreshCw } from 'lucide-react';
 
-// تحديد نوع المحتوى المتوقع من homePageContent.technology
-interface FeatureItem {
-    title: string;
-    description: string;
-    icon: string;
-}
-
-interface TechnologyContent {
-    title: string;
-    subtitle: string;
-    features: FeatureItem[];
-    mainImage: string; // صورة شاشة التطبيق
-    buttonText: string;
-    buttonLink: string;
-}
-
-interface TechnologySectionProps {
-    content: TechnologyContent;
-}
-
-// المسار النسبي: الخروج 3 مرات من مجلد home للوصول إلى public/
-const IconBase = '../../../public'; 
-
-const FeatureCard: React.FC<FeatureItem> = ({ title, description, icon }) => {
-    return (
-        <div className="flex items-start space-x-4 space-x-reverse mb-6">
-            <div className="shrink-0">
-                {/* الأيقونة */}
-                <Image src={icon} alt={title} width={36} height={36} className="text-[#06D6A0] mt-1" />
-            </div>
-            <div>
-                <h3 className="text-xl font-bold text-[#001218] mb-1 font-cairo">{title}</h3>
-                <p className="text-gray-600 text-base">{description}</p>
-            </div>
-        </div>
-    );
+const iconMap = {
+  Smartphone,
+  Lock,
+  Zap,
+  RefreshCw
 };
 
-const TechnologySection: React.FC<TechnologySectionProps> = ({ content }) => {
-    return (
-        <section className="py-16 md:py-24 bg-white" dir="rtl">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+type TechnologyProps = {
+  content: {
+    title: string;
+    subtitle: string;
+    features: Array<{
+      icon: keyof typeof iconMap;
+      title: string;
+      description: string;
+    }>;
+  };
+};
+
+const TechnologySection = ({ content }: TechnologyProps) => {
+  const { title, subtitle, features } = content;
+
+  return (
+    <section className="py-16 md:py-24 bg-gradient-to-b from-[#F8F9FA] to-white" dir="rtl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content Side */}
+          <div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#001218] font-cairo mb-4">
+              {title}
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 mb-8">
+              {subtitle}
+            </p>
+
+            {/* Features List */}
+            <div className="space-y-6">
+              {features.map((feature, index) => {
+                const IconComponent = iconMap[feature.icon];
                 
-                {/* العنوان الرئيسي */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-[#001218] mb-3 font-cairo">
-                        {content.title}
-                    </h2>
-                    <p className="text-lg font-light text-gray-600">
-                        {content.subtitle}
-                    </p>
-                </div>
-
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-                    
-                    {/* 1. قائمة المزايا */}
-                    <div className="lg:w-1/2 order-2 lg:order-1">
-                        {content.features.map((feature, index) => (
-                            <FeatureCard key={index} {...feature} />
-                        ))}
-                        
-                        {/* زر الدعوة للعمل */}
-                        <div className="mt-8 text-right">
-                            <Link 
-                                href={content.buttonLink}
-                                className="inline-block bg-[#001218] text-white text-lg font-bold py-3 px-8 rounded-full hover:bg-[#06D6A0] hover:text-[#001218] transition-colors shadow-lg"
-                            >
-                                {content.buttonText}
-                            </Link>
-                        </div>
+                return (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-100 hover:border-[#00CFC5] hover:shadow-lg transition-all duration-300 group"
+                  >
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#00CFC5] to-[#0099CC] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-6 h-6 text-white" />
                     </div>
 
-                    {/* 2. صورة التطبيق (Mobile Mockup) */}
-                    <div className="lg:w-1/2 order-1 lg:order-2 flex justify-center">
-                        <Image 
-                            src={content.mainImage} 
-                            alt="Medyour App Interface Features" 
-                            width={500} 
-                            height={600} 
-                            className="rounded-xl shadow-2xl"
-                        />
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-lg font-bold text-[#001218] font-cairo mb-2">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {feature.description}
+                      </p>
                     </div>
-                </div>
-
+                  </div>
+                );
+              })}
             </div>
-        </section>
-    );
+          </div>
+
+          {/* Visual Side */}
+          <div className="relative">
+            <div className="relative bg-gradient-to-br from-[#00CFC5]/10 to-[#0099CC]/10 rounded-3xl p-8">
+              {/* Mockup Placeholder */}
+              <div className="aspect-square bg-white rounded-2xl shadow-2xl flex items-center justify-center">
+                <Smartphone className="w-48 h-48 text-[#00CFC5]" />
+              </div>
+
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -left-4 w-20 h-20 bg-gradient-to-br from-[#00CFC5] to-[#0099CC] rounded-xl shadow-xl animate-bounce"></div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-[#0099CC] to-[#00CFC5] rounded-full shadow-xl animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default TechnologySection;

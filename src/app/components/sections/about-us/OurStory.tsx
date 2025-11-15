@@ -1,64 +1,74 @@
-// components/sections/about-us/OurStory.tsx
-import Image from 'next/image';
+// app/components/sections/about-us/OurStory.tsx
+import { Lightbulb, Target, Users } from 'lucide-react';
 
-interface StoryContent {
-    sectionTitle: string;
+type OurStoryProps = {
+  content: {
     title: string;
     paragraphs: string[];
-    image: string;
-}
+    highlights: Array<{
+      icon: string;
+      title: string;
+      description: string;
+    }>;
+  };
+};
 
-interface OurStorySectionProps {
-    content: StoryContent;
-}
+const iconMap = {
+  Lightbulb,
+  Target,
+  Users
+};
 
-// المسار النسبي: الخروج 3 مرات من مجلد about-us للوصول إلى public/
-// (نستخدم المسار النسبي: الخروج مرتين للوصول إلى components/sections/ ثم مرة للوصول إلى المجلد root)
-// المسار من components/sections/about-us/OurStory.tsx إلى public/images هو: ../../../public
-// لكن في Next.js نستخدم المسار المطلق /images/
-const ImagePath = (path: string) => path; // دالة للمساعدة في مسارات الصور
+const OurStorySection = ({ content }: OurStoryProps) => {
+  const { title, paragraphs, highlights } = content;
 
-const OurStorySection: React.FC<OurStorySectionProps> = ({ content }) => {
-    return (
-        <section className="py-16 md:py-24 bg-white" dir="rtl">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                
-                {/* العنوان الرئيسي للقسم */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="text-sm font-semibold text-[#06D6A0] uppercase tracking-wider block mb-2">
-                        {content.sectionTitle}
-                    </span>
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-[#001218] font-cairo">
-                        {content.title}
-                    </h2>
-                </div>
-
-                <div className="flex flex-col lg:flex-row items-center gap-12">
-                    
-                    {/* 1. المحتوى النصي */}
-                    <div className="lg:w-1/2">
-                        {content.paragraphs.map((paragraph, index) => (
-                            <p key={index} className="text-lg text-gray-700 mb-6 leading-relaxed">
-                                {paragraph}
-                            </p>
-                        ))}
-                    </div>
-
-                    {/* 2. الصورة */}
-                    <div className="lg:w-1/2 flex justify-center lg:justify-end">
-                        <Image 
-                            src={ImagePath(content.image)} // نفترض أن المسار يبدأ بـ /images
-                            alt={content.title} 
-                            width={550} 
-                            height={400} 
-                            className="rounded-xl shadow-2xl object-cover"
-                        />
-                    </div>
-                </div>
-
+  return (
+    <section className="py-16 md:py-24 bg-white" dir="rtl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text Content */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#001218] font-cairo mb-6">
+              {title}
+            </h2>
+            <div className="space-y-4">
+              {paragraphs.map((paragraph, index) => (
+                <p key={index} className="text-lg text-gray-600 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
             </div>
-        </section>
-    );
+          </div>
+
+          {/* Highlights */}
+          <div className="space-y-6">
+            {highlights.map((highlight, index) => {
+              const IconComponent = iconMap[highlight.icon as keyof typeof iconMap];
+              
+              return (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 p-6 bg-gradient-to-br from-[#F8F9FA] to-white rounded-xl border border-gray-100 hover:border-[#00CFC5] hover:shadow-lg transition-all duration-300 group"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#00CFC5] to-[#0099CC] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    {IconComponent && <IconComponent className="w-6 h-6 text-white" />}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#001218] font-cairo mb-2">
+                      {highlight.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {highlight.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default OurStorySection;
