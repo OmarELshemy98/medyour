@@ -1,6 +1,9 @@
-export default function HtmlNavbarAr() {
+export default function HtmlNavbarAr({ mode = 'hero', home = false }: { mode?: 'hero' | 'static'; home?: boolean }) {
+  const base = "fixed top-0 z-50 w-full text-white transition-all duration-500 ease-in-out";
+  const bg = "bg-[url('/images/navbar-background.png')] bg-cover bg-center";
+  const cls = mode === 'static' ? `${base} ${bg}` : `${base} bg-transparent`;
   return (
-    <nav className="fixed top-0 z-50 w-full text-white transition-all duration-500 ease-in-out bg-[url('/images/navbar-background.png')] bg-cover bg-center" dir="rtl">
+    <nav className={cls} dir="rtl" id={home ? 'home-nav' : 'navbar'} data-mode={mode}>
       <div className="mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between">
         <input id="menu-toggle-ar" type="checkbox" className="hidden peer" />
         <div className="flex items-center justify-between w-full lg:hidden">

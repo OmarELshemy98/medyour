@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <HtmlNavbarAr />
+      <HtmlNavbarAr mode="static" home />
 
       <main className="max-w-7xl mx-auto">
         {/* 1. قسم الهيرو مطابق لنسخة HTML */}
@@ -33,6 +33,7 @@ const HomePage: React.FC = () => {
       </main>
 
       <HtmlFooterAr />
+      <script src="/js/script.js"></script>
     </>
   );
 };

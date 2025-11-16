@@ -4,7 +4,7 @@ import HtmlFooterEn from '../../components/html/HtmlFooterEn';
 const HomePageEn: React.FC = () => {
   return (
     <>
-      <HtmlNavbarEn />
+      <HtmlNavbarEn mode="hero" home />
 
       <main className="min-h-screen text-[#123D46] pt-[85px]">
         <div className="py-16 mt-8 relative">
@@ -247,6 +247,7 @@ const HomePageEn: React.FC = () => {
       </main>
 
       <HtmlFooterEn />
+      <script src="/js/script.js"></script>
     </>
   );
 };
