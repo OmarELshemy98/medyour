@@ -48,6 +48,7 @@ const AboutUsPageEn: React.FC = () => {
         </section>
       </main>
       <HtmlFooterEn />
+
     </>
   );
 };

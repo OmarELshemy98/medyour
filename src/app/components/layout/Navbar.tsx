@@ -1,8 +1,9 @@
+// Navbar.tsx
 import { Menu } from 'lucide-react';
 import LanguageSwitcher from './LanguageSwitcher';
 
 type NavbarProps = {
-  isHome?: boolean;
+  isHome?: boolean; // سنترك الـ prop لكننا لن نستخدمه لتغيير الـ style
   lang?: 'ar' | 'en';
 };
 
@@ -30,19 +31,12 @@ const Navbar = ({ isHome = false, lang = 'ar' }: NavbarProps) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 ${
-        isHome ? 'bg-transparent' : 'bg-white/95 backdrop-blur-md shadow-md'
-      } transition-all duration-300`}
+      id="main-navbar" // هذا الـ ID مهم جداً لملف الـ JS
+      // التغيير هنا: ألغينا كل الـ logic الخاص بـ isHome
+      // سيبدأ دائماً شفافاً
+      className="fixed top-0 left-0 right-0 z-50 bg-[url('/images/navbar-background.png')] bg-cover bg-center text-white transition-all duration-300"
       dir={lang === 'en' ? 'ltr' : 'rtl'}
-      style={
-        isHome
-          ? {}
-          : {
-              backgroundImage: 'url(/images/navbar-background.png)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }
-      }
+      style={{}} // ألغينا الـ style prop logic أيضاً
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -54,7 +48,8 @@ const Navbar = ({ isHome = false, lang = 'ar' }: NavbarProps) => {
             <div className="w-12 h-12 bg-gradient-to-br from-[#00CFC5] to-[#0099CC] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-white font-bold text-xl">M</span>
             </div>
-            <span className={`text-2xl font-bold font-cairo ${isHome ? 'text-[#001218]' : 'text-[#001218]'}`}>
+            {/* التغيير هنا: تأكد أن النص يظهر (كان يعتمد على isHome) */}
+            <span className="text-2xl font-bold font-cairo text-[#001218]">
               {lang === 'en' ? 'Medyour' : 'ميديور'}
             </span>
           </a>
@@ -65,9 +60,8 @@ const Navbar = ({ isHome = false, lang = 'ar' }: NavbarProps) => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-semibold transition-colors hover:text-[#00CFC5] ${
-                  isHome ? 'text-[#001218]' : 'text-gray-700'
-                }`}
+                 // التغيير هنا: تأكد أن النص يظهر (كان يعتمد على isHome)
+                className="font-semibold transition-colors hover:text-[#00CFC5] text-gray-700"
               >
                 {link.label}
               </a>
@@ -89,27 +83,6 @@ const Navbar = ({ isHome = false, lang = 'ar' }: NavbarProps) => {
           <button className="lg:hidden p-2 text-gray-700 hover:text-[#00CFC5] transition-colors">
             <Menu className="w-6 h-6" />
           </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu (Hidden by default - would need JavaScript to toggle) */}
-      <div className="hidden lg:hidden bg-white border-t border-gray-200">
-        <div className="container mx-auto px-4 py-4 space-y-2">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block py-2 px-4 text-gray-700 hover:bg-[#F8F9FA] hover:text-[#00CFC5] rounded-lg transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href={`${base}/contact`}
-            className="block text-center bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-3 px-6 rounded-full hover:shadow-xl transition-all duration-300"
-          >
-            {lang === 'en' ? 'Book Now' : 'احجز الآن'}
-          </a>
         </div>
       </div>
     </nav>

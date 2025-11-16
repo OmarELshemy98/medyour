@@ -6,6 +6,9 @@ import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import HeroHeader from '../../components/common/HeroHeader';
 import VisionMissionSection from '../../components/sections/about-us/VisionMission';
 
+// Script import
+import Script from 'next/script';
+
 const AboutUsPage: React.FC = () => {
     // تم استخدام as any لتجنب الحاجة لتعريف الواجهة الكاملة هنا
     const { seo, hero, story, visionMission } = aboutUsContent as any;
@@ -29,6 +32,7 @@ const AboutUsPage: React.FC = () => {
             </main>
 
             <HtmlFooterAr /> 
+            <Script src="/js/navbar-script.js" strategy="lazyOnload" />
         </>
     );
 };

@@ -7,7 +7,8 @@ type Props = {
 
 export default function HeroHeader({ title, subtitle = '', backgroundImage = "/images/background-img.png", dir = 'ltr' }: Props) {
   return (
-    <div
+    // التغيير هنا: من <div> إلى <header>
+    <header
       className="relative w-full overflow-hidden bg-cover bg-center bg-no-repeat h-auto pt-20 flex flex-col justify-center"
       style={{ backgroundImage: `url('${backgroundImage}')` }}
       dir={dir}
@@ -23,13 +24,7 @@ export default function HeroHeader({ title, subtitle = '', backgroundImage = "/i
           </p>
         )}
       </div>
-      <div className="hidden md:block">
-        <div className="absolute -top-[3.5rem] -right-[1rem] w-[2rem] h-[2rem] bg-[#8CE2FF] animate-float opacity-80" />
-        <div className="absolute top-1/3 -right-[0.25rem] w-[1.25rem] h-[1.25rem] bg-yellow-300 animate-float-delay opacity-80" />
-        <div className="absolute bottom-[2.5rem] -right-[4rem] w-[1rem] h-[1rem] bg-[#8CE2FF] animate-float blur-[2px] opacity-80" />
-        <div className="absolute top-[2rem] -left-[6rem] w-[1rem] h-[1rem] bg-[#FF00FB] animate-float-delay opacity-80" />
-        <div className="absolute bottom-1/3 -left-[1.25rem] w-[1.25rem] h-[1.25rem] bg-[#00FF90] animate-float blur-[2px] opacity-80" />
-      </div>
-    </div>
+    
+    </header> // التغيير هنا: إغلاق <header>
   );
 }

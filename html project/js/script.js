@@ -1,40 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-
-  // Mobile menu toggle
+  // ------------------- [NAVBAR SECTION] -------------------
+  // Toggle for mobile menu
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   menuToggle?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
   });
 
-  // Floating animation
-  const floatingElements = document.querySelectorAll('.animate-float, .animate-float-delay');
-  floatingElements.forEach(element => {
-    if (element.classList.contains('animate-float-delay')) {
-      element.style.animation = 'floatAndRotate 3s ease-in-out infinite 0.5s';
-    } else {
-      element.style.animation = 'floatAndRotate 3s ease-in-out infinite';
-    }
-    element.style.visibility = 'visible';
-  });
-  if (!document.querySelector('#float-animation')) {
-    const style = document.createElement('style');
-    style.id = 'float-animation';
-    style.textContent = `
-      @keyframes floatAndRotate {
-        0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
-        50% { transform: translateY(-10px) rotate(180deg); opacity: 1; }
-        100% { transform: translateY(0px) rotate(360deg); opacity: 0.8; }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  // Navbar background control
-  const navbar = document.getElementById('navbar'); // فقط navbar العادي
+  // Navbar background change on scroll
+  const navbar = document.getElementById('navbar');
   const updateNavbar = () => {
-    if (!navbar) return; // لا تعمل أي شيء لو مفيش navbar عادي
+    if (!navbar) return;
     if (window.scrollY > 10) {
       navbar.classList.remove('bg-transparent');
       navbar.classList.add('bg-[url("/images/navbar-background.png")]', 'bg-cover', 'bg-center');
@@ -45,14 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.addEventListener('scroll', updateNavbar);
 
-  // Set Active Navigation Link Style
+  // Detect active navigation link and highlight (desktop/mobile)
   const currentPath = window.location.pathname.split('/').pop();
   const pageName = currentPath === '' ? 'index.html' : currentPath;
 
-  // FIXED: Better home page detection
+  // Helper: Better detection if it's home page
   const isHomePage = () => {
     const path = window.location.pathname;
-    // Check if path is root, ends with index.html, or ends with /en or /en/
     return path === '/' ||
       path.endsWith('/index.html') ||
       path === '/en' ||
@@ -60,16 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
       path.endsWith('/en/index.html');
   };
 
-  // Check if carousel exists (better way to detect home page with carousel)
+  // Helper: Detect if carousel exists
   const hasCarousel = document.querySelector('.carousel-container') !== null;
 
+  // Set nav links highlight active (with hover for home)
   if (isHomePage() || hasCarousel) {
-    // --- كود الـ home فقط ---
-    // استخدم #home-nav فقط
+    // -- HOME NAVBAR أهداف التنقل للقائمة في الصفحة الرئيسية --
     const desktopNavLinks = document.querySelectorAll('#home-nav .hidden.md\\:flex a[href]:not(.bg-white):not(.bg-\\[\\#001218\\])');
     const mobileNavLinks = document.querySelectorAll('#mobile-menu .container a[href]:not(.bg-white):not(.border-2)');
 
-    // Navbar active state (home: مع hover)
     const setActiveLinkHome = (links) => {
       links.forEach(link => {
         const linkHref = link.getAttribute('href');
@@ -85,8 +60,63 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     setActiveLinkHome(desktopNavLinks);
     setActiveLinkHome(mobileNavLinks);
+  } else {
+    // -- باقي الصفحات (كل الصفحات غير الرئيسية) --
+    const desktopNavLinks = document.querySelectorAll('#navbar .hidden.md\\:flex a[href]:not(.bg-white):not(.bg-\\[\\#001218\\])');
+    const mobileNavLinks = document.querySelectorAll('#mobile-menu .container a[href]:not(.bg-white):not(.border-2)');
 
-    // Carousel logic
+    const setActiveLink = (links) => {
+      links.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        const linkPath = linkHref === '/' ? '' : linkHref.split('/').pop();
+        const linkPageName = linkPath === '' ? 'index.html' : linkPath;
+        link.classList.remove('font-bold');
+        link.classList.add('font-light');
+        if (linkPageName === pageName) {
+          link.classList.remove('font-light');
+          link.classList.add('font-bold');
+        }
+      });
+    };
+    setActiveLink(desktopNavLinks);
+    setActiveLink(mobileNavLinks);
+  }
+
+  // تنفيذ تحديث تصميم النافبار أول مرة
+  updateNavbar();
+  // ------------------- [END NAVBAR SECTION] -------------------
+
+
+  // ------------------- [FLOATING ANIMATION SECTION] -------------------
+  // Floating animation (for icons or shapes)
+  const floatingElements = document.querySelectorAll('.animate-float, .animate-float-delay');
+  floatingElements.forEach(element => {
+    if (element.classList.contains('animate-float-delay')) {
+      element.style.animation = 'floatAndRotate 3s ease-in-out infinite 0.5s';
+    } else {
+      element.style.animation = 'floatAndRotate 3s ease-in-out infinite';
+    }
+    element.style.visibility = 'visible';
+  });
+  // Inject keyframes if not present
+  if (!document.querySelector('#float-animation')) {
+    const style = document.createElement('style');
+    style.id = 'float-animation';
+    style.textContent = `
+      @keyframes floatAndRotate {
+        0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+        50% { transform: translateY(-10px) rotate(180deg); opacity: 1; }
+        100% { transform: translateY(0px) rotate(360deg); opacity: 0.8; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  // ------------------- [END FLOATING ANIMATION SECTION] -------------------
+
+
+  // ------------------- [CAROUSEL SECTION (HOME PAGE)] -------------------
+  if (isHomePage() || hasCarousel) {
+    // كل من كود الكاروسيل الأساسي ينفذ فقط في الصفحة الرئيسية التي يحوي فيها كلاس carousel-container
     const carouselContainer = document.querySelector('.carousel-container');
     const carouselSlides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.querySelector('.carousel-button-prev');
@@ -211,33 +241,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       console.log('Carousel initialized successfully'); // Debug log
     }
-  } else {
-    // --- باقي الصفحات ---
-    // استخدم #navbar فقط
-    const desktopNavLinks = document.querySelectorAll('#navbar .hidden.md\\:flex a[href]:not(.bg-white):not(.bg-\\[\\#001218\\])');
-    const mobileNavLinks = document.querySelectorAll('#mobile-menu .container a[href]:not(.bg-white):not(.border-2)');
-
-    const setActiveLink = (links) => {
-      links.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        const linkPath = linkHref === '/' ? '' : linkHref.split('/').pop();
-        const linkPageName = linkPath === '' ? 'index.html' : linkPath;
-        link.classList.remove('font-bold');
-        link.classList.add('font-light');
-        if (linkPageName === pageName) {
-          link.classList.remove('font-light');
-          link.classList.add('font-bold');
-        }
-      });
-    };
-
-    setActiveLink(desktopNavLinks);
-    setActiveLink(mobileNavLinks);
   }
+  // ------------------- [END CAROUSEL SECTION] -------------------
 
-  updateNavbar();
 
-  // Smooth scroll for anchor links (كل الصفحات)
+  // ------------------- [SMOOTH SCROLL (ALL PAGES)] -------------------
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
@@ -247,4 +256,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  // ------------------- [END SMOOTH SCROLL SECTION] -------------------
 });
