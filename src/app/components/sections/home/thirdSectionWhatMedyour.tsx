@@ -1,32 +1,28 @@
 // app/components/sections/home/thirdSection.tsx
 
-/**
- * "ماذا تقدم ميديور؟" — مطابق تمامًا للقالب الخاص بـ index.html
- * هذا القسم يعرض 6 بطاقات (ميزات أو خدمات) في 3 صفوف مع العناوين والأيقونات والفقرات (بالمحتوى العربي)
- * يعتمد على بنية وفئات Tailwind كما في القالب الأصلي مع استخدام SVGs بدلاً من أيقونات خارجية.
- */
+import React from "react";
 
-const ThirdSection = () => (
+const thirdSectionWhatMedyour = () => (
   <section>
     <div className="py-16">
-      <div className=" px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row-reverse items-start gap-8">
-          <div className="flex-1 flex items-center justify-end md:justify-end mb-6 md:mb-0">
-            {/* نقل العنوان إلى أقصى اليمين */}
+          {/* Title Div */}
+          <div className="flex-1 flex items-center justify-end mb-6 md:mb-0">
             <h2 className="text-right text-[31px] font-[900] leading-[70px] whitespace-nowrap pr-0">
               ماذا تقدم ميديور؟
             </h2>
           </div>
+          {/* Cards Div */}
           <div className="flex-2 flex-[2] w-full">
             <div className="flex flex-col gap-6">
               {/* Row 1 */}
-              <div className="flex flex-col md:flex-row items-stretch gap-6 w-full">
+              <div className="flex flex-col md:flex-row-reverse items-stretch gap-6 w-full">
                 {/* Card 1 */}
                 <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
                   <div className="flex flex-col h-full flex-1">
-                    <div className="mb-2 flex flex-row-reverse items-center ">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="83" height="88" viewBox="0 0 83 88"
-                        className="w-16 h-16">
+                  <div className="mb-2 flex flex-row-reverse items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="83" height="88" viewBox="0 0 83 88" className="w-16 h-16">
                         <g>
                           <path fillRule="evenodd" clipRule="evenodd"
                             d="M60.071 26.7391C45.8104 36.4477 26.3604 32.8647 16.5051 18.6619C16.4066 18.52 16.3095 18.3775 16.2137 18.2346L13.2223 20.3102C5.96467 25.3463 4.16371 35.3123 9.19976 42.5699C14.2358 49.8276 24.2018 51.6286 31.4595 46.5925L60.071 26.7391ZM60.5405 26.4133L60.7293 26.2823L60.7277 26.2799C60.6655 26.3246 60.6031 26.369 60.5405 26.4133Z"
@@ -39,24 +35,23 @@ const ThirdSection = () => (
                         </g>
                       </svg>
                     </div>
-                    <h3 className="text-[1.5rem]  font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
+                    <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
                       <span className="block">تغطية شاملة للرعاية</span>
                       <span className="block">الصحية</span>
                     </h3>
                     <div className="flex-1"></div>
-                    <p className="text-[1.3125rem]  font-light leading-[1.5rem] flex items-center mt-4">
+                    <p className="text-[1.3125rem] font-light leading-[1.5rem] flex items-center mt-4">
                       خطط مرنة ومتكاملة للأفراد والشركات تتيح لك إدارة خدماتك بسهولة تامة مع ضمان أعلى مستويات
                       الرعاية وجودة الخدمة دون تعقيدات أو قيود.
                     </p>
-
                   </div>
                 </div>
                 {/* Card 2 */}
                 <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
                   <div className="flex flex-col h-full flex-1">
-                  <div className="mb-2 flex flex-row-reverse items-center ">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="71" height="53" viewBox="0 0 71 53" fill="none"
-                        className="w-16 h-16">
+                    <div className="mb-2 flex flex-row-reverse items-center gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="71" height="53" viewBox="0 0 71 53" fill="none"
+                        className="w-16 h-16 flex-shrink-0">
                         <g>
                           <path fillRule="evenodd" clipRule="evenodd"
                             d="M38.3851 51.5505C38.5384 34.2994 52.5705 20.3621 69.8578 20.3621C70.0305 20.3621 70.2029 20.3635 70.375 20.3663L70.375 16.7253C70.375 7.89154 63.2138 0.730363 54.3801 0.730363C45.5463 0.730364 38.3851 7.89154 38.3851 16.7253L38.3851 51.5505ZM38.3851 52.1215L38.3851 52.3516L38.388 52.3516C38.3868 52.275 38.3858 52.1983 38.3851 52.1215Z"
@@ -69,12 +64,12 @@ const ThirdSection = () => (
                         </g>
                       </svg>
                     </div>
-                    <h3 className="text-[1.5rem]  font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
+                    <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
                       <span className="block">رعاية صحية فورية</span>
                       <span className="block">وموثوقة</span>
                     </h3>
                     <div className="flex-1"></div>
-                    <p className="text-[1.3125rem]  font-light leading-[1.5rem] flex items-center mt-4">
+                    <p className="text-[1.3125rem] font-light leading-[1.5rem] flex items-center mt-4">
                       احصل على رعاية صحية فورية دون انتظار ومن أي مكان وفي أي وقت مع تجربة سلسة وموثوقة بين يديك
                       دائمًا.
                     </p>
@@ -86,7 +81,7 @@ const ThirdSection = () => (
                 {/* Card 3 */}
                 <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
                   <div className="flex flex-col h-full flex-1">
-                  <div className="mb-2 flex flex-row-reverse items-center ">
+                  <div className="mb-2 flex flex-row-reverse items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="87" height="81" viewBox="0 0 87 81" fill="none"
                         className="w-16 h-16">
                         <g>
@@ -101,13 +96,13 @@ const ThirdSection = () => (
                         </g>
                       </svg>
                     </div>
-                    <h3 className="text-[1.5rem]  font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
+                    <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
                       <span className="block">إدارة شاملة</span>
                       <span className="block">عبر تطبيق</span>
                       <span className="block">الهاتف</span>
                     </h3>
                     <div className="flex-1"></div>
-                    <p className="text-[1.3125rem]  font-light leading-[1.5rem] flex items-center mt-4">
+                    <p className="text-[1.3125rem] font-light leading-[1.5rem] flex items-center mt-4">
                       تحكّم كامل وسهل عبر تطبيق مصمم لتبسيط كل خطوة في رحلتك الصحية، أحجز خدماتك الطبية، ادفع بأمان،
                       وتابع نتائجك، كل ذلك من هاتفك في أي وقت.
                     </p>
@@ -116,7 +111,7 @@ const ThirdSection = () => (
                 {/* Card 4 */}
                 <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
                   <div className="flex flex-col h-full flex-1">
-                  <div className="mb-2 flex flex-row-reverse items-center ">
+                  <div className="mb-2 flex flex-row-reverse items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="87" height="87" viewBox="0 0 87 87" fill="none"
                         className="w-16 h-16">
                         <g>
@@ -131,13 +126,13 @@ const ThirdSection = () => (
                         </g>
                       </svg>
                     </div>
-                    <h3 className="text-[1.5rem]  font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center ">
+                    <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center ">
                       <span className="block">تكلفة خدمات</span>
                       <span className="block">واضحة — ما تراه</span>
                       <span className="block">هو ما تدفعه</span>
                     </h3>
                     <div className="flex-1"></div>
-                    <p className="text-[1.3125rem]  font-light leading-[1.5rem] flex items-center mt-4">
+                    <p className="text-[1.3125rem] font-light leading-[1.5rem] flex items-center mt-4">
                       الشفافية الكاملة في الأسعار لتعرف بوضوح تكلفة الخدمة التي تحتاجها قبل تلقيها دون أي رسوم
                       مخفية.
                     </p>
@@ -149,28 +144,28 @@ const ThirdSection = () => (
                 {/* Card 5 */}
                 <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
                   <div className="flex flex-col h-full flex-1">
-                  <div className="mb-2 flex flex-row-reverse items-center ">
+                  <div className="mb-2 flex flex-row-reverse items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="82" height="69" viewBox="0 0 82 69"
                         fill="none">
-                        <g style={{mixBlendMode:"lighten"}}>
+                        <g style={{ mixBlendMode: "lighten" }}>
                           <path
                             d="M35.7601 43.2198C33.4736 51.7522 24.7027 56.8162 16.1701 54.5301C7.63759 52.2437 2.57384 43.4727 4.85989 34.9401L5.80291 31.4207C5.96822 31.4679 6.13347 31.5164 6.30014 31.561C23.0669 36.0537 40.3003 26.1233 44.8286 9.37562L35.7601 43.2198ZM44.8668 9.23318C44.9045 9.09104 44.9394 8.94844 44.9751 8.80624L44.9808 8.80776L44.8668 9.23318Z"
                             fill="#CC8700" />
                         </g>
-                        <g style={{mixBlendMode:"lighten"}}>
+                        <g style={{ mixBlendMode: "lighten" }}>
                           <path
                             d="M66.4118 14.5549C74.9443 16.8414 80.0074 25.612 77.7211 34.1446C75.4347 42.6771 66.6647 47.7412 58.1321 45.4551L5.80137 31.4332L5.80542 31.4181C5.96943 31.4649 6.13352 31.513 6.29887 31.5574C23.089 36.0562 40.3471 26.0923 44.846 9.30214C44.8899 9.13837 44.9307 8.97398 44.9718 8.81011L66.4118 14.5549Z"
                             fill="#FFAE00" />
                         </g>
                       </svg>
                     </div>
-                    <h3 className="text-[1.5rem]  font-bold leading-[1.7rem] mt-2 mb-3  flex flex-col justify-center ">
+                    <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center ">
                       <span className="block">رعاية متاحة</span>
                       <span className="block">للجميع</span>
                       <span className="block">بلا قيود</span>
                     </h3>
                     <div className="flex-1"></div>
-                    <p className="text-[1.3125rem]  font-light leading-[1.5rem] flex items-center mt-4">
+                    <p className="text-[1.3125rem] font-light leading-[1.5rem] flex items-center mt-4">
                       لا قيود على العمر أو بالأمراض المزمنة أو السابقة للتعاقد. الجميع مرحب بهم للاستفادة من خدمات
                       الرعاية الصحية بسهولة وبدون أي قيود.
                     </p>
@@ -179,28 +174,28 @@ const ThirdSection = () => (
                 {/* Card 6 */}
                 <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
                   <div className="flex flex-col h-full flex-1">
-                  <div className="mb-2 flex flex-row-reverse items-center ">
+                  <div className="mb-2 flex flex-row-reverse items-center gap-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="85" height="88" viewBox="0 0 85 88"
                         fill="none">
-                        <g style={{mixBlendMode:"lighten"}}>
+                        <g style={{ mixBlendMode: "lighten" }}>
                           <path
                             d="M51.837 39.6973C58.6595 34.0861 68.7395 35.0681 74.3509 41.8905C79.9622 48.713 78.9802 58.7931 72.1577 64.4044L69.3437 66.7189C69.2366 66.5844 69.1304 66.4488 69.0208 66.3155C57.9962 52.9112 38.206 50.9646 24.7819 61.9491L51.837 39.6973ZM24.6559 62.0527C24.5446 62.1448 24.4347 62.2381 24.3249 62.3313L24.3218 62.3275L24.6559 62.0527Z"
                             fill="#00B833" />
                         </g>
-                        <g style={{mixBlendMode:"lighten"}}>
+                        <g style={{ mixBlendMode: "lighten" }}>
                           <path
                             d="M10.231 45.188C4.61991 38.3654 5.60229 28.2861 12.4248 22.6748C19.2473 17.0637 29.3268 18.045 34.9381 24.8672L69.3521 66.7098L69.3401 66.7197C69.2339 66.5862 69.1284 66.4516 69.0197 66.3194C57.978 52.8944 38.144 50.9623 24.7189 62.0038C24.588 62.1115 24.4592 62.2215 24.3305 62.3309L10.231 45.188Z"
                             fill="#2AF562" />
                         </g>
                       </svg>
                     </div>
-                    <h3 className="text-[1.5rem]  font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
-                      <span className="block">شبكةواسعة</span>
+                    <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
+                      <span className="block">شبكة واسعة</span>
                       <span className="block">من أفضل مقدمي</span>
                       <span className="block">الخدمات الصحية</span>
                     </h3>
                     <div className="flex-1"></div>
-                    <p className="text-[1.3125rem]  font-light leading-[1.5rem] flex items-center mt-2">
+                    <p className="text-[1.3125rem] font-light leading-[1.5rem] flex items-center mt-2">
                       أكثر من 2,500 مقدم خدمة صحية معتمد في جميع محافظات مصر تشمل مستشفيات وعيادات وأطباء متخصصين
                       ومعامل وصيدليات كل ذلك من خلال منصة واحدة متكاملة تضمن لك اختيارات موثوقة وجودة مضمونة في كل
                       مكان.
@@ -216,4 +211,4 @@ const ThirdSection = () => (
   </section>
 );
 
-export default ThirdSection;
+export default thirdSectionWhatMedyour;

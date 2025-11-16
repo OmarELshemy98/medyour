@@ -2,37 +2,18 @@
 
 /**
  * Benefits Section
- * This React component is rewritten to closely match the markup and structure from 
- * index.html (121-180) as requested. Tailwind classes and structure are preserved for 
- * consistency and visual accuracy with the original HTML. 
- * Responsive logic maintains the desktop/mobile separation as in the HTML.
+ *
+ * This component directly imports ONLY the "benefits" object
+ * from ../../content/ar/index, as instructed, and renders it.
+ * No props are used – content source is internal.
  */
 
-import { Clock, Shield, Users, Smartphone } from 'lucide-react';
+import { homePageContent } from '../../../content/ar/index';
 
-const iconMap = {
-  Clock,
-  Shield,
-  Users,
-  Smartphone
-};
+const { benefits } = homePageContent;
 
-type Benefit = {
-  icon: keyof typeof iconMap;
-  title: string;
-  description: string;
-};
-
-type BenefitsProps = {
-  content: {
-    title: string;
-    subtitle: string;
-    benefits: Benefit[];
-  };
-};
-
-const BenefitsSection = ({ content }: BenefitsProps) => {
-  const { title, subtitle, benefits } = content;
+const FirstSectionMobileSection = () => {
+  const { title, subtitle } = benefits;
 
   return (
     <div className="py-16 mt-8 relative" dir="rtl">
@@ -44,11 +25,11 @@ const BenefitsSection = ({ content }: BenefitsProps) => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-6 md:py-10 relative z-10">
 
-            {/* Content Side (header, subtitle, possible benefit grid on the right) */}
+            {/* Content Side (header, subtitle) */}
             <div className="w-full  relative z-20 text-right flex ">
               <div className="flex items-start gap-3 md:gap-4 flex-row-reverse w-fit">
                 {/* Border on the right with yellow accent */}
-                <div className="flex flex-col text-right pr-6 md:pr-8 border-r-[8px] md:border-r-[8px]   border-[#FFB800]">
+                <div className="flex flex-col text-right pr-6 md:pr-8 border-r-[8px] md:border-r-[8px] border-[#FFB800]">
                   <h1 className=" text-[2.5rem] md:text-[2.8rem] font-[900] text-white uppercase leading-[2.6rem] mb-2 md:mb-3 whitespace-normal md:whitespace-nowrap">
                     {title}
                   </h1>
@@ -96,4 +77,4 @@ const BenefitsSection = ({ content }: BenefitsProps) => {
   );
 };
 
-export default BenefitsSection;
+export default FirstSectionMobileSection;

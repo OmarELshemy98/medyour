@@ -9,7 +9,6 @@ import { whyMedyourContent } from '../../content/ar/why-medyour';
 import KeyFeaturesSection from '../../components/sections/why-medyour/KeyFeatures';
 import ComparisonSection from '../../components/sections/why-medyour/Comparison';
 import DifferenceSection from '../../components/sections/why-medyour/Difference';
-import CtaSection from '../../components/sections/home/CtaSection';
 import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
 import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 
@@ -34,8 +33,7 @@ const WhyMedyourPage: React.FC = () => {
                 {/* 4. Difference Section */}
                 <DifferenceSection content={difference} />
                 
-                {/* 5. CTA Section */}
-                <CtaSection content={cta} />
+             
                 
             </main>
 

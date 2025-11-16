@@ -50,7 +50,7 @@ const getCardCorners = (idx: number) => {
   return '';
 };
 
-const CarouselHome = () => (
+const lastSectionCarouselHome = () => (
   <section className="py-8 md:py-12 mx-auto max-w-7xl">
     <div className="max-w-7xl mx-auto">
       <div className="flex items-center gap-2 md:gap-4">
@@ -115,4 +115,4 @@ const CarouselHome = () => (
   </section>
 );
 
-export default CarouselHome;
+export default lastSectionCarouselHome;

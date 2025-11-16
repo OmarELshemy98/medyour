@@ -6,7 +6,6 @@ import { servicesContent as servicesPageContent } from '../../content/ar/service
 
 import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
 import HtmlFooterAr from '../../components/html/HtmlFooterAr';
-import CtaSection from '../../components/sections/home/CtaSection';
 
 const ServicesPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة
@@ -34,12 +33,7 @@ const ServicesPage: React.FC = () => {
                 </section>
 
                 {/* 3. CTA Section (الدعوة للعمل) */}
-                <CtaSection content={{
-                  title: servicesPageContent.cta.title,
-                  subtitle: '',
-                  primaryButton: { text: servicesPageContent.cta.buttonText, link: servicesPageContent.cta.buttonLink }
-                }} />
-                
+               
             </main>
 
             <HtmlFooterAr /> 

@@ -5,7 +5,7 @@
  * مطابق للبنية الأصلية من index.html (461-470)
  */
 
-const VisionSection = () => (
+const fourthSectionVision = () => (
   <section className="py-10" dir="rtl">
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 className="text-right text-[1.9375rem] font-[900] leading-[4.375rem]">
@@ -19,4 +19,4 @@ const VisionSection = () => (
   </section>
 );
 
-export default VisionSection;
+export default fourthSectionVision;
