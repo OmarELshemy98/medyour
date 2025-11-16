@@ -1,16 +1,16 @@
 
 // pages/index.tsx (الإصدار النهائي للصفحة الرئيسية)
 // Content Import
-import { homePageContent } from '../../content/ar/index';
+import Script from 'next/script';
 
 import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
 import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import LineSeparator from '../../components/common/LineSeparator';
-import FirstSectionMobileSection from '../../components/sections/home/FirstSectionMobileSection';
 import SecondSectionIntroduction from '../../components/sections/home/SecondSectionIntroduction';
 import ThirdSectionWhatMedyour from '../../components/sections/home/thirdSectionWhatMedyour';
 import FourthSectionVision from '../../components/sections/home/fourthSectionVision';
 import LastSectionCarouselHome from '../../components/sections/home/lastSectionCarouselHome';
+import FirstSectionMobileSection from '../../components/sections/home/FirstSectionMobileSection';
 
 // Helper functions for casting icon fields safely
 
@@ -21,9 +21,9 @@ const HomePage: React.FC = () => {
     <>
       <HtmlNavbarAr mode="static" home />
 
-      <main className="max-w-7xl mx-auto">
+      <main className="min-h-screen text-[#123D46] pt-[85px]">
         {/* 1. قسم الهيرو مطابق لنسخة HTML */}
-        <FirstSectionMobileSection  />
+        <FirstSectionMobileSection />
         <SecondSectionIntroduction />
         <LineSeparator />
         <ThirdSectionWhatMedyour />
@@ -33,6 +33,7 @@ const HomePage: React.FC = () => {
       </main>
 
       <HtmlFooterAr />
+
       <script src="/js/script.js"></script>
     </>
   );
