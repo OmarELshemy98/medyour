@@ -6,7 +6,7 @@ import Script from 'next/script';
 const lastSectionCarouselHome = () => (
   <>
     <section className="py-8 md:py-12 mx-auto max-w-7xl">
-      <div className="max-w-7xl mx-auto ">
+      <div className="max-w-7xl mx-auto  ">
         <div className="flex items-center gap-2 md:gap-4">
           {/* Left Arrow */}
           <button
@@ -17,8 +17,8 @@ const lastSectionCarouselHome = () => (
             </svg>
           </button>
           {/* Carousel Container */}
-          <div className="flex-1 overflow-hidden rounded-xl">
-            <div className="carousel-container flex transition-transform duration-500 flex-row-reverse ease-in-out">
+          <div className="flex-1 overflow-hidden rounded-xl flex-row-reverse">
+            <div className="carousel-container flex transition-transform duration-500 flex-row ease-in-out">
               {/* Card 1: Integrity */}
               <div className="carousel-slide flex-shrink-0 w-full">
                 <div className="aspect-[4/3] relative flex flex-col justify-center rounded-tl-[70px] rounded-br-[70px] overflow-hidden">
