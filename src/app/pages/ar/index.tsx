@@ -4,15 +4,13 @@ import { homePageContent } from '../../content/ar/index';
 
 import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
 import HtmlFooterAr from '../../components/html/HtmlFooterAr';
-import HeroSection from '../../components/sections/home/HeroSection';
-import HeroHeader from '../../components/common/HeroHeader';
-import ValuesCarousel from '../../components/sections/home/ValuesCarousel';
-import ProvidersSection from '../../components/sections/home/Providers';
-import BenefitsSection from '../../components/sections/home/Benefits';
-import SpecialitiesSection from '../../components/sections/home/Specialities';
-import TechnologySection from '../../components/sections/home/Technology';
-import TestimonialsSection from '../../components/sections/home/Testimonials';
-import CtaSection from '../../components/sections/home/CtaSection';
+import BenefitsSection from '../../components/sections/home/mobileSection';
+import IntroductionSection from '../../components/sections/home/introduction';
+import ThirdSection from '../../components/sections/home/thirdSection';
+import VisionSection from '../../components/sections/home/visionHome';
+import CarouselHome from '../../components/sections/home/carouselHome';
+import LineSeparator from '../../components/common/LineSeparator';
+
 
 // Helper functions for casting icon fields safely
 const castBenefits = (benefits: any[]): { icon: "Clock" | "Shield" | "Users" | "Smartphone"; title: string; description: string; }[] =>
@@ -35,35 +33,17 @@ const HomePage: React.FC = () => {
     <>
       <HtmlNavbarAr />
 
-      <main className="min-h-screen">
+      <main className="max-w-7xl mx-auto">
         {/* 1. قسم الهيرو مطابق لنسخة HTML */}
-        <HeroHeader title={hero.title} subtitle={hero.description} dir="rtl" />
 
-        {/* 2. قسم المزايا */}
-        <BenefitsSection content={{
-          ...benefits,
-          benefits: castBenefits(benefits.benefits),
-        }} />
+        <BenefitsSection content={benefits}/>
+        <IntroductionSection/>
+        <LineSeparator/>
+        <ThirdSection/>
+        <LineSeparator/>
+        <VisionSection/>
+        <CarouselHome/>
 
-        {/* 3. قسم مقدمي الخدمة */}
-        <ProvidersSection content={providers} />
-
-        {/* 4. قسم التخصصات */}
-        <SpecialitiesSection content={{
-          ...specialities,
-          specialities: castSpecialities(specialities.specialities),
-        }} />
-
-        {/* 5. قسم التكنولوجيا (المميزات) */}
-        <TechnologySection content={technology as any} />
-        {/* Carousel للقيم بشكل CSS-only */}
-        <ValuesCarousel items={(technology.features || []).map((f: any) => ({ title: f.title, description: f.description }))} />
-
-        {/* 6. قسم آراء العملاء */}
-        <TestimonialsSection content={testimonials as any} />
-
-        {/* 7. قسم الدعوة للعمل */}
-        <CtaSection content={cta as any} />
       </main>
 
       <HtmlFooterAr />
