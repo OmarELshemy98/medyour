@@ -5,6 +5,8 @@ import { homePageContent } from '../../content/ar/index';
 import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
 import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import HeroSection from '../../components/sections/home/HeroSection';
+import HeroHeader from '../../components/common/HeroHeader';
+import ValuesCarousel from '../../components/sections/home/ValuesCarousel';
 import ProvidersSection from '../../components/sections/home/Providers';
 import BenefitsSection from '../../components/sections/home/Benefits';
 import SpecialitiesSection from '../../components/sections/home/Specialities';
@@ -34,8 +36,8 @@ const HomePage: React.FC = () => {
       <HtmlNavbarAr />
 
       <main className="min-h-screen">
-        {/* 1. قسم الهيرو */}
-        <HeroSection content={hero} />
+        {/* 1. قسم الهيرو مطابق لنسخة HTML */}
+        <HeroHeader title={hero.title} subtitle={hero.description} dir="rtl" />
 
         {/* 2. قسم المزايا */}
         <BenefitsSection content={{
@@ -54,6 +56,8 @@ const HomePage: React.FC = () => {
 
         {/* 5. قسم التكنولوجيا (المميزات) */}
         <TechnologySection content={technology as any} />
+        {/* Carousel للقيم بشكل CSS-only */}
+        <ValuesCarousel items={(technology.features || []).map((f: any) => ({ title: f.title, description: f.description }))} />
 
         {/* 6. قسم آراء العملاء */}
         <TestimonialsSection content={testimonials as any} />

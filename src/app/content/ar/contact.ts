@@ -7,25 +7,69 @@ export const contactContent = {
     },
     hero: {
         breadcrumb: 'الرئيسية / تواصل معنا',
-        title: 'نحن هنا لخدمتك',
-        subtitle: 'فريق دعم ميديور جاهز للرد على استفساراتك وتقديم المساعدة اللازمة في أي وقت.',
-        image: '/images/background_img.png', 
-    },
-    contactInfo: {
-        address: '123 شارع التحرير، الدقي، الجيزة، مصر',
-        phone: '+20 100 123 4567',
-        email: 'info@medyour.com',
-        workingHours: 'من الأحد إلى الخميس: 9:00 صباحاً - 5:00 مساءً (الدعم الطارئ 24/7)',
+        title: 'تواصل معنا',
+        subtitle: `نحن هنا لخدمتك! لأي استفسارات أو ملاحظات، يُرجى تعبئة نموذج التواصل أو التواصل معنا مباشرةً عبر وسائل الاتصال المتاحة.
+ابقَ على اطلاع دائم بآخر التحديثات والمبادرات المجتمعية من خلال متابعتنا.`,
+        image: '/images/background-img.png',
     },
     form: {
-        title: 'أرسل لنا رسالة',
         fields: [
-            { name: 'name', label: 'الاسم بالكامل', type: 'text', placeholder: 'أدخل اسمك' },
-            { name: 'email', label: 'البريد الإلكتروني', type: 'email', placeholder: 'example@email.com' },
-            { name: 'subject', label: 'الموضوع', type: 'text', placeholder: 'استفسار عن تغطية الشركات' },
-            { name: 'message', label: 'رسالتك', type: 'textarea', placeholder: 'كيف يمكننا مساعدتك؟' },
+            {
+                name: 'phone',
+                label: 'الهاتف',
+                type: 'tel',
+                placeholder: 'أدخل رقم هاتفك',
+                required: true,
+            },
+            {
+                name: 'email',
+                label: 'البريد الإلكتروني',
+                type: 'email',
+                placeholder: 'أدخل بريدك الإلكتروني',
+                required: true,
+            },
+            {
+                name: 'location',
+                label: 'الموقع',
+                type: 'text',
+                placeholder: 'أدخل عنوانك',
+                required: false,
+            },
+            {
+                name: 'message',
+                label: 'رسالتك',
+                type: 'textarea',
+                placeholder: 'اكتب رسالتك',
+                required: true,
+            }
         ],
-        buttonText: 'إرسال الرسالة',
-        // ملاحظة: معالجة الـ Form ستتم في ملف pages/contact.tsx
-    }
+        buttonText: 'إرسال',
+        note: 'يُرجى ملء جميع الحقول المطلوبة'
+    },
+    social: [
+        {
+            name: 'facebook',
+            label: 'فيسبوك',
+            href: 'https://www.facebook.com/profile.php?id=61576602431934',
+            icon: 'fab fa-facebook-f'
+        },
+        {
+            name: 'instagram',
+            label: 'انستجرام',
+            href: 'https://www.instagram.com/medyouregypt/',
+            icon: 'fab fa-instagram'
+        },
+        {
+            name: 'linkedin',
+            label: 'لينكدإن',
+            href: 'https://www.linkedin.com/company/medyouregypt',
+            icon: 'fab fa-linkedin-in'
+        },
+        {
+            name: 'twitter',
+            label: 'تويتر',
+            href: 'https://x.com/medyouregypt',
+            icon: 'fab fa-twitter'
+        }
+    ]
 }

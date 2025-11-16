@@ -1,18 +1,19 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
 import HtmlFooterEn from '../../components/html/HtmlFooterEn';
+import HeroHeader from '../../components/common/HeroHeader';
+import { aboutUsContentEn } from '../../content/en/about-us';
 
 const AboutUsPageEn: React.FC = () => {
   return (
     <>
       <HtmlNavbarEn />
       <main>
-        <div className="relative  w-full overflow-hidden  bg-[url('/images/background-img.png')] bg-cover bg-center bg-no-repeat h-auto pt-20  flex flex-col justify-center">
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="relative pt-20 pb-24 z-10 text-white w-full max-w-[90rem] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center justify-center gap-4 ">
-            <h1 className="text-center font-extrabold text-[1.5rem] xs:text-[1.75rem] sm:text-[2rem] leading-tight break-words max-w-4xl">Medyour: 15 Years of Excellence</h1>
-            <p className="text-center font-light text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[1.5rem] leading-normal sm:leading-[2.1rem] md:leading-[2.4rem] lg:leading-[2.8rem] w-full max-w-3xl sm:max-w-4xl md:max-w-5xl px-1 overflow-hidden text-ellipsis">Medyour pioneers smart digital solutions that transform healthcare access, combining innovative technology with a trusted network of providers.</p>
-          </div>
-        </div>
+        <HeroHeader
+          title={aboutUsContentEn.hero.title}
+          subtitle={aboutUsContentEn.hero.subtitle}
+          backgroundImage={aboutUsContentEn.hero.image}
+          dir="ltr"
+        />
 
         <section className="py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg">
           <div className="w-[90%] mx-auto px-6 relative">

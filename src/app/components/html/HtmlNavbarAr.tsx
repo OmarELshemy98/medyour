@@ -1,6 +1,6 @@
 export default function HtmlNavbarAr() {
   return (
-    <nav className="fixed top-0 z-50 w-full text-white transition-all duration-500 ease-in-out" dir="rtl">
+    <nav className="fixed top-0 z-50 w-full text-white transition-all duration-500 ease-in-out bg-[url('/images/navbar-background.png')] bg-cover bg-center" dir="rtl">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between">
         <input id="menu-toggle-ar" type="checkbox" className="hidden peer" />
         <div className="flex items-center justify-between w-full lg:hidden">

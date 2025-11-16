@@ -23,16 +23,7 @@ const WhyMedyourPage: React.FC = () => {
             <main className="min-h-screen">
                 
                 {/* 1. Hero Section */}
-                <section className="pt-24 md:pt-32 pb-16 bg-gradient-to-b from-[#F8F9FA] to-white" dir="rtl">
-                    <div className="container mx-auto px-4 text-center max-w-4xl">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#001218] font-cairo mb-6">
-                            {hero.title}
-                        </h1>
-                        <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-                            {hero.subtitle}
-                        </p>
-                    </div>
-                </section>
+                <HeroHeader title={hero.title} subtitle={hero.subtitle} backgroundImage={hero.image} dir="rtl" />
                 
                 {/* 2. Key Features Section */}
                 <KeyFeaturesSection content={keyFeatures} />
@@ -54,3 +45,4 @@ const WhyMedyourPage: React.FC = () => {
 };
 
 export default WhyMedyourPage;
+import HeroHeader from '../../components/common/HeroHeader';

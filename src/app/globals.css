@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes floatAndRotate {
+  0% { transform: translateY(0) rotate(0deg); opacity: .85; }
+  50% { transform: translateY(-10px) rotate(180deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(360deg); opacity: .85; }
+}
+
+.animate-float { animation: floatAndRotate 3s ease-in-out infinite; visibility: visible; }
+.animate-float-delay { animation: floatAndRotate 3s ease-in-out infinite .5s; visibility: visible; }

@@ -1,5 +1,6 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
 import HtmlFooterEn from '../../components/html/HtmlFooterEn';
+import HeroHeader from '../../components/common/HeroHeader';
 import { whyMedyourContentEn } from '../../content/en/why-medyour';
 
 const WhyMedyourPageEn: React.FC = () => {
@@ -8,12 +9,7 @@ const WhyMedyourPageEn: React.FC = () => {
     <>
       <HtmlNavbarEn />
       <main>
-        <div className="pt-24 md:pt-32 pb-16 bg-gradient-to-b from-[#F8F9FA] to-white">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#001218] mb-6">{hero.title}</h1>
-            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">{hero.subtitle}</p>
-          </div>
-        </div>
+        <HeroHeader title={hero.title} subtitle={hero.subtitle} backgroundImage={hero.image} dir="ltr" />
         <div className="py-12">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((b: any, idx: number) => (

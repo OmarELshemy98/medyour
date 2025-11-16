@@ -1,5 +1,6 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
 import HtmlFooterEn from '../../components/html/HtmlFooterEn';
+import HeroHeader from '../../components/common/HeroHeader';
 import { challengesContentEn } from '../../content/en/challenges';
 
 const ChallengesPageEn: React.FC = () => {
@@ -8,12 +9,7 @@ const ChallengesPageEn: React.FC = () => {
     <>
       <HtmlNavbarEn />
       <main>
-        <div className="pt-24 md:pt-32 pb-16 bg-[#F8F9FA]">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#001218] mb-4">{hero.title}</h1>
-            <p className="text-xl text-gray-600">{hero.subtitle}</p>
-          </div>
-        </div>
+        <HeroHeader title={hero.title} subtitle={hero.subtitle} backgroundImage={hero.image} dir="ltr" />
         <div className="py-12">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
             {challenges.sections.map((s: any, idx: number) => (

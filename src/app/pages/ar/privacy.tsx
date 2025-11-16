@@ -2,6 +2,7 @@
 
 // Content Import
 import { privacyContent } from '../../content/ar/privacy';
+import HeroHeader from '../../components/common/HeroHeader';
 
 // Layout Imports
 
@@ -19,17 +20,7 @@ const PrivacyPage: React.FC = () => {
             
             <main className="min-h-screen bg-white">
                 
-                {/* 1. Hero Section */}
-                <section className="pt-24 md:pt-32 pb-12 bg-[#F8F9FA]" dir="rtl">
-                    <div className="container mx-auto px-4 max-w-4xl">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-[#001218] font-cairo mb-4">
-                            {hero.title}
-                        </h1>
-                        <p className="text-lg text-gray-600">
-                            {hero.lastUpdated}
-                        </p>
-                    </div>
-                </section>
+                <HeroHeader title={hero.title} subtitle={hero.lastUpdated} backgroundImage={hero.image || '/images/background-img.png'} dir="rtl" />
                 
                 {/* 2. Privacy Content */}
                 <PrivacyContentSection sections={sections} />

@@ -19,16 +19,7 @@ const ServicesPage: React.FC = () => {
             <main className="min-h-screen">
                 
                 {/* 1. Services Hero Section (العنوان والوصف) */}
-                <section className="pt-24 md:pt-32 pb-16 bg-[#F8F9FA]" dir="rtl">
-                    <div className="container mx-auto px-4 text-center max-w-4xl">
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-[#001218] font-cairo mb-4">
-                            {pageHero.mainTitle}
-                        </h1>
-                        <p className="text-xl text-gray-600">
-                            {pageHero.description}
-                        </p>
-                    </div>
-                </section>
+                <HeroHeader title={pageHero.mainTitle} subtitle={pageHero.description} backgroundImage={'/images/background-img.png'} dir="rtl" />
                 
                 {/* 2. Main Services Grid (الخدمات الأساسية من المحتوى) */}
                 <section className="py-12">
@@ -57,3 +48,4 @@ const ServicesPage: React.FC = () => {
 };
 
 export default ServicesPage;
+import HeroHeader from '../../components/common/HeroHeader';

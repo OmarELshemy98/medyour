@@ -1,5 +1,6 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
 import HtmlFooterEn from '../../components/html/HtmlFooterEn';
+import HeroHeader from '../../components/common/HeroHeader';
 import { servicesContentEn } from '../../content/en/services';
 
 const ServicesPageEn: React.FC = () => {
@@ -8,12 +9,7 @@ const ServicesPageEn: React.FC = () => {
     <>
       <HtmlNavbarEn />
       <main>
-        <div className="pt-24 md:pt-32 pb-16 bg-[#F8F9FA]">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#001218] mb-4">Our Services</h1>
-            <p className="text-xl text-gray-600">Medyour offers a fully digital ecosystem that redefines the healthcare experience, combining ease, security, and precision.</p>
-          </div>
-        </div>
+        <HeroHeader title={servicesContentEn.hero.title} subtitle={servicesContentEn.hero.subtitle} backgroundImage={servicesContentEn.hero.image} dir="ltr" />
         <div className="py-12">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
             {sections.map((s: any, idx: number) => (
