@@ -1,77 +1,78 @@
 // app/components/sections/faqs/FAQSection.tsx
-import { ChevronDown } from 'lucide-react';
 
-type FAQSectionProps = {
-  items: Array<{
-    question: string;
-    answer: string;
-    category?: string;
-  }>;
-  sectionTitle: string;
-  sectionSubtitle: string;
-};
 
-const FAQSection = ({ items, sectionTitle, sectionSubtitle }: FAQSectionProps) => {
+
+const Separator = () => (
+  <div className="flex items-center w-[80%] mx-auto mt-[3rem]">
+    <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40"></div>
+    <div className="flex items-center">
+      <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+      <div className="w-[12.5rem] sm:w-[30.8125rem] border-t-2 border-[#3A6070]"></div>
+      <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+    </div>
+    <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40"></div>
+  </div>
+);
+
+const FAQSection = () => {
+  // Directly rendering the static FAQ HTML structure from project/ar/faqs.html (lines 175-250)
   return (
-    <section className="py-16 md:py-24 bg-white" dir="rtl">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#001218] font-cairo mb-4">
-            {sectionTitle}
-          </h2>
-          <p className="text-lg text-gray-600">
-            {sectionSubtitle}
-          </p>
-        </div>
-
-        {/* FAQ Accordion */}
-        <div className="space-y-4">
-          {items.map((item, index) => (
-            <details
-              key={index}
-              className="group bg-gradient-to-br from-white to-[#F8F9FA] rounded-xl border border-gray-200 hover:border-[#00CFC5] transition-all duration-300"
-            >
-              <summary className="flex items-center justify-between cursor-pointer p-6 font-bold text-[#001218] font-cairo text-lg">
-                <span className="flex-1">{item.question}</span>
-                <ChevronDown className="w-6 h-6 text-[#00CFC5] flex-shrink-0 ml-4 group-open:rotate-180 transition-transform duration-300" />
-              </summary>
-              <div className="px-6 pb-6">
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-gray-700 leading-relaxed text-lg">
-                    {item.answer}
-                  </p>
+    <main className="text-[#003439]" dir="rtl">
+      <div className="mx-auto w-[90%] py-12">
+        <div className="space-y-[1.5rem] sm:space-y-[2rem] lg:space-y-[2.5rem]">
+          {/* FAQ Item 1 */}
+          <section className="faq-item">
+            <div className="pb-[1rem] sm:pb-[1.5rem] lg:pb-[2rem] ">
+              <h3 className=" text-base sm:text-lg lg:text-xl font-medium mb-[0.5rem] sm:mb-[0.75rem] lg:mb-[1rem] text-center">
+                هل التغطية متاحة لجميع الأعمار؟
+              </h3>
+              <div className=" text-sm sm:text-base lg:text-lg font-normal leading-5 sm:leading-6 lg:leading-7 text-center mx-auto">
+                <div>
+                  نعم، خطط الرعاية الصحية مصممة لتناسب جميع الفئات العمرية بدون
+                  استثناء.
                 </div>
               </div>
-            </details>
-          ))}
-        </div>
+            </div>
+            {/* Line Separator */}
+            <Separator />
+          </section>
 
-        {/* Still Have Questions */}
-        <div className="mt-16 text-center bg-gradient-to-br from-[#E6F9F7] to-white p-8 rounded-2xl border-2 border-[#00CFC5]">
-          <h3 className="text-2xl font-bold text-[#001218] font-cairo mb-4">
-            لم تجد إجابة لسؤالك؟
-          </h3>
-          <p className="text-lg text-gray-600 mb-6">
-            فريق الدعم لدينا جاهز لمساعدتك على مدار الساعة
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="inline-block bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-3 px-8 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              اتصل بنا
-            </a>
-            <a
-              href="tel:800-633-9687"
-              className="inline-block bg-white text-[#00CFC5] font-bold py-3 px-8 rounded-full border-2 border-[#00CFC5] hover:bg-[#00CFC5] hover:text-white hover:shadow-xl transition-all duration-300"
-            >
-              اتصل: 800-MEDYOUR
-            </a>
-          </div>
+          {/* FAQ Item 2 */}
+          <section className="faq-item">
+            <div className="pb-[1rem] sm:pb-[1.5rem] lg:pb-[2rem] ">
+              <h3 className=" text-base sm:text-lg lg:text-xl font-medium mb-[0.5rem] sm:mb-[0.75rem] lg:mb-[1rem] text-center">
+                ما الذي يميز ميديور عن مقدمي الرعاية الصحية التقليديين؟
+              </h3>
+              <div className=" text-sm sm:text-base lg:text-lg font-normal leading-5 sm:leading-6 lg:leading-7 text-center mx-auto">
+                <div>
+                  ميديور منصة رعاية صحية رقمية رائدة تعتمد على تقنيات متقدمة
+                  لتوفير وصول فوري إلى شبكة واسعة من أفضل مقدمي الخدمات الصحية،
+                </div>
+                <div>دون تعقيدات أو قيود، عبر منصات مبتكرة ومتطورة،</div>
+                <div>مع دعم مستمر يعيد تعريف مفهوم الرعاية الصحية</div>
+              </div>
+            </div>
+            {/* Line Separator */}
+            <Separator />
+          </section>
+
+          {/* FAQ Item 3 */}
+          <section className="faq-item">
+            <div className="pb-[1rem] sm:pb-[1.5rem] lg:pb-[2rem]">
+              <h3 className=" text-base sm:text-lg lg:text-xl font-medium mb-[0.5rem] sm:mb-[0.75rem] lg:mb-[1rem] text-center">
+                كيف يمكنني الوصول إلى سجلاتي الطبية؟
+              </h3>
+              <div className=" text-sm sm:text-base lg:text-lg font-normal leading-5 sm:leading-6 lg:leading-7 text-center mx-auto">
+                <div>
+                  يمكنك الوصول إلى سجلاتك الطبية بسهولة وأمان عبر منصتنا
+                  السحابية أو من خلال تطبيق ميديور على هاتفك.
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

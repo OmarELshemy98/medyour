@@ -1,20 +1,11 @@
 // pages/why-medyour.tsx
 
-// Content Import
-import { whyMedyourContent } from '../../content/ar/why-medyour';
-
-// Layout Imports
-
-// Section Imports
-import KeyFeaturesSection from '../../components/sections/why-medyour/KeyFeatures';
-import ComparisonSection from '../../components/sections/why-medyour/Comparison';
-import DifferenceSection from '../../components/sections/why-medyour/Difference';
 import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
 import HtmlFooterAr from '../../components/html/HtmlFooterAr';
+import HeroHeader from '../../components/common/HeroHeader';
+import WhyMedyourSection from '../../components/sections/why-medyour/WhyMedyourSection';
 
 const WhyMedyourPage: React.FC = () => {
-    const { seo, hero, keyFeatures, comparison, difference, cta } = whyMedyourContent as any;
-    
     return (
         <>
             <HtmlNavbarAr /> 
@@ -22,19 +13,15 @@ const WhyMedyourPage: React.FC = () => {
             <main className="min-h-screen">
                 
                 {/* 1. Hero Section */}
-                <HeroHeader title={hero.title} subtitle={hero.subtitle} backgroundImage={hero.image} dir="rtl" />
-                
+                <HeroHeader
+                  title="لماذا ميديور؟"
+                  subtitle="في ميديور، نُقدّم حلولًا رقمية متطورة تجعل الرعاية الصحية أقرب وأسهل من أي وقت مضى.
+نوفر لك تجربة رقمية تتيح الوصول السريع إلى شبكة واسعة من نخبة مقدمي الرعاية الصحية في مختلف التخصصات، مع ضمان الجودة والأمان في كل خطوة. سواء كنت فردًا تبحث عن خدمة مميزة لك ولعائلتك، أو مؤسسة تسعى لإدارة شاملة ومتكاملة للرعاية الصحية لموظفيها، نمنحك حلولًا مبتكرة تلبي احتياجاتك وتضمن راحتك ورضاك."
+                  backgroundImage="/images/background-img.png"
+                  dir="rtl"
+                />  
                 {/* 2. Key Features Section */}
-                <KeyFeaturesSection content={keyFeatures} />
-
-                {/* 3. Comparison Section */}
-                <ComparisonSection content={comparison} />
-
-                {/* 4. Difference Section */}
-                <DifferenceSection content={difference} />
-                
-             
-                
+                <WhyMedyourSection/>
             </main>
 
             <HtmlFooterAr /> 
@@ -43,4 +30,3 @@ const WhyMedyourPage: React.FC = () => {
 };
 
 export default WhyMedyourPage;
-import HeroHeader from '../../components/common/HeroHeader';

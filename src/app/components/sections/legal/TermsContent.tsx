@@ -1,79 +1,87 @@
 // app/components/sections/legal/TermsContent.tsx
 
-type TermsContentProps = {
-    sections: Array<{
-      title: string;
-      content: string[];
-    }>;
-  };
-  
-  const TermsContentSection = ({ sections }: TermsContentProps) => {
-    return (
-      <section className="py-12 md:py-16 bg-white" dir="rtl">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="space-y-10">
-            {sections.map((section, index) => (
-              <div key={index} className="prose prose-lg max-w-none">
-                {/* Section Title */}
-                <h2 className="text-2xl md:text-3xl font-bold text-[#001218] font-cairo mb-4 pb-2 border-b-2 border-[#00CFC5]">
-                  {section.title}
-                </h2>
-  
-                {/* Section Content */}
-                <div className="space-y-4">
-                  {section.content.map((paragraph, pIndex) => (
-                    <p
-                      key={pIndex}
-                      className="text-gray-700 leading-relaxed text-base md:text-lg"
-                      style={{ whiteSpace: 'pre-line' }}
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-  
-          {/* Important Notice */}
-          <div className="mt-12 bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl border-2 border-amber-300">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-amber-900 font-cairo mb-2">
-                  ملاحظة هامة
-                </h3>
-                <p className="text-amber-800 leading-relaxed">
-                  استخدامك المستمر لمنصة ميديور يعني قبولك لهذه الشروط والأحكام. إذا كانت لديك أي أسئلة أو استفسارات، لا تتردد في التواصل مع فريق الدعم لدينا.
-                </p>
-              </div>
-            </div>
-          </div>
-  
-          {/* Contact Card */}
-          <div className="mt-8 bg-gradient-to-br from-[#F8F9FA] to-white p-8 rounded-2xl border-2 border-[#00CFC5]">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-[#001218] font-cairo mb-4">
-                تحتاج لمساعدة في فهم الشروط؟
-              </h3>
-              <p className="text-gray-600 mb-6">
-                فريق الدعم لدينا مستعد لتوضيح أي نقطة في الشروط والأحكام
-              </p>
-              <a
-                href="/contact"
-                className="inline-block bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-3 px-8 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                تواصل معنا
-              </a>
-            </div>
+import React from "react";
+
+const TermsContentSection = () => {
+  return (
+    <section
+      className="mobile-app-section py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg text-[#00313B]"
+      dir="rtl"
+      lang="ar"
+    >
+      {/* Green square between header and section */}
+
+      <div className="mx-auto px-6 relative">
+        <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
+          <div
+            className="hidden md:block absolute -top-[5rem] left-1/2 transform -translate-x-4/6 w-[1.5rem] h-[1.5rem] bg-[#00FF90] animate-float opacity-80"
+          ></div>
+
+          <div className="space-y-6 relative">
+            <h2 className="text-[33px] font-semibold leading-[43px]">خدماتنا</h2>
+            <p className="text-[29px] font-normal leading-[43px]">
+              توفر ميديور منصة ذكية ومتكاملة تتيح للأفراد والشركات الوصول إلى خدمات رعاية صحية فورية وبتكلفة مناسبة عبر
+              شبكة طبية واسعة تغطي جميع أنحاء مصر. تشمل خدماتنا:
+            </p>
+            <ul className="text-[29px] font-normal leading-[43px] list-disc pr-8 text-right">
+              <li>
+                شبكة طبية تشمل: العيادات، المستشفيات، المراكز الطبية المتخصصة، معامل التحاليل، مراكز الأشعة،
+                الصيدليات، خدمات الأسنان والعلاج الطبيعي، البصريات، الأجهزة التعويضية والمساعدة، وخدمات الطوارئ.
+              </li>
+              <li>حجز فوري إلكتروني، وسجلات طبية رقمية، وتوصيات ذكية للخدمات.</li>
+              <li>أدوات مخصصة للشركات لإدارة وتتبّع تغطية الرعاية الصحية للموظفين.</li>
+              <li>خطط شاملة تغطي جميع الفئات العمرية وتشمل الأمراض المزمنة والحالات القائمة مسبقًا.</li>
+            </ul>
+
+            <h2 className="text-[33px] font-semibold leading-[43px] mt-8">شروط الأهلية</h2>
+            <p className="text-[29px] font-normal leading-[43px]">
+              يجب أن يكون عمرك 16 عامًا أو أكثر لاستخدام خدماتنا. إن كنت أصغر من ذلك، يمكنك استخدام المنصة فقط تحت إشراف
+              أحد الوالدين أو الوصي القانوني.
+            </p>
+
+            <h2 className="text-[33px] font-semibold leading-[43px] mt-8">التزامات المستخدم</h2>
+            <p className="text-[29px] font-normal leading-[43px]">عند استخدامك لـ ميديور، فإنك تلتزم بما يلي:</p>
+            <ul className="text-[29px] font-normal leading-[43px] list-disc pr-8 text-right">
+              <li>إدخال معلومات صحيحة ومكتملة أثناء التسجيل.</li>
+              <li>الحفاظ على سرية بيانات الدخول الخاصة بحسابك.</li>
+              <li>استخدام المنصة بشكل قانوني وعدم إساءة استخدامها.</li>
+              <li>الامتناع عن أي محاولة لتعطيل أو إتلاف المنصة أو خدماتها.</li>
+            </ul>
+
+            <h2 className="text-[33px] font-semibold leading-[43px] mt-8">الدفع والاشتراكات</h2>
+            <p className="text-[29px] font-normal leading-[43px]">
+              قد يتطلب الوصول إلى خدمات ميديور سداد رسوم اشتراك. تتم معالجة جميع المدفوعات بشكل آمن من خلال مزودي بوابات
+              الدفع الإلكتروني المعتمدين لدينا. جميع الرسوم غير قابلة للاسترداد إلا إذا نُص على خلاف ذلك بشكل صريح.
+            </p>
+
+            <h2 className="text-[33px] font-semibold leading-[43px] mt-8">حدود المسؤولية</h2>
+            <p className="text-[29px] font-normal leading-[43px]">
+              لا تتحمل ميديور أي مسؤولية عن الأضرار غير المباشرة أو العرضية أو التبعية التي قد تنشأ نتيجة استخدامك
+              لخدماتنا. وتقتصر مسؤوليتنا، في جميع الأحوال، على قيمة الخدمة المدفوعة التي تسببت في المشكلة محل النزاع.
+            </p>
+
+            <h2 className="text-[33px] font-semibold leading-[43px] mt-8">الإنهاء أو الإيقاف</h2>
+            <p className="text-[29px] font-normal leading-[43px]">
+              يحق لـ ميديور تعليق أو إنهاء استخدامك للخدمة في حال مخالفة الشروط دون إشعار مسبق، وذلك وفقًا لتقديرنا.
+            </p>
+
+            <h2 className="text-[33px] font-semibold leading-[43px] mt-8">القانون المعمول به</h2>
+            <p className="text-[29px] font-normal leading-[43px]">
+              تخضع هذه الشروط وتُفسر وفقًا لقوانين جمهورية مصر العربية، وتكون محاكم القاهرة هي المختصة في حال نشوء أي
+              نزاع.
+            </p>
+
+            <div
+              className="hidden md:block absolute top-[2rem] -right-[5rem] w-[1.25rem] h-[1.25rem] bg-[#FF00FB] animate-float opacity-80"
+            ></div>
+            <div
+              className="hidden md:block absolute top-1/2 -left-[4rem] w-[1rem] h-[1rem] bg-[#8CE2FF] animate-float-delay opacity-60 blur-[2px]"
+            ></div>
           </div>
         </div>
-      </section>
-    );
-  };
-  
-  export default TermsContentSection;
+      </div>
+    </section>
+  );
+};
+
+export default TermsContentSection;

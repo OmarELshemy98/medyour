@@ -1,39 +1,33 @@
-// pages/faqs.tsx (الإصدار النهائي)
+// pages/faqs.tsx (إصدار مختصر بدون جلب محتوى الأسئلة الشائعة)
 // Layout Imports
-// Section Imports
-
-// Content Import - (افتراضي)
-import { faqsContent as faqsPageContent } from '../../content/ar/faqs'; 
 import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
 import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import FAQSection from '../../components/sections/faqs/FAQSection';
+import HeroHeader from '../../components/common/HeroHeader';
 
 const FAQsPage: React.FC = () => {
-    // تم استخدام as any لافتراض الواجهة
-    const { hero, sections } = faqsPageContent as any;
-    
     return (
         <>
-            <HtmlNavbarAr /> 
-            
+            <HtmlNavbarAr />
+
             <main className="min-h-screen">
-                
+
                 {/* 1. FAQs Hero Section (قسم العنوان والوصف) */}
-                <HeroHeader title={hero.title} subtitle={hero.subtitle} backgroundImage={hero.image} dir="rtl" />
-                
-                {/* 2. FAQ Section - الأسئلة والأجوبة */}
-                <FAQSection
-                    items={(sections || []).flatMap((s: any) => s.faqs || [])}
-                    sectionTitle={hero.title}
-                    sectionSubtitle={hero.subtitle}
+                <HeroHeader
+                    title="الأسئلة الشائعة"
+                    subtitle="ابحث عن إجابات لأكثر الأسئلة شيوعًا حول تغطيتك وخدمات الرعاية الصحية الخاصة بك"
+                    backgroundImage="/images/background-img.png"
+                    dir="rtl"
                 />
-                
+
+                {/* 2. FAQ Section - الأسئلة والأجوبة */}
+                <FAQSection />
+
             </main>
 
-            <HtmlFooterAr /> 
+            <HtmlFooterAr />
         </>
     );
 };
 
 export default FAQsPage;
-import HeroHeader from '../../components/common/HeroHeader';
