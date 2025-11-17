@@ -1,6 +1,6 @@
 // Pure JS + simple dynamic rendering, no React hooks or "use client"
 
-import { contactContent } from '../../../content/ar/contact';
+import { contactContent } from '../../../../content/ar/contact';
 
 // ====== TypeScript type assertion to fix errors ======
 type ContactField = {

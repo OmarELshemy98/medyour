@@ -46,7 +46,7 @@ const FloatSquare = ({
   className: string;
 }) => <div className={className}></div>;
 
-const VisionMissionSection = () => {
+const VisionMissionSection: React.FC = () => {
   return (
     <section className="mobile-app-section py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg">
       <div className="w-[90%] mx-auto px-6 relative">

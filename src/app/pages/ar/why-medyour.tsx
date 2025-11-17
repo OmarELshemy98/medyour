@@ -1,14 +1,14 @@
 // pages/why-medyour.tsx
 
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import HeroHeader from '../../components/common/HeroHeader';
-import WhyMedyourSection from '../../components/sections/why-medyour/WhyMedyourSection';
+import WhyMedyourSection from '../../components/sections/ar/why-medyour/WhyMedyourSection';
+import FooterAr from '../../components/sections/ar/footer/FooterAr';
+import HeroNavbar from '../../components/sections/ar/navbar/HeroNavbar';
 
 const WhyMedyourPage: React.FC = () => {
     return (
         <>
-            <HtmlNavbarAr /> 
+            <HeroNavbar/> 
             
             <main className="min-h-screen">
                 
@@ -24,7 +24,7 @@ const WhyMedyourPage: React.FC = () => {
                 <WhyMedyourSection/>
             </main>
 
-            <HtmlFooterAr /> 
+            <FooterAr/> 
         </>
     );
 };

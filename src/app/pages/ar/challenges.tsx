@@ -1,12 +1,12 @@
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
-import ChallengesSection from '../../components/sections/challenges/ChallengesSection';
+import ChallengesSection from '../../components/sections/ar/challenges/ChallengesSection';
 import HeroHeader from '../../components/common/HeroHeader';
+import FooterAr from '../../components/sections/ar/footer/FooterAr';
+import HeroNavbar from '../../components/sections/ar/navbar/HeroNavbar';
 
 const ChallengesPage: React.FC = () => {
     return (
         <>
-            <HtmlNavbarAr /> 
+            <HeroNavbar/> 
             
             <main className="min-h-screen">
                 
@@ -22,7 +22,7 @@ const ChallengesPage: React.FC = () => {
                 
             </main>
 
-            <HtmlFooterAr /> 
+            <FooterAr /> 
         </>
     );
 };

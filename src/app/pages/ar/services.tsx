@@ -1,15 +1,15 @@
 // pages/services.tsx (الإصدار النهائي)
 // Section Imports
 
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import HeroHeader from '../../components/common/HeroHeader';
-import ServiceSection from '../../components/sections/services/services';
+import ServiceSection from '../../components/sections/ar/services/services';
+import FooterAr from '../../components/sections/ar/footer/FooterAr';
+import HeroNavbar from '../../components/sections/ar/navbar/HeroNavbar';
 
 const ServicesPage: React.FC = () => {
     return (
         <>
-            <HtmlNavbarAr /> 
+            <HeroNavbar /> 
             <main className="min-h-screen">
                 {/* 1. Services Hero Section (العنوان والوصف) */}
                 <HeroHeader
@@ -20,7 +20,7 @@ const ServicesPage: React.FC = () => {
                 />
                 <ServiceSection/>
             </main>
-            <HtmlFooterAr /> 
+            <FooterAr /> 
         </>
     );
 };

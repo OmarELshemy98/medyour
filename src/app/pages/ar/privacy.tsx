@@ -3,14 +3,14 @@
 import HeroHeader from '../../components/common/HeroHeader';
 
 // Section Imports
-import PrivacyContentSection from '../../components/sections/legal/PrivacyContent';
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
+import PrivacyContentSection from '../../components/sections/ar/legal/PrivacyContent';
+import FooterAr from '../../components/sections/ar/footer/FooterAr';
+import HeroNavbar from '../../components/sections/ar/navbar/HeroNavbar';
 
 const PrivacyPage: React.FC = () => {
     return (
         <>
-            <HtmlNavbarAr /> 
+            <HeroNavbar/> 
             
             <main className="min-h-screen bg-white">
                 
@@ -26,7 +26,7 @@ const PrivacyPage: React.FC = () => {
                 
             </main>
 
-            <HtmlFooterAr /> 
+            <FooterAr/> 
         </>
     );
 };

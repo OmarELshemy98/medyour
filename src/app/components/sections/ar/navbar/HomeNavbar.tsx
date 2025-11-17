@@ -1,4 +1,4 @@
-export default function HtmlNavbarAr({ mode = 'hero', home = false }: { mode?: 'hero' | 'static'; home?: boolean }) {
+export default function HomeNavbar({ mode = 'hero', home = false }: { mode?: 'hero' | 'static'; home?: boolean }) {
   const base = "fixed top-0 z-50 w-full text-white transition-all duration-500 ease-in-out";
   const bg = "bg-[url('/images/navbar-background.png')] bg-cover bg-center";
   const cls = mode === 'static' ? `${base} ${bg}` : `${base} bg-transparent`;

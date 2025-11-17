@@ -2,10 +2,10 @@
 
 // Content Import - (افتراضي)
 import { contactContent as contactPageContent } from '../../content/ar/contact';
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
-import ContactFormSection from '../../components/sections/contact/contact';
+import ContactFormSection from '../../components/sections/ar/contact/contact';
 import HeroHeader from '../../components/common/HeroHeader';
+import HtmlFooterEn from '../../components/html/HtmlFooterEn';
+import HeroNavbar from '../../components/sections/ar/navbar/HeroNavbar';
 
 const ContactPage: React.FC = () => {
     // تم استخدام as any لافتراض الواجهة
@@ -13,7 +13,7 @@ const ContactPage: React.FC = () => {
     
     return (
         <>
-            <HtmlNavbarAr/> 
+            <HeroNavbar/> 
             
             <main className="min-h-screen">
                 <HeroHeader title={hero.title} subtitle={hero.subtitle} backgroundImage={hero.image || '/images/background-img.png'} dir="rtl" />
@@ -35,7 +35,7 @@ const ContactPage: React.FC = () => {
                 
             </main>
 
-            <HtmlFooterAr /> 
+            <HtmlFooterEn/> 
         </>
     );
 };

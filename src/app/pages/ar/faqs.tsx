@@ -1,14 +1,14 @@
 // pages/faqs.tsx (إصدار مختصر بدون جلب محتوى الأسئلة الشائعة)
 // Layout Imports
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
-import FAQSection from '../../components/sections/faqs/FAQSection';
+import FAQSection from '../../components/sections/ar/faqs/FAQSection';
 import HeroHeader from '../../components/common/HeroHeader';
+import FooterAr from '../../components/sections/ar/footer/FooterAr';
+import HeroNavbar from '../../components/sections/ar/navbar/HeroNavbar';
 
 const FAQsPage: React.FC = () => {
     return (
         <>
-            <HtmlNavbarAr />
+            <HeroNavbar/>
 
             <main className="min-h-screen">
 
@@ -25,7 +25,7 @@ const FAQsPage: React.FC = () => {
 
             </main>
 
-            <HtmlFooterAr />
+            <FooterAr />
         </>
     );
 };

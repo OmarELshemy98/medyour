@@ -1,16 +1,16 @@
 // pages/about-us.tsx (الإصدار النهائي)
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import HeroHeader from '../../components/common/HeroHeader';
 
 // Script import
-import VisionMissionSection from '../../components/sections/about-us/VisionMission';
+import VisionMissionSection from '../../components/sections/ar/about-us/VisionMission';
+import FooterAr from '../../components/sections/ar/footer/FooterAr';
+import HeroNavbar from '../../components/sections/ar/navbar/HeroNavbar';
 
 const AboutUsPage: React.FC = () => {
     
     return (
         <>
-            <HtmlNavbarAr/>
+            <HeroNavbar/>
             
             <main className="min-h-screen">
                 
@@ -24,7 +24,7 @@ const AboutUsPage: React.FC = () => {
                 <VisionMissionSection/>
             </main>
 
-            <HtmlFooterAr /> 
+            <FooterAr /> 
         </>
     );
 };

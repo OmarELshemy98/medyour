@@ -5,9 +5,9 @@ import HeroHeader from '../../components/common/HeroHeader';
 // Layout Imports
 
 // Section Imports
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
-import TermsContentSection from '../../components/sections/legal/TermsContent';
+import FooterAr from '../../components/sections/ar/footer/FooterAr';
+import TermsContentSection from '../../components/sections/ar/legal/TermsContent';
+import HeroNavbar from '../../components/sections/ar/navbar/HeroNavbar';
 
 const TermsPage: React.FC = () => {
     // termsContent removed; must hardcode or fetch values if necessary
@@ -15,7 +15,7 @@ const TermsPage: React.FC = () => {
 
     return (
         <>
-            <HtmlNavbarAr /> 
+            <HeroNavbar /> 
             
             <main className="min-h-screen bg-white">
                 
@@ -30,7 +30,7 @@ const TermsPage: React.FC = () => {
                 
             </main>
 
-            <HtmlFooterAr /> 
+            <FooterAr /> 
         </>
     );
 };

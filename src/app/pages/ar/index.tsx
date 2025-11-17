@@ -3,14 +3,14 @@
 // Content Import
 import Script from 'next/script';
 
-import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
-import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import LineSeparator from '../../components/common/LineSeparator';
-import SecondSectionIntroduction from '../../components/sections/home/SecondSectionIntroduction';
-import ThirdSectionWhatMedyour from '../../components/sections/home/thirdSectionWhatMedyour';
-import FourthSectionVision from '../../components/sections/home/fourthSectionVision';
-import LastSectionCarouselHome from '../../components/sections/home/lastSectionCarouselHome';
-import FirstSectionMobileSection from '../../components/sections/home/FirstSectionMobileSection';
+import SecondSectionIntroduction from '../../components/sections/ar/home/SecondSectionIntroduction';
+import ThirdSectionWhatMedyour from '../../components/sections/ar/home/thirdSectionWhatMedyour';
+import FourthSectionVision from '../../components/sections/ar/home/fourthSectionVision';
+import LastSectionCarouselHome from '../../components/sections/ar/home/lastSectionCarouselHome';
+import FirstSectionMobileSection from '../../components/sections/ar/home/FirstSectionMobileSection';
+import FooterAr from '../../components/sections/ar/footer/FooterAr';
+import HomeNavbar from '../../components/sections/ar/navbar/HomeNavbar';
 
 // Helper functions for casting icon fields safely
 
@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <HtmlNavbarAr mode="static" home />
+      <HomeNavbar mode="static" home />
 
       <main className="min-h-screen text-[#123D46] pt-[85px]">
         {/* 1. قسم الهيرو مطابق لنسخة HTML */}
@@ -32,7 +32,7 @@ const HomePage: React.FC = () => {
         <LastSectionCarouselHome />
       </main>
 
-      <HtmlFooterAr />
+      <FooterAr />
 
       <script src="/js/script.js"></script>
     </>
