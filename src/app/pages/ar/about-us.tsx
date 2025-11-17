@@ -26,13 +26,11 @@ const AboutUsPage: React.FC = () => {
                 {/* 3. Vision and Mission Section (الرؤية والرسالة) */}
                 <VisionMissionSection content={visionMission} />
                 
-                {/* 4. Team Section (فريق العمل) */}
           
 
             </main>
 
             <HtmlFooterAr /> 
-            <Script src="/js/navbar-script.js" strategy="lazyOnload" />
         </>
     );
 };
