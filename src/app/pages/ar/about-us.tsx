@@ -1,17 +1,12 @@
 // pages/about-us.tsx (الإصدار النهائي)
-// Content Import
-import { aboutUsContent } from '../../content/ar/about-us';
 import HtmlNavbarAr from '../../components/html/HtmlNavbarAr';
 import HtmlFooterAr from '../../components/html/HtmlFooterAr';
 import HeroHeader from '../../components/common/HeroHeader';
-import VisionMissionSection from '../../components/sections/about-us/VisionMission';
 
 // Script import
-import Script from 'next/script';
+import VisionMissionSection from '../../components/sections/about-us/VisionMission';
 
 const AboutUsPage: React.FC = () => {
-    // تم استخدام as any لتجنب الحاجة لتعريف الواجهة الكاملة هنا
-    const { seo, hero, story, visionMission } = aboutUsContent as any;
     
     return (
         <>
@@ -20,14 +15,13 @@ const AboutUsPage: React.FC = () => {
             <main className="min-h-screen">
                 
                 {/* 1. About Hero Section (قسم العنوان فقط) */}
-                <HeroHeader title={hero.title} subtitle={hero.subtitle} dir="rtl" />
-                
-
-                {/* 3. Vision and Mission Section (الرؤية والرسالة) */}
-                <VisionMissionSection content={visionMission} />
-                
-          
-
+                <HeroHeader
+                    title="ميديور: 15 عامًا من التميز"
+                    subtitle="نرتقي بتجربة الرعاية الصحية عبر دمج الحلول التقنية الذكية مع الخبرة لنقدم لك خدمة متميزة تضعك دائمًا في المقام الأول."
+                    backgroundImage="/images/background-img.png"
+                    dir="rtl"
+                />
+                <VisionMissionSection/>
             </main>
 
             <HtmlFooterAr /> 

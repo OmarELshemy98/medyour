@@ -1,84 +1,73 @@
-import { aboutUsContent } from "../../../content/ar/about-us";
 
-type VisionMissionProps = {
-  content?: {
-    story?: {
-      title?: string;
-      paragraphs?: string[];
-    };
-    visionMission?: {
-      title?: string;
-      description?: string;
-      // removed points?: string[];
-    };
-    hero?:{
-      title?:string;
-      subtitle?:string
-    };
-  };
-};
+import React from "react";
 
-const VisionMissionSection = ({ content }: VisionMissionProps) => {
-  // Use imported aboutUsContent as the main content source, allow prop override
-  const story = content?.story ?? aboutUsContent.story;
-  const visionMission = content?.visionMission ?? aboutUsContent.visionMission;
-  const hero = content?.hero ?? aboutUsContent.hero;
-
+const VisionMissionSection = () => {
   return (
-    <>
+    <section className="mobile-app-section py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg">
+      <div className="w-[90%] mx-auto px-6 relative">
+        <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
+          <div
+            className="hidden md:block absolute -top-[5rem] right-1/2 transform translate-x-4/6 w-[1.5rem] h-[1.5rem] bg-[#00FF90] animate-float opacity-80"
+          ></div>
 
-      <section className="mobile-app-section py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg">
-        <div className="w-[90%] mx-auto px-6 relative">
-          <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
+          {/* Company Introduction */}
+          <div className="space-y-6 relative">
             <div
-              className="hidden md:block absolute -top-[5rem] right-1/2 transform translate-x-4/6 w-[1.5rem] h-[1.5rem] bg-[#00FF90] animate-float opacity-80">
+              className="hidden md:block absolute top-[2rem] -left-[5rem] w-[1.25rem] h-[1.25rem] bg-[#FF00FB] animate-float opacity-80"
+            ></div>
+            <section>
+              <h2
+                className="text-right text-[1.9375rem] font-[900] leading-[4.375rem]"
+                style={{ fontFamily: "'Cairo',sans-serif !important" }}
+              >
+                عن شركة ميديور إيجيبت لحلول الرعاية الصحية
+              </h2>
+              <p className="text-right text-[1.125rem] font-normal leading-[1.8125rem] mt-2">
+                ميديور إيجيبت هي شركة متخصصة في حلول الرعاية الصحية والرقمية المتكاملة، تهدف إلى إتاحة خدمات طبية
+                وعلاجية متميزة بأسعار مخفّضة ومنافسة، بما يضمن وصولها إلى أكبر عدد ممكن من المستفيدين في مصر.
+                <br />
+                نسعى إلى تحقيق هذا الهدف من خلال برامج رعاية صحية مبتكرة تلبي احتياجات الأفراد والمؤسسات على حد سواء،
+                مدعومة بشبكة واسعة من نخبة مقدمي الرعاية الصحية في مختلف التخصصات، تغطي أنحاء الجمهورية كافة.
+                <br />
+                تؤمن ميديور إيجيبت بأن الرعاية الصحية حق للجميع دون تمييز، ولذلك تسعى إلى إزالة الحواجز التقليدية التي
+                قد تحد من سهولة الحصول على الخدمات الصحية، مثل العمر أو الحالة الصحية أو الأمراض المزمنة، لضمان وصول
+                الجميع إلى رعاية طبية متكاملة وعالية الجودة.
+              </p>
+            </section>
+
+            <div className="flex items-center w-[80%] mx-auto mt-8">
+              <div className="flex-1 border-t-[0.125rem] border-dashed border-[#3A6070] opacity-40 h-[0.125rem]"></div>
+              <div className="flex items-center">
+                <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+                <div className="w-[200px] sm:w-[493px] border-t-[0.125rem] border-[#3A6070]"></div>
+                <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
+              </div>
+              <div className="flex-1 border-t-[0.125rem] border-dashed border-[#3A6070] opacity-40 h-[0.125rem]"></div>
             </div>
-            <div className="space-y-6 relative">
-              <div
-                className="hidden md:block absolute top-[2rem] -left-[5rem] w-[1.25rem] h-[1.25rem] bg-[#FF00FB] animate-float opacity-80">
-              </div>
-              <section>
-                <h2 className="text-right text-[1.9375rem] font-[900] leading-[4.375rem]" style={{ fontFamily: "'Cairo',sans-serif" }}>
-                  {story?.title}
-                </h2>
-                {/* Render story paragraphs, support HTML line breaks */}
-                {story?.paragraphs && Array.isArray(story.paragraphs) && story.paragraphs.map((para, idx) => (
-                  <p
-                    key={idx}
-                    className="text-right text-[1.125rem] font-normal leading-[1.8125rem] mt-2"
-                    dangerouslySetInnerHTML={{ __html: para }}
-                  />
-                ))}
-              </section>
-              <div className="flex items-center w-[80%] mx-auto mt-8">
-                <div className="flex-1 border-t-[0.125rem] border-dashed border-[#3A6070] opacity-40 h-[0.125rem]"></div>
-                <div className="flex items-center">
-                  <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
-                  <div className="w-[200px] sm:w-[493px] border-t-[0.125rem] border-[#3A6070]"></div>
-                  <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
-                </div>
-                <div className="flex-1 border-t-[0.125rem] border-dashed border-[#3A6070] opacity-40 h-[0.125rem]"></div>
-              </div>
-              <section>
-                <h2 className="text-right text-[1.9375rem] font-[900] leading-[4.375rem] mt-8">
-                  {visionMission?.title}
-                </h2>
-                {visionMission?.description && (
-                  <p
-                    className="text-right text-[1.125rem] font-normal leading-[1.8125rem] mt-2"
-                    dangerouslySetInnerHTML={{ __html: visionMission.description }}
-                  />
-                )}
-                {/* Removed rendering of visionMission.points because it does not exist */}
-              </section>
-              <div
-                className="hidden md:block absolute top-1/2 -right-[4rem] w-[1rem] h-[1rem] bg-[#8CE2FF] animate-float-delay opacity-60 blur-[2px]">
-              </div>
-            </div>
+
+            <section>
+              <h2 className="text-right text-[1.9375rem] font-[900] leading-[4.375rem] mt-8">
+                عن برنامج ميديور للرعاية الصحية
+              </h2>
+              <p className="text-right text-[1.125rem] font-normal leading-[1.8125rem] mt-2">
+                ميديور هو برنامج رعاية صحية متكامل بمفهوم جديد يختلف عن أنظمة التأمين الصحي التقليدية، حيث يتيح البرنامج
+                الاشتراك السنوي في مظلة رعاية صحية متكاملة سواء للأفراد أو للمؤسسات. كما يتيح للعاملين في المؤسسات ضم
+                أسرهم ووالديهم للاشتراك دون حد أقصى لعدد أفراد الأسرة، ودون التقيد بعمر المشترك أو بالأمراض المزمنة أو
+                السابقة للتعاقد.
+                <br />
+                يوفر برنامج ميديور للرعاية الصحية تغطية طبية وعلاجية متميزة تُمكّن المشتركين من تلقي الخدمات الصحية دون
+                عدد محدد من الزيارات أو حد أقصى للاستهلاك، سواء للفرد أو للأسرة، من ﺧﻼﻝ ﺷﺑﻛﺔ ﻁﺑﻳﺔ ﻭﺍﺳﻌﺔ ﺍﻟﻧﻁﺎﻕ ﻭﻣﺗﻧﻭﻋﺔ
+                ﺗﻐﻁﻲ ﻣﻌﻅﻡ ﻣﻘﺩﻣﻲ ﺍﻟﺧﺩﻣﺎﺕ ﺍﻟﺻﺣﻳﺔ ﻓﻲ ﻣﺻﺭ، تشمل المستشفيات، المراكز الطبية، العيادات، معامل التحاليل، مراكز
+                الأشعة، والصيدليات في مختلف أنحاء مصر.
+              </p>
+            </section>
+            <div
+              className="hidden md:block absolute top-1/2 -right-[4rem] w-[1rem] h-[1rem] bg-[#8CE2FF] animate-float-delay opacity-60 blur-[2px]"
+            ></div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
