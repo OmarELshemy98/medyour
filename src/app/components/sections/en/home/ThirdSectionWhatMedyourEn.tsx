@@ -27,9 +27,9 @@ const cards: CardData[][] = [
           </g>
         </svg>
       ),
-      title: ["تغطية شاملة للرعاية", "الصحية"],
+      title: ["Comprehensive", "Healthcare Coverage"],
       description:
-        "خطط مرنة ومتكاملة للأفراد والشركات تتيح لك إدارة خدماتك بسهولة تامة مع ضمان أعلى مستويات الرعاية وجودة الخدمة دون تعقيدات أو قيود.",
+        "Flexible, integrated plans for individuals and companies allowing you to manage your services effortlessly, with the highest standards of care and service quality—no hassles, no limitations.",
     },
     {
       svg: (
@@ -47,9 +47,9 @@ const cards: CardData[][] = [
           </g>
         </svg>
       ),
-      title: ["رعاية صحية فورية", "وموثوقة"],
+      title: ["Instant Access", "to Trusted Care"],
       description:
-        "احصل على رعاية صحية فورية دون انتظار ومن أي مكان وفي أي وقت مع تجربة سلسة وموثوقة بين يديك دائمًا.",
+        "Receive instant healthcare services anywhere, anytime, with a seamless and reliable experience always at your fingertips.",
     },
   ],
   // Row 2 (2 cards)
@@ -70,9 +70,9 @@ const cards: CardData[][] = [
           </g>
         </svg>
       ),
-      title: ["إدارة شاملة", "عبر تطبيق", "الهاتف"],
+      title: ["Full Control", "via Mobile App"],
       description:
-        "تحكّم كامل وسهل عبر تطبيق مصمم لتبسيط كل خطوة في رحلتك الصحية، أحجز خدماتك الطبية، ادفع بأمان، وتابع نتائجك، كل ذلك من هاتفك في أي وقت.",
+        "Effortlessly manage your health journey with a user-friendly mobile app: book services, pay securely, and track results—all from your phone, anytime.",
     },
     {
       svg: (
@@ -90,9 +90,9 @@ const cards: CardData[][] = [
           </g>
         </svg>
       ),
-      title: ["تكلفة خدمات", "واضحة — ما تراه", "هو ما تدفعه"],
+      title: ["Clear Pricing —", "What You See", "Is What You Pay"],
       description:
-        "الشفافية الكاملة في الأسعار لتعرف بوضوح تكلفة الخدمة التي تحتاجها قبل تلقيها دون أي رسوم مخفية.",
+        "Full price transparency so you always know the cost of your healthcare ahead of time—no hidden fees, ever.",
     },
   ],
   // Row 3 (2 cards)
@@ -113,9 +113,9 @@ const cards: CardData[][] = [
           </g>
         </svg>
       ),
-      title: ["رعاية متاحة", "للجميع", "بلا قيود"],
+      title: ["Care for All,", "Without Barriers"],
       description:
-        "لا قيود على العمر أو بالأمراض المزمنة أو السابقة للتعاقد. الجميع مرحب بهم للاستفادة من خدمات الرعاية الصحية بسهولة وبدون أي قيود.",
+        "No age restrictions, no exclusions for chronic or pre-existing conditions—everyone is welcome to get the care they need, simply and easily.",
     },
     {
       svg: (
@@ -133,18 +133,18 @@ const cards: CardData[][] = [
           </g>
         </svg>
       ),
-      title: ["شبكة واسعة", "من أفضل مقدمي", "الخدمات الصحية"],
+      title: ["A Wide Network", "of Top", "Healthcare Providers"],
       description:
-        "أكثر من 2,500 مقدم خدمة صحية معتمد في جميع محافظات مصر تشمل مستشفيات وعيادات وأطباء متخصصين ومعامل وصيدليات كل ذلك من خلال منصة واحدة متكاملة تضمن لك اختيارات موثوقة وجودة مضمونة في كل مكان.",
+        "Over 2,500 certified healthcare providers nationwide, including hospitals, clinics, specialists, labs, and pharmacies—all through a single platform that guarantees trusted options and quality service everywhere.",
       mtDesc: "mt-2",
     },
   ]
 ];
 
 const Card: React.FC<CardData> = ({ svg, title, description, mtDesc }) => (
-  <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
+  <div className="flex-1 flex flex-col text-left p-6 rounded-lg h-full justify-between">
     <div className="flex flex-col h-full flex-1">
-      <div className="mb-2 flex flex-row-reverse items-center gap-3">
+      <div className="mb-2 flex items-center gap-3">
         {svg}
       </div>
       <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
@@ -160,15 +160,15 @@ const Card: React.FC<CardData> = ({ svg, title, description, mtDesc }) => (
   </div>
 );
 
-const thirdSectionWhatMedyour: React.FC = () => (
+const ThirdSectionWhatMedyourEn: React.FC = () => (
   <section>
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col md:flex-row-reverse items-start gap-8">
+        <div className="flex flex-col md:flex-row items-start gap-8">
           {/* Title Div */}
-          <div className="flex-1 flex items-center justify-end mb-6 md:mb-0">
-            <h2 className="text-right text-[31px] font-[900] leading-[70px] whitespace-nowrap pr-0">
-              ماذا تقدم ميديور؟
+          <div className="flex-1 flex items-center justify-start mb-6 md:mb-0">
+            <h2 className="text-left text-[31px] font-[900] leading-[70px] whitespace-nowrap pr-0">
+              What does Medyour offer?
             </h2>
           </div>
           {/* Cards Div */}
@@ -179,7 +179,7 @@ const thirdSectionWhatMedyour: React.FC = () => (
                   key={rowIdx}
                   className={`flex flex-col ${
                     rowIdx === 0
-                      ? "md:flex-row-reverse"
+                      ? "md:flex-row"
                       : "md:flex-row"
                   } items-stretch gap-6 w-full`}
                 >
@@ -199,4 +199,4 @@ const thirdSectionWhatMedyour: React.FC = () => (
   </section>
 );
 
-export default thirdSectionWhatMedyour;
+export default ThirdSectionWhatMedyourEn;
