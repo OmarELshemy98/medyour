@@ -1,7 +1,7 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
-import HtmlFooterEn from '../../components/html/HtmlFooterEn';
 import HeroHeader from '../../components/common/HeroHeader';
 import TermsContentSectionEn from '../../components/sections/en/legal/TermsContentSectionEn';
+import FooterEn from '../../components/sections/en/footer/FooterEn';
 
 const TermsPageEn: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const TermsPageEn: React.FC = () => {
         />        
         <TermsContentSectionEn/>  
       </main>
-      <HtmlFooterEn />
+      <FooterEn/>
     </>
   );
 };

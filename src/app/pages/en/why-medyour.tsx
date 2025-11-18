@@ -1,7 +1,7 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
-import HtmlFooterEn from '../../components/html/HtmlFooterEn';
 import HeroHeader from '../../components/common/HeroHeader';
 import WhyMedyourSectionEn from '../../components/sections/en/why-medyour/WhyMedyourSectionEn';
+import FooterEn from '../../components/sections/en/footer/FooterEn';
 
 const WhyMedyourPageEn: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const WhyMedyourPageEn: React.FC = () => {
       />
                 <WhyMedyourSectionEn/>
       </main>
-      <HtmlFooterEn />
+      <FooterEn />
     </>
   );
 };

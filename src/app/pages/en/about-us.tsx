@@ -1,7 +1,7 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
-import HtmlFooterEn from '../../components/html/HtmlFooterEn';
 import HeroHeader from '../../components/common/HeroHeader';
 import VisionMissionSectionEn from '../../components/sections/en/about-us/VisionMissionSectionEn';
+import FooterEn from '../../components/sections/en/footer/FooterEn';
 
 const AboutUsPageEn: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const AboutUsPageEn: React.FC = () => {
 
        <VisionMissionSectionEn/>
       </main>
-      <HtmlFooterEn />
+      <FooterEn/>
 
     </>
   );

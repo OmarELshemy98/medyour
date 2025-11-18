@@ -1,7 +1,7 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
-import HtmlFooterEn from '../../components/html/HtmlFooterEn';
 import HeroHeader from '../../components/common/HeroHeader';
 import ServiceSectionEn from '../../components/sections/en/services/ServiceSectionEn';
+import FooterEn from '../../components/sections/en/footer/FooterEn';
 
 // Define hardcoded content to replace servicesContentEn
 
@@ -19,7 +19,7 @@ const ServicesPageEn: React.FC = () => {
         />     
         <ServiceSectionEn/>
       </main>
-      <HtmlFooterEn />
+      <FooterEn />
     </>
   );
 };

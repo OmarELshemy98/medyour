@@ -1,7 +1,7 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
-import HtmlFooterEn from '../../components/html/HtmlFooterEn';
 import HeroHeader from '../../components/common/HeroHeader';
 import FAQSectionEn from '../../components/sections/en/faqs/FAQSectionEn';
+import FooterEn from '../../components/sections/en/footer/FooterEn';
 
 const FaqsPageEn: React.FC = () => {
   // Removed faqsContentEn. You may need to fetch or define content here.
@@ -18,7 +18,7 @@ const FaqsPageEn: React.FC = () => {
         />       
         <FAQSectionEn/>
       </main>
-      <HtmlFooterEn />
+      <FooterEn />
     </>
   );
 };

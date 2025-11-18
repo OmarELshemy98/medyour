@@ -1,7 +1,7 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
-import HtmlFooterEn from '../../components/html/HtmlFooterEn';
 import HeroHeader from '../../components/common/HeroHeader';
 import ChallengesSectionEn from '../../components/sections/en/challenges/ChallengesSectionEn';
+import FooterEn from '../../components/sections/en/footer/FooterEn';
 
 const ChallengesPageEn: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const ChallengesPageEn: React.FC = () => {
         />
         <ChallengesSectionEn />
       </main>
-      <HtmlFooterEn />
+      <FooterEn />
     </>
   );
 };

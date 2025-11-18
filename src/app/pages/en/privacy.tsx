@@ -1,7 +1,7 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
-import HtmlFooterEn from '../../components/html/HtmlFooterEn';
 import HeroHeader from '../../components/common/HeroHeader';
 import PrivacyContentSectionEn from '../../components/sections/en/legal/PrivacyContentSectionEn';
+import FooterEn from '../../components/sections/en/footer/FooterEn';
 
 const PrivacyPageEn: React.FC = () => {
   // Hardcoded privacy content since privacyContentEn import is removed
@@ -18,7 +18,7 @@ const PrivacyPageEn: React.FC = () => {
         />        
       </main>
       <PrivacyContentSectionEn/>
-      <HtmlFooterEn />
+      <FooterEn />
     </>
   );
 };

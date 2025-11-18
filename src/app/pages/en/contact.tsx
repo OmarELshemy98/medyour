@@ -1,5 +1,5 @@
 import HtmlNavbarEn from '../../components/html/HtmlNavbarEn';
-import HtmlFooterEn from '../../components/html/HtmlFooterEn';
+import FooterEn from '../../components/sections/en/footer/FooterEn';
 import { contactContentEn } from '../../content/en/contact';
 
 const ContactPageEn: React.FC = () => {
@@ -51,7 +51,7 @@ const ContactPageEn: React.FC = () => {
           </div>
         </div>
       </main>
-      <HtmlFooterEn />
+      <FooterEn/>
     </>
   );
 };
