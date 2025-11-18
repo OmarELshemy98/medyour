@@ -27,7 +27,7 @@ const BENEFITS = [
           fill="#329BD7" />
   </svg>
     ),
-    iconTitleClass: `${iconTitleBase} text-[2.1rem] text-right md:h-[100px] leading-[2rem]`,
+    iconTitleClass: `${iconTitleBase} text-[2.1rem]  md:h-[100px] leading-[2rem]`,
     iconTitle: (
       <>
         <span className="block">Comprehensive</span>
