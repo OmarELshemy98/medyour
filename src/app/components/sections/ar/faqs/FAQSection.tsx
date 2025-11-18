@@ -1,18 +1,7 @@
 // app/components/sections/faqs/FAQSection.tsx
 
 import React from "react";
-
-const Separator: React.FC = () => (
-  <div className="flex items-center w-[80%] mx-auto mt-[3rem]">
-    <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40"></div>
-    <div className="flex items-center">
-      <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
-      <div className="w-[12.5rem] sm:w-[30.8125rem] border-t-2 border-[#3A6070]"></div>
-      <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
-    </div>
-    <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40"></div>
-  </div>
-);
+import LineSeparator from "../../../common/LineSeparator";
 
 type FAQItemType = {
   question: string;
@@ -71,7 +60,7 @@ const FAQItem: React.FC<FAQItemType & { showSeparator?: boolean }> = ({
         {answer}
       </div>
     </div>
-    {showSeparator && <Separator />}
+    {showSeparator && <LineSeparator />}
   </section>
 );
 

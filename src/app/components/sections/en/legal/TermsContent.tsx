@@ -1,6 +1,7 @@
 // app/components/sections/legal/TermsContent.tsx
 
 import React from "react";
+import LineSeparator from "../../../common/LineSeparator";
 
 type SectionType = {
   heading: string;
@@ -102,6 +103,8 @@ const TermsContentSection: React.FC = () => {
                   <Text key={j}>{par}</Text>
                 ))}
                 {sec.listItems && <List items={sec.listItems} />}
+                {/* Only add a separator between sections, not after the last one */}
+                {i < sections.length - 1 && <LineSeparator />}
               </React.Fragment>
             ))}
             <div

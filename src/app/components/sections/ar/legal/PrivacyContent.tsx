@@ -1,5 +1,6 @@
 
 import React from 'react';
+import LineSeparator from '../../../common/LineSeparator';
 
 type ListProps = {
   items: React.ReactNode[];
@@ -37,6 +38,8 @@ const ContentSection: React.FC<SectionProps> = ({
 }) => (
   <div className={containerClassName}>
     <h2 className={`text-[2.1rem] md:text-[2.25rem] font-semibold leading-[2.7rem]${titleClassName ? ' ' + titleClassName : ''}`}>{title}</h2>
+    {/* Imported the separator instead of duplicating the code */}
+    <LineSeparator />
     {paragraph && (
       <p className={`text-[1.8rem] font-normal leading-[2.7rem]${paragraphClassName ? ' ' + paragraphClassName : ''}`}>
         {paragraph}

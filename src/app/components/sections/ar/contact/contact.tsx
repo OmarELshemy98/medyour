@@ -1,6 +1,7 @@
 // Pure JS + simple dynamic rendering, no React hooks or "use client"
 
 import { contactContent } from '../../../../content/ar/contact';
+import LineSeparator from '../../../common/LineSeparator';
 
 // ====== TypeScript type assertion to fix errors ======
 type ContactField = {
@@ -90,7 +91,6 @@ function getContactInfo(): {
     ...source, // keep extra fields
   };
 }
-
 
 // ====== Main component ======
 export default function ContactFormSection() {
@@ -221,15 +221,7 @@ export default function ContactFormSection() {
       </div>
 
       {/* Separator */}
-      <div className="flex items-center w-[80%] mx-auto">
-        <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40"></div>
-        <div className="flex items-center">
-          <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
-          <div className="w-[12.5rem] sm:w-[30.8125rem] border-t-2 border-[#3A6070]"></div>
-          <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
-        </div>
-        <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40"></div>
-      </div>
+      <LineSeparator />
 
       {/* Social Links */}
       <div className="mx-auto flex justify-center py-[1.5rem] sm:py-[3rem] lg:py-[4rem] w-[90%]">

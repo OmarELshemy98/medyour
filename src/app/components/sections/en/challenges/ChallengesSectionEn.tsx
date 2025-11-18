@@ -4,6 +4,7 @@ import React from "react";
 // Also, image paths should be absolute from the public directory (so: `/images/...` not `../images/...`).
 
 import Image from "next/image";
+import LineSeparator from "../../../common/LineSeparator";
 
 type ChallengeSectionProps = {
   className: string;
@@ -104,18 +105,6 @@ const ChallengeSectionEn: React.FC<ChallengeSectionProps> = ({
       </div>
     </div>
   </section>
-);
-
-const LineSeparator: React.FC = () => (
-  <div className="flex items-center w-[80%] mx-auto mt-[2rem]">
-    <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40 bg-[length:1.25rem_0.125rem] bg-[position:top] h-[0.125rem]"></div>
-    <div className="flex items-center">
-      <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
-      <div className="w-[12.5rem] sm:w-[30.8125rem] border-t-2 border-[#3A6070]"></div>
-      <div className="w-[0.0625rem] h-[0.5rem] bg-[#3A6070]"></div>
-    </div>
-    <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40 bg-[length:1.25rem_0.125rem] bg-[position:top] h-[0.125rem]"></div>
-  </div>
 );
 
 // Fix image paths: use absolute paths from public directory

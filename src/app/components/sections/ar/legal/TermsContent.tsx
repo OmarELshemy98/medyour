@@ -1,6 +1,7 @@
 // app/components/sections/legal/TermsContent.tsx
 
 import React from "react";
+import LineSeparator from "../../../common/LineSeparator";
 
 type SectionType = {
   heading: string;
@@ -98,6 +99,7 @@ const TermsContentSection: React.FC = () => {
             {sections.map((sec, i) => (
               <React.Fragment key={sec.heading}>
                 <Heading mt={i !== 0}>{sec.heading}</Heading>
+                <LineSeparator />
                 {sec.paragraphs.map((par, j) => (
                   <Text key={j}>{par}</Text>
                 ))}

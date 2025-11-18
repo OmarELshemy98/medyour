@@ -1,6 +1,7 @@
 // app/components/sections/why-medyour/Comparison.tsx
 
 import React from "react";
+import LineSeparator from "../../../common/LineSeparator";
 
 // Common classes that repeat a lot
 const benefitCardBase =
@@ -10,19 +11,6 @@ const iconTitleBase = "font-normal text-[#123D46] h-auto overflow-hidden";
 const mainTextBase = "text-[1.125rem] font-normal text-[#00313B] h-auto overflow-hidden leading-[1.5rem] mt-4 max-w-[37.5rem]";
 const iconFlexBase = "flex flex-1 items-center gap-6 order-1 md:order-none";
 const textFlexBase = "flex-[3] order-2 md:order-none";
-
-// Reusable Line Separator
-const LineSeparator = () => (
-  <div className="flex flex-row items-center w-[80%] mx-auto mt-8">
-    <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40 bg-[length:20px_2px] bg-[position:top] h-[2px]" />
-    <div className="flex flex-row items-center">
-      <div className="w-[1px] h-[8px] bg-[#3A6070]" />
-      <div className="w-[200px] sm:w-[493px] border-t-2 border-[#3A6070]" />
-      <div className="w-[1px] h-[8px] bg-[#3A6070]" />
-    </div>
-    <div className="flex-1 border-t-2 border-dashed border-[#3A6070] opacity-40 bg-[length:20px_2px] bg-[position:top] h-[2px]" />
-  </div>
-);
 
 const BENEFITS = [
   {
