@@ -144,7 +144,7 @@ const cards: CardData[][] = [
 const Card: React.FC<CardData> = ({ svg, title, description, mtDesc }) => (
   <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
     <div className="flex flex-col h-full flex-1">
-      <div className="mb-2 flex flex-row-reverse items-center gap-3">
+      <div className="mb-2 flex flex-row items-center gap-3">
         {svg}
       </div>
       <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
@@ -164,9 +164,9 @@ const thirdSectionWhatMedyour: React.FC = () => (
   <section>
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col md:flex-row-reverse items-start gap-8">
+        <div className="flex flex-col md:flex-row items-start gap-8">
           {/* Title Div */}
-          <div className="flex-1 flex items-center justify-end mb-6 md:mb-0">
+          <div className="flex-1 flex items-center  mb-6 md:mb-0">
             <h2 className="text-right text-[31px] font-[900] leading-[70px] whitespace-nowrap pr-0">
               ماذا تقدم ميديور؟
             </h2>
@@ -177,11 +177,7 @@ const thirdSectionWhatMedyour: React.FC = () => (
               {cards.map((row, rowIdx) => (
                 <div
                   key={rowIdx}
-                  className={`flex flex-col ${
-                    rowIdx === 0
-                      ? "md:flex-row-reverse"
-                      : "md:flex-row"
-                  } items-stretch gap-6 w-full`}
+                  className={`flex flex-col${rowIdx === 0 ? " md:flex-row" : "md:flex-row"} items-stretch gap-6 w-full`}
                 >
                   {row.map((card, cardIdx) => (
                     <Card

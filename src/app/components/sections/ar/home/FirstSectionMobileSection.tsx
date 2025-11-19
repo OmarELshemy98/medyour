@@ -5,9 +5,9 @@ const FirstSectionMobileSection = () => (
       {/* Background image container */}
       <div
         className="rounded-tl-3xl rounded-br-3xl bg-cover bg-center hidden md:block relative overflow-visible"
-        style={{ backgroundImage: "url('./images/background-img.png')" }}
+        style={{ backgroundImage: "url('../images/background-img.png')" }}
       >
-        <div className="flex flex-col md:flex-row-reverse items-center justify-between px-6 md:px-12 py-6 md:py-10 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-6 md:py-10 relative z-10">
           {/* Content Side (الكلام على اليمين + الشريط على أقصى اليمين) */}
           <div className="w-full  relative z-20 flex justify-end">
             <div className="flex items-start gap-3 md:gap-4 flex-row w-fit">
@@ -29,7 +29,7 @@ const FirstSectionMobileSection = () => (
             {/* دفعت الصوره اكتر نحية الشمال بـ left-[-6rem] بدل left-0 */}
             <div className="absolute left-[-6rem] top-[-30rem] w-[50rem] h-[65rem]">
               <img
-                src="./images/home-images/mob-ar.png"
+                src="../images/home-images/mob-ar.png"
                 alt="تطبيق ميديور"
                 className="object-contain rotate-[6deg] w-full h-full"
                 loading="lazy"
