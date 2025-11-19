@@ -1,0 +1,308 @@
+{
+  "nav": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "whyMedyour": "Why Medyour",
+    "challenges": "Challenges",
+    "faqs": "FAQs",
+    "contact": "Contact",
+    "bookNow": "Book Now"
+  },
+  "home": {
+    "hero": {
+      "title": "Your Gateway to a better",
+      "titleLine2": "Healthcare",
+      "subtitle": "experience – Without Limits\nEmpowering Well-being Through\nInnovative Care.",
+      "mobileImage": "/images/home-images/mob.png"
+    },
+    "intro": {
+      "title": "Welcome to Medyour",
+      "p1": "Medyour is a cutting-edge platform providing an innovative approach to healthcare. Our integrated ecosystem delivers a seamless, flexible experience, connecting you with a wide network of top-tier healthcare providers across all specialties—without long waits or complex procedures.",
+      "p2": "Whether you are an individual seeking premium care for yourself and your family, or an organization aiming for efficient, comprehensive healthcare management for your employees, Medyour combines usability, quality, and security in one platform.",
+      "p3": "Our mission is to deliver accessible, high-quality healthcare for everyone, without barriers"
+    },
+    "whatOffers": {
+      "title": "What Medyour Offers",
+      "cards": [
+        {
+          "title": "Comprehensive Healthcare Coverage",
+          "description": "Flexible and integrated plans for individuals and organizations, designed to simplify healthcare management while ensuring top-quality care without restrictions or limitations.",
+          "icon": "healthcare"
+        },
+        {
+          "title": "Instant and Reliable Care",
+          "description": "Access healthcare instantly, anytime and anywhere you need, with a seamless, trustworthy experience always at your fingertips.",
+          "icon": "instant"
+        },
+        {
+          "title": "Full Management via Mobile App",
+          "description": "Manage your healthcare journey effortlessly through our intuitive mobile app: book your medical services, pay securely, and track your results—all from your phone, any time.",
+          "icon": "mobile"
+        },
+        {
+          "title": "Transparent Costs",
+          "description": "Complete clarity on service costs—what you need is what you pay, with no hidden fees.",
+          "icon": "transparent"
+        },
+        {
+          "title": "Healthcare for Everyone Without Restrictions",
+          "description": "No age limits, no exclusion for chronic or pre-existing conditions—everyone is welcome to benefit our healthcare services easily and without constraints",
+          "icon": "inclusive"
+        },
+        {
+          "title": "Extensive Network of Providers",
+          "description": "Over 2,500 accredited healthcare providers across Egypt, including hospitals, clinics, specialists, labs, and pharmacies, all accessible through one integrated platform ensuring quality and reliability.",
+          "icon": "network"
+        }
+      ]
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "At Medyour, we aim to provide exceptional, accessible healthcare for everyone. We achieve this by adhering to the following core values:",
+      "values": [
+        {
+          "title": "Integrity",
+          "description": "We uphold the highest standards of transparency and honesty in all our interactions.",
+          "image": "/images/home-images/Integrity.png"
+        },
+        {
+          "title": "Innovation",
+          "description": "We leverage cutting-edge technology to continuously improve the healthcare experience",
+          "image": "/images/home-images/innovation.png"
+        },
+        {
+          "title": "Easy Access to Services",
+          "description": "We remove all barriers preventing people from obtaining healthcare, making the process faster and simpler than ever.",
+          "image": "/images/home-images/accessibility.png"
+        },
+        {
+          "title": "Quality",
+          "description": "We guarantee the highest standards of safety and performance in every service we deliver, because your health is always our priority.",
+          "image": "/images/home-images/quality.png"
+        }
+      ]
+    }
+  },
+  "whyMedyour": {
+    "title": "Why Choose MedYour?",
+    "subtitle": "At Medyour, we offer advanced digital healthcare solutions that make access to quality care easier than ever. Our fully digital experience connects you with an extensive network of top-tier healthcare providers across all specialties, ensuring quality, safety, and efficiency at every step. Whether you're an individual seeking premium healthcare for yourself and your family, or an organization aiming to manage employee healthcare comprehensively, Medyour delivers innovative solutions that meet your needs while ensuring comfort and satisfaction.",
+    "backgroundImage": "/images/background-img.png",
+    "seo": {
+      "title": "Why Medyour? | Medyour",
+      "description": "Discover why Medyour is your best choice for digital healthcare."
+    }
+  },
+  "services": {
+    "title": "Everything You Need... In One Place",
+    "subtitle": "Medyour provides an integrated digital system that redefines the healthcare experience with a seamless, secure, and precise approach. Through an easy-to-use digital app, individuals can access a wide network of healthcare providers and receive services quickly and smoothly without complications. Meanwhile, advanced electronic platforms enable organizations to efficiently manage employee subscriptions and track reports, and allow service providers to manage their operations and communicate directly with subscribers with ease. This integration brings all parties together in a unified and synchronized digital experience, making access to healthcare easier and more effective than ever before.",
+    "backgroundImage": "/images/background-img.png",
+    "seo": {
+      "title": "Our Services | Medyour",
+      "description": "Discover Medyour's comprehensive range of digital healthcare services."
+    }
+  },
+  "challenges": {
+    "title": "We Understand the Challenges... and Deliver Care as It Should Be",
+    "subtitle": "At Medyour, we address the most prominent healthcare obstacles through integrated digital solutions, providing you with a simpler, faster, and more efficient experience, without complexity or excessive costs.",
+    "backgroundImage": "/images/background-img.png",
+    "seo": {
+      "title": "Challenges | Medyour",
+      "description": "Medyour addresses healthcare challenges with innovative solutions."
+    }
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to the most common questions about your coverage and healthcare services",
+    "backgroundImage": "/images/background-img.png",
+    "seo": {
+      "title": "FAQs | Medyour",
+      "description": "Find answers to frequently asked questions about Medyour services."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help! For any inquiries or feedback, please fill out the contact form or reach us directly through the available communication channels.\nStay updated with the latest news and community initiatives by following us.",
+    "backgroundImage": "/images/background-img.png",
+    "seo": {
+      "title": "Contact Us | Medyour",
+      "description": "Contact Medyour smart healthcare team for any inquiries or support."
+    }
+  },
+  "footer": {
+    "copyright": "(c) Copyrights 2025, all rights reserved.",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy"
+  },
+  "whyMedyourSection": {
+    "benefits": [
+      {
+        "iconBorder": "#2196F3",
+        "title": "Comprehensive health coverage",
+        "description": "A comprehensive healthcare program for individuals and companies, covering all ages and pre-existing or chronic conditions for fair and inclusive coverage. Everyone deserves access to healthcare services—no exceptions."
+      },
+      {
+        "iconBorder": "#4CAF50",
+        "title": "Fully digital experience",
+        "description": "A user-friendly digital platform eliminates paperwork, delays and manual hassle, streamlining every healthcare process so you get care, not complexity."
+      },
+      {
+        "iconBorder": "#FFA726",
+        "title": "A mobile app to access everything you need for your health",
+        "description": "A simple app gives you instant access to all your healthcare benefits, including direct digital enrollment, finding in-network providers near you, and using your benefits easily from your phone—no admin runaround."
+      },
+      {
+        "iconBorder": "#00B833",
+        "title": "Multiple and secure payment options",
+        "description": "Safe electronic payment options let you pay your subscription or cost share conveniently, making all healthcare payments easy, secure, and instant—no paperwork, no hassle."
+      },
+      {
+        "iconBorder": "#2196F3",
+        "title": "Expansive medical network",
+        "description": "A wide network of over 2,500 trusted providers—labs, radiology centers, hospitals, clinics, and pharmacies—across governorates, so you always have access to quality care close to you."
+      },
+      {
+        "iconBorder": "#4CAF50",
+        "title": "Direct access to your medical records",
+        "description": "Get your lab and test results right in the app—no need to go back to the provider. Track your medical history, prescriptions and more, anytime and anywhere."
+      }
+    ]
+  },
+  "servicesSection": {
+    "sections": [
+      {
+        "title": "Healthcare Coverage",
+        "image": "/images/services-images/healthcare-coverage.png",
+        "description": "Flexible and comprehensive healthcare programs designed for individuals and organizations, offered through affordable annual subscriptions with transparent pricing. Medyour allows unlimited family members and parents to be added, with no caps on covered services or usage frequency. Medyour focuses on delivering integrated medical coverage that ensures subscriber comfort and service quality in every visit, making healthcare more accessible and available to everyone."
+      },
+      {
+        "title": "Provider Network",
+        "image": "/images/services-images/provider-network.png",
+        "description": "An extensive medical network of over 2,500 accredited providers across various governorates, including hospitals, medical centers, clinics, laboratories, radiology centers, and pharmacies. The network includes a selection of the best doctors and specialists across all medical specialties, ensuring you receive high-quality care wherever you are."
+      },
+      {
+        "title": "Mobile App",
+        "image": "/images/services-images/mobile-app.png",
+        "description": "A user-friendly digital app that allows you to manage all your healthcare needs from one place, including appointment booking, results tracking, secure electronic payments, and browsing the provider network. The app provides a smooth and comfortable user experience that makes managing your health easy and available anytime."
+      },
+      {
+        "title": "Cloud Secured",
+        "image": "/images/services-images/cloud-secured.png",
+        "description": "We use the latest cloud security technologies to ensure the safety and confidentiality of your health data. All information is protected with advanced encryption and a robust security system, ensuring the privacy and confidentiality of your medical records at all times."
+      },
+      {
+        "title": "Real-time Tracking",
+        "image": "/images/services-images/Real-time.png",
+        "description": "A real-time tracking system that allows you to monitor all your healthcare services and test results instantly. You can view your complete medical record and visit history from anywhere and at any time."
+      }
+    ]
+  },
+  "challengesSection": {
+    "challenges": [
+      {
+        "title": "Rising Healthcare Costs",
+        "image": "/images/challenges-images/costs.png",
+        "description": "We provide comprehensive healthcare coverage at reduced and competitive prices suitable for all categories, helping you face rising treatment costs while maintaining the quality of services provided."
+      },
+      {
+        "title": "Coverage Gaps",
+        "image": "/images/challenges-images/financial.png",
+        "description": "We close the gaps that were depriving some groups of access to care, through comprehensive plans covering all ages and health conditions, including chronic and pre-existing conditions, ensuring everyone gets the healthcare services they deserve without exception."
+      },
+      {
+        "title": "Financial Constraints",
+        "image": "/images/challenges-images/administrative.png",
+        "description": "We remove traditional financial constraints that limit service utilization, such as usage limits, financial caps, service exclusions, or complexity in cost-sharing ratios, providing fair and flexible coverage that enables everyone to get the care they need without financial burdens or complex conditions."
+      },
+      {
+        "title": "Administrative Burdens",
+        "image": "/images/challenges-images/inclusivity.png",
+        "description": "We simplify complex administrative procedures and reduce paperwork through integrated digital systems that allow easy service tracking and execution, saving time and effort and increasing the speed and efficiency of the healthcare experience."
+      },
+      {
+        "title": "Difficulty Accessing Service Providers",
+        "image": "/images/challenges-images/accessibility.png",
+        "description": "With the Medyour app, accessing the healthcare providers nearest to you becomes faster and easier than ever, through a wide-ranging and diverse medical network covering various governorates and specialties, so you can find the care you need easily, wherever you are."
+      }
+    ]
+  },
+  "faqsSection": {
+    "faqs": [
+      {
+        "question": "Is coverage available for all ages?",
+        "answer": "Yes, healthcare plans are designed to suit all age groups without exception."
+      },
+      {
+        "question": "What makes Medyour different from traditional healthcare providers?",
+        "answer": "Medyour is a leading digital healthcare platform that relies on advanced technologies to provide instant access to a wide network of the best healthcare service providers, without complications or restrictions, through innovative and advanced platforms, with continuous support that redefines the concept of healthcare."
+      },
+      {
+        "question": "How can I access my medical records?",
+        "answer": "You can access your medical records easily and securely through our cloud platform or through the Medyour app on your phone."
+      }
+    ]
+  },
+  "contactSection": {
+    "form": {
+      "fields": [
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "placeholder": "Enter your phone number",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "placeholder": "Enter your email",
+          "required": true
+        },
+        {
+          "name": "location",
+          "label": "Location",
+          "type": "text",
+          "placeholder": "Enter your address",
+          "required": false
+        },
+        {
+          "name": "message",
+          "label": "Your Message",
+          "type": "textarea",
+          "placeholder": "Write your message",
+          "required": true
+        }
+      ],
+      "buttonText": "Send",
+      "note": "Please fill in all required fields"
+    },
+    "social": [
+      {
+        "name": "facebook",
+        "label": "Facebook",
+        "href": "https://www.facebook.com/profile.php?id=61576602431934",
+        "icon": "fab fa-facebook-f"
+      },
+      {
+        "name": "instagram",
+        "label": "Instagram",
+        "href": "https://www.instagram.com/medyouregypt/",
+        "icon": "fab fa-instagram"
+      },
+      {
+        "name": "linkedin",
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/medyouregypt",
+        "icon": "fab fa-linkedin-in"
+      },
+      {
+        "name": "twitter",
+        "label": "Twitter",
+        "href": "https://x.com/medyouregypt",
+        "icon": "fab fa-twitter"
+      }
+    ]
+  }
+}
+
