@@ -14,7 +14,6 @@ import SecondSectionIntroductionEn from '../components/sections/en/home/SecondSe
 import ThirdSectionWhatMedyourEn from '../components/sections/en/home/ThirdSectionWhatMedyourEn';
 import FourthSectionVisionEn from '../components/sections/en/home/FourthSectionVisionEn';
 import LastSectionCarouselHomeEn from '../components/sections/en/home/LastSectionCarouselHomeEn';
-import Script from 'next/script';
 type Props = {
   params: { lang: 'ar' | 'en' };
 };
@@ -81,7 +80,10 @@ export default function HomePage({ params }: Props) {
   return (
     <>
       <UnifiedNavbar lang={lang} isHome />
-      <main className={isArabic ? 'min-h-screen text-[#123D46] pt-[85px]' : 'min-h-screen'}>
+      <main
+        dir={isArabic ? 'rtl' : 'ltr'}
+        className={`min-h-screen text-[#123D46] pt-[85px] ${isArabic ? 'text-right' : 'text-left'}`}
+      >
         {isArabic ? (
           <>
             <FirstSectionMobileSection />
@@ -105,8 +107,7 @@ export default function HomePage({ params }: Props) {
         )}
       </main>
       {isArabic ? <FooterAr /> : <FooterEn />}
-      <Script src="/js/script.js" strategy="afterInteractive" />
-          </>
+    </>
   );
 }
 

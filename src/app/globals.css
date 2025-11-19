@@ -1,6 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --font-english: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-arabic-heading: 'Cairo', 'Noto Sans Arabic', 'Segoe UI', sans-serif;
+  --font-arabic-body: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+}
+
+html[lang="en"] body {
+  font-family: var(--font-english);
+}
+
+html[lang="ar"] body {
+  font-family: var(--font-arabic-body);
+  direction: rtl;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6,
+html[lang="ar"] .font-ar-heading {
+  font-family: var(--font-arabic-heading);
+}
 
 @keyframes floatAndRotate {
   0% { transform: translateY(0) rotate(0deg); opacity: .85; }

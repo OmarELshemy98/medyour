@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
 import UnifiedNavbar from '../../components/layout/UnifiedNavbar';
-import HeroHeader from '../../components/common/HeroHeader';
-import { getTranslations } from '../../../lib/locales';
 import ContactSectionAr from '../../components/sections/ar/contact/contact';
 import ContactSectionEn from '../../components/sections/en/contact/contact';
 import FooterAr from '../../components/sections/ar/footer/FooterAr';
 import FooterEn from '../../components/sections/en/footer/FooterEn';
+import { getTranslations } from '../../../lib/locales';
 
 type Props = {
   params: { lang: 'ar' | 'en' };
@@ -38,19 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function ContactPage({ params }: Props) {
   const { lang } = params;
-  const t = getTranslations(lang);
   const isArabic = lang === 'ar';
 
   return (
     <>
       <UnifiedNavbar lang={lang} />
       <main>
-        <HeroHeader
-          title={t.contact.title}
-          subtitle={t.contact.subtitle}
-          backgroundImage={t.contact.backgroundImage}
-          dir={isArabic ? 'rtl' : 'ltr'}
-        />
         {isArabic ? <ContactSectionAr /> : <ContactSectionEn />}
       </main>
       {isArabic ? <FooterAr /> : <FooterEn />}

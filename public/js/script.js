@@ -4,69 +4,135 @@
     'bg-cover',
     'bg-center',
   ];
+  const BG_STYLES = {
+    backgroundImage: 'url("/images/navbar-background.png")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  };
 
-  document.addEventListener('DOMContentLoaded', () => {
-    initNavbar();
-    initMobileMenuClosing();
+  const run = () => {
+    setupNavbar();
+    highlightActiveLinks();
     initFloatingElements();
     initCarousel();
     initSmoothScroll();
-  });
+  };
 
-  function initNavbar() {
-    const navbar = document.getElementById('home-nav') || document.getElementById('navbar');
-    if (!navbar) return;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
 
-    const mode = navbar.dataset.mode || 'static';
-    const addBackground = () => {
-      navbar.classList.remove('bg-transparent');
-      BG_CLASSES.forEach((cls) => navbar.classList.add(cls));
-    };
-    const removeBackground = () => {
-      if (mode === 'hero') return;
-      navbar.classList.add('bg-transparent');
-      BG_CLASSES.forEach((cls) => navbar.classList.remove(cls));
-    };
+  function setupNavbar() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenuBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const homeNav = document.getElementById('home-nav');
+    const navbar = document.getElementById('navbar');
 
-    if (mode === 'hero') {
-      addBackground();
-      return;
-    }
-
-    const hasHero = !!document.querySelector('header');
-    if (!hasHero) {
-      addBackground();
-      return;
-    }
-
-    const onScroll = () => {
-      if (window.scrollY > 10) {
-        addBackground();
+    const toggleMobileMenu = (forceOpen) => {
+      if (!mobileMenu) return;
+      const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : mobileMenu.classList.contains('hidden');
+      if (shouldOpen) {
+        mobileMenu.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
       } else {
-        removeBackground();
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
       }
     };
 
-    onScroll();
-    window.addEventListener('scroll', onScroll);
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => toggleMobileMenu());
+    }
+
+    if (closeMenuBtn) {
+      closeMenuBtn.addEventListener('click', () => toggleMobileMenu(false));
+    }
+
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => toggleMobileMenu(false));
+      });
+    }
+
+    const addBackground = (element) => {
+      if (!element) return;
+      element.classList.remove('bg-transparent');
+      BG_CLASSES.forEach((cls) => element.classList.add(cls));
+      element.style.backgroundImage = BG_STYLES.backgroundImage;
+      element.style.backgroundSize = BG_STYLES.backgroundSize;
+      element.style.backgroundPosition = BG_STYLES.backgroundPosition;
+    };
+
+    const removeBackground = (element) => {
+      if (!element) return;
+      element.classList.add('bg-transparent');
+      BG_CLASSES.forEach((cls) => element.classList.remove(cls));
+      element.style.backgroundImage = '';
+      element.style.backgroundSize = '';
+      element.style.backgroundPosition = '';
+    };
+
+    if (homeNav) {
+      addBackground(homeNav);
+    }
+
+    if (navbar) {
+      const updateNavbar = () => {
+        if (window.scrollY > 10) {
+          addBackground(navbar);
+        } else {
+          removeBackground(navbar);
+        }
+      };
+      updateNavbar();
+      window.addEventListener('scroll', updateNavbar, { passive: true });
+    }
   }
 
-  function initMobileMenuClosing() {
-    const toggles = [
-      { toggleId: 'menu-toggle-ar', menuId: 'mobile-menu-ar' },
-      { toggleId: 'menu-toggle-en', menuId: 'mobile-menu-en' },
+  function normalizePath(value) {
+    try {
+      const url = new URL(value, window.location.origin);
+      let pathname = url.pathname.replace(/\/+$/, '');
+      if (pathname === '' || pathname === '/') return 'index';
+      const parts = pathname.split('/').filter(Boolean);
+      if (parts[0] === 'ar' || parts[0] === 'en') {
+        parts.shift();
+      }
+      if (parts.length === 0) return 'index';
+      const last = parts[parts.length - 1];
+      if (last === 'index' || last === 'index.html') {
+        return 'index';
+      }
+      return parts.join('/');
+    } catch (err) {
+      return value;
+    }
+  }
+
+  function highlightActiveLinks() {
+    const current = normalizePath(window.location.pathname);
+    const selectors = [
+      '#home-nav .hidden.lg\\:flex a[href]:not(.bg-white):not(.bg-\\[\\#001218\\])',
+      '#navbar .hidden.lg\\:flex a[href]:not(.bg-white):not(.bg-\\[\\#001218\\])',
+      '#mobile-menu .container a[href]:not(.bg-white):not(.border-2)',
     ];
 
-    toggles.forEach(({ toggleId, menuId }) => {
-      const toggle = document.getElementById(toggleId);
-      const menu = document.getElementById(menuId);
-      if (!toggle || !menu) return;
-
-      menu.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          toggle.checked = false;
-          toggle.dispatchEvent(new Event('change'));
-        });
+    selectors.forEach((selector) => {
+      document.querySelectorAll(selector).forEach((link) => {
+        if (link.hasAttribute('data-nav-ignore')) return;
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#')) return;
+        const normalizedLink = normalizePath(href);
+        if (normalizedLink === current) {
+          link.classList.add('font-bold');
+          link.classList.remove('font-light');
+        } else {
+          link.classList.remove('font-bold');
+          link.classList.add('font-light');
+        }
       });
     });
   }
