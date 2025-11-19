@@ -23,8 +23,8 @@ const Navbar = ({ isHome = false, lang = 'ar' }: NavbarProps) => {
         { href: `${base}/`, label: 'الرئيسية' },
         { href: `${base}/about-us`, label: 'من نحن' },
         { href: `${base}/services`, label: 'خدماتنا' },
-        { href: `${base}/why-medyour`, label: 'لماذا ميديور' },
-        { href: `${base}/challenges`, label: 'التحديات' },
+        { href: `${base}/why-medyour`, label: 'لماذا ميديور؟' },
+        { href: `${base}/challenges`, label: 'تحديات الرعاية الصحية' },
         { href: `${base}/faqs`, label: 'الأسئلة الشائعة' },
         { href: `${base}/contact`, label: 'اتصل بنا' },
       ];
@@ -68,16 +68,7 @@ const Navbar = ({ isHome = false, lang = 'ar' }: NavbarProps) => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={`${base}/contact`}
-              className="bg-gradient-to-r from-[#00CFC5] to-[#0099CC] text-white font-bold py-2 px-6 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
-            >
-              {lang === 'en' ? 'Book Now' : 'احجز الآن'}
-            </a>
-            <LanguageSwitcher lang={lang} />
-          </div>
+          
 
           {/* Mobile Menu Button */}
           <button className="lg:hidden p-2 text-gray-700 hover:text-[#00CFC5] transition-colors">

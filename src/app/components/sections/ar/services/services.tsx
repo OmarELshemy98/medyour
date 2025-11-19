@@ -55,7 +55,7 @@ const ServiceSection: React.FC = () => {
         title="التغطية الصحية"
         titleClassName="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
         imageConfig={{
-          src: "../images/services-images/healthcare-coverage.png",
+          src: "/images/services-images/healthcare-coverage.png",
           alt: "تغطية الرعاية الصحية",
           className: "relative w-full sm:w-3/4 md:w-4/5 lg:w-3/4 transform",
           floatingDivs: (
@@ -84,7 +84,7 @@ const ServiceSection: React.FC = () => {
         title="شبكة مقدمي الخدمة"
         titleClassName="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
         imageConfig={{
-          src: "../images/services-images/provider-network.png",
+          src: "/images/services-images/provider-network.png",
           alt: "شبكة مقدمي الرعاية الصحية",
           className: "relative w-full md:w-4/5 lg:w-3/4 transform",
           floatingDivs: (

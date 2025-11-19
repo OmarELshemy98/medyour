@@ -3,7 +3,7 @@ export default function FooterAr() {
     <footer className="bg-[#003439] text-white py-6">
       <div className="max-w-7xl mx-auto px-4">
         {/* Desktop Layout */}
-        <div className="hidden md:flex md:flex-row-reverse md:items-center md:justify-between">
+        <div className="hidden md:flex md:flex-row md:items-center md:justify-between">
           {/* Navigation Links */}
           <div className="flex items-center space-x-6">
             <a

@@ -56,7 +56,7 @@ const SECTIONS = [
   {
     className: "healthcare-costs",
     title: "ارتفاع تكاليف الرعاية الصحية",
-    imgSrc: "../images/challenges-images/costs.png",
+    imgSrc: "/images/challenges-images/costs.png",
     imgAlt: "تصاعد تكاليف الرعاية الصحية",
     paragraph:
       "نقدّم تغطية صحية شاملة بأسعار مخفضة ومنافسة تناسب جميع الفئات، لمساعدتك على مواجهة ارتفاع تكاليف العلاج، مع الحفاظ على جودة الخدمات المقدَّمة.",
@@ -65,7 +65,7 @@ const SECTIONS = [
   {
     className: "financial",
     title: "الفجوات في التغطية",
-    imgSrc: "../images/challenges-images/financial.png",
+    imgSrc: "/images/challenges-images/financial.png",
     imgAlt: "القيود المالية",
     paragraph:
       "نغلق الفجوات التي كانت تحرم بعض الفئات من الحصول على الرعاية، من خلال خطط شاملة تغطي جميع الأعمار والحالات الصحية، بما في ذلك الأمراض المزمنة والسابقة للتعاقد، لضمان حصول الجميع على الخدمات الصحية التي تليق بهم دون استثناء.",
@@ -74,7 +74,7 @@ const SECTIONS = [
   {
     className: "administrative",
     title: "القيود المالية",
-    imgSrc: "../images/challenges-images/administrative.png",
+    imgSrc: "/images/challenges-images/administrative.png",
     imgAlt: "الأعباء الإدارية",
     paragraph:
       "نُزيل القيود المالية التقليدية التي تحدّ من الاستفادة من الخدمات، مثل حدود الاستخدام والسقوف المالية واستثناء بعض الخدمات أو التعقيد في نسب التحمل، لنوفّر تغطية عادلة ومرنة تُمكِّن الجميع من الحصول على الرعاية التي يحتاجونها دون أعباء مالية أو شروط معقدة.",
@@ -83,7 +83,7 @@ const SECTIONS = [
   {
     className: "inclusivity",
     title: "الأعباء الإدارية",
-    imgSrc: "../images/challenges-images/inclusivity.png",
+    imgSrc: "/images/challenges-images/inclusivity.png",
     imgAlt: "فجوات الشمول",
     paragraph:
       "نُبسّط الإجراءات الإدارية المعقدة ونقلّل المعاملات الورقية من خلال أنظمة رقمية متكاملة، تتيح متابعة الخدمات وتنفيذها بسهولة، مما يوفّر الوقت والجهد ويزيد من سرعة وكفاءة التجربة الصحية.",
@@ -92,7 +92,7 @@ const SECTIONS = [
   {
     className: "accessibility",
     title: "صعوبة الوصول إلى مقدّمي الخدمات",
-    imgSrc: "../images/challenges-images/accessibility.png",
+    imgSrc: "/images/challenges-images/accessibility.png",
     imgAlt: "الوصول إلى مقدمي الخدمات",
     paragraph:
       "مع تطبيق ميديور، يصبح الوصول إلى مقدّمي الرعاية الصحية الأقرب إليك أسرع وأسهل من أي وقتٍ مضى، عبر شبكة طبية واسعة النطاق ومتنوعة تغطي مختلف المحافظات والتخصصات، لتجد الرعاية التي تحتاجها بسهولة، أينما كنت.",
