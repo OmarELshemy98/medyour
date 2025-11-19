@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
 :root {
   --font-english: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   --font-arabic-heading: 'Cairo', 'Noto Sans Arabic', 'Segoe UI', sans-serif;
