@@ -1,8 +1,33 @@
-import { contactContentEn } from '../../../../content/en/contact';
 import LineSeparator from '../../../common/LineSeparator';
 
 export default function ContactSectionEn() {
-  const { hero, form, socialSection } = contactContentEn;
+  const hero = {
+    title: 'Get in Touch',
+    subtitle: "We're here to help! For inquiries, please fill out our contact form or reach us directly",
+    image: '/images/background-img.png',
+  };
+
+  const form = {
+    title: 'Contact Form',
+    fields: [
+      { name: 'phone', label: 'Phone:', type: 'tel', placeholder: 'Add Your Mobile', required: true },
+      { name: 'email', label: 'Email:', type: 'email', placeholder: 'Add Your Email', required: true },
+      { name: 'location', label: 'Location:', type: 'text', placeholder: 'Add Your Address', required: false },
+      { name: 'message', label: 'Message:', type: 'textarea', placeholder: 'Type your message', required: true },
+    ],
+    buttonText: 'Send',
+  };
+
+  const socialSection = {
+    heading: 'Follow Us:',
+    text: 'Stay connected with us: for the latest updates and community initiatives.',
+    links: [
+      { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61576602431934', iconClass: 'fab fa-facebook-f' },
+      { name: 'Instagram', url: 'https://www.instagram.com/medyouregypt/', iconClass: 'fab fa-instagram' },
+      { name: 'LinkedIn', url: 'https://www.linkedin.com/company/medyouregypt', iconClass: 'fab fa-linkedin-in' },
+      { name: 'Twitter', url: 'https://x.com/medyouregypt', iconClass: 'fab fa-twitter' },
+    ],
+  };
 
   return (
     <main dir="ltr">

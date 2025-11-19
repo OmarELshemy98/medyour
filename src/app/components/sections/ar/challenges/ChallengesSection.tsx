@@ -38,9 +38,9 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
             <Image
               src={imgSrc}
               alt={imgAlt}
-              fill
-              sizes="(max-width: 768px) 180px, 220px"
-              className="object-contain"
+              width={220}
+              height={220}
+              className="object-contain w-full h-auto"
               priority={false}
             />
             <DecorativeSquares />
