@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import LineSeparator from "../../../common/LineSeparator";
 
 type ChallengeSectionProps = {
@@ -33,14 +34,15 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
       <div className="flex flex-col items-center gap-[2rem]">
         <h2 className={titleClassName}>{title}</h2>
         <div className="w-full flex justify-center relative">
-          <div className="w-full max-w-[13.75rem]">
-            <img
+          <div className="w-full max-w-[13.75rem] relative">
+            <Image
               src={imgSrc}
               alt={imgAlt}
-              loading="lazy"
+              fill
+              sizes="(max-width: 768px) 180px, 220px"
               className="object-contain"
+              priority={false}
             />
-            {/* Decorative squares */}
             <DecorativeSquares />
           </div>
         </div>

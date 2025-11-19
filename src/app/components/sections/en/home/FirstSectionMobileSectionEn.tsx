@@ -29,11 +29,13 @@ const FirstSectionMobileSectionEn = () => (
           {/* Phone Image Side (left, lifted up) */}
           <div className="hidden md:block w-full relative">
             <div className="absolute right-[-4rem] top-[-30rem] w-[50rem] h-[65rem]">
-              <img
+              <Image
                 src="../images/home-images/mob.png"
                 alt="MedYour App"
-                className="object-contain rotate-[6deg] w-full h-full"
-                loading="lazy"
+                fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-contain rotate-[6deg]"
+                priority={false}
               />
             </div>
           </div>
@@ -65,3 +67,4 @@ const FirstSectionMobileSectionEn = () => (
 );
 
 export default FirstSectionMobileSectionEn;
+import Image from 'next/image';

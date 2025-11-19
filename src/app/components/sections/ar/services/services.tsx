@@ -2,6 +2,7 @@
 
 import React from "react";
 import LineSeparator from "../../../common/LineSeparator";
+import Image from "next/image";
 
 type ImageConfig = {
   src: string;
@@ -32,12 +33,14 @@ const SectionBlock: React.FC<SectionBlockProps> = ({
       <h2 className={titleClassName}>{title}</h2>
       {imageConfig && (
         <div className="w-full flex justify-center">
-          <div className={imageConfig.className || ""}>
-            <img
+          <div className={(imageConfig.className || "") + " relative"}>
+            <Image
               src={imageConfig.src}
               alt={imageConfig.alt}
-              loading="lazy"
-              className="object-contain w-full h-auto"
+              fill
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 70vw, 800px"
+              className="object-contain"
+              priority={false}
             />
             {imageConfig.floatingDivs}
           </div>

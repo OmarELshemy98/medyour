@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Script from 'next/script';
 import UnifiedNavbar from '../components/layout/UnifiedNavbar';
 import { getTranslations } from '../../lib/locales';
 import LineSeparator from '../components/common/LineSeparator';
@@ -57,6 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: {
         ar: `${baseUrl}/ar`,
         en: `${baseUrl}/en`,
+        'x-default': `${baseUrl}/`,
       },
     },
     robots: {
@@ -76,6 +78,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function HomePage({ params }: Props) {
   const { lang } = params;
   const isArabic = lang === 'ar';
+  const baseUrl = 'https://www.medyour.com';
+  const base = lang === 'en' ? '/en' : '/ar';
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: isArabic ? 'الرئيسية' : 'Home', item: `${baseUrl}${base}` },
+    ],
+  };
 
   return (
     <>
@@ -107,6 +118,8 @@ export default function HomePage({ params }: Props) {
         )}
       </main>
       {isArabic ? <FooterAr /> : <FooterEn />}
+      <Script id="jsonld-breadcrumb-home" type="application/ld+json" strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
     </>
   );
 }

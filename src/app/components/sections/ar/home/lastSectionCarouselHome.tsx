@@ -5,7 +5,7 @@ import Script from 'next/script';
 
 const lastSectionCarouselHome = () => (
   <>
-    <section className="py-8 md:py-12 mx-auto max-w-7xl">
+    <section className="py-8 md:py-12 mx-auto max-w-7xl"dir="ltr">
       <div className="max-w-7xl mx-auto  ">
         <div className="flex items-center gap-2 md:gap-4">
           {/* Left Arrow */}
