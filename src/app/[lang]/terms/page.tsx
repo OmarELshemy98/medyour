@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Script from 'next/script';
 import UnifiedNavbar from '../../components/layout/UnifiedNavbar';
 import HeroHeader from '../../components/common/HeroHeader';
 import { getTranslations } from '../../../lib/locales';
@@ -23,17 +24,40 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: lang === 'ar'
       ? 'الشروط والأحكام لاستخدام منصة ميديور للرعاية الصحية'
       : 'Terms and conditions for using Medyour healthcare platform',
+    keywords: lang === 'ar'
+      ? ['الشروط والأحكام','سياسات','ميديور','الاستخدام','منصة','رعاية صحية']
+      : ['terms and conditions','policies','Medyour','usage','platform','healthcare'],
     openGraph: {
       title: lang === 'ar' ? 'الشروط والأحكام | ميديور' : 'Terms & Conditions | Medyour',
       url: `${baseUrl}${base}/terms`,
       images: [{ url: `${baseUrl}/images/logo-medyour.png` }],
       locale: lang === 'ar' ? 'ar_SA' : 'en_US',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: lang === 'ar' ? 'الشروط والأحكام | ميديور' : 'Terms & Conditions | Medyour',
+      description: lang === 'ar'
+        ? 'الشروط والأحكام لاستخدام منصة ميديور.'
+        : 'Terms and conditions for using Medyour platform.',
+      images: [`${baseUrl}/images/logo-medyour.png`],
+    },
     alternates: {
       canonical: `${baseUrl}${base}/terms`,
       languages: {
         'ar': `${baseUrl}/terms`,
         'en': `${baseUrl}/en/terms`,
+        'x-default': `${baseUrl}/terms`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
       },
     },
   };
@@ -43,6 +67,16 @@ export default function TermsPage({ params }: Props) {
   const { lang } = params;
   const t = getTranslations(lang);
   const isArabic = lang === 'ar';
+  const baseUrl = 'https://www.medyour.com';
+  const base = lang === 'en' ? '/en' : '/ar';
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: isArabic ? 'الرئيسية' : 'Home', item: `${baseUrl}${base}` },
+      { '@type': 'ListItem', position: 2, name: t.footer.terms, item: `${baseUrl}${base}/terms` },
+    ],
+  };
 
   return (
     <>
@@ -59,6 +93,8 @@ export default function TermsPage({ params }: Props) {
         {isArabic ? <TermsContentAr /> : <TermsContentEn />}
       </main>
       {isArabic ? <FooterAr /> : <FooterEn />}
+      <Script id="jsonld-breadcrumb-terms" type="application/ld+json" strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
     </>
   );
 }

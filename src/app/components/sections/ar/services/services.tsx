@@ -2,6 +2,7 @@
 
 import React from "react";
 import LineSeparator from "../../../common/LineSeparator";
+import Image from "next/image";
 
 type ImageConfig = {
   src: string;
@@ -32,12 +33,14 @@ const SectionBlock: React.FC<SectionBlockProps> = ({
       <h2 className={titleClassName}>{title}</h2>
       {imageConfig && (
         <div className="w-full flex justify-center">
-          <div className={imageConfig.className || ""}>
-            <img
+          <div className={(imageConfig.className || "") + " relative"}>
+            <Image
               src={imageConfig.src}
               alt={imageConfig.alt}
-              loading="lazy"
-              className="object-contain w-full h-auto"
+              fill
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 70vw, 800px"
+              className="object-contain"
+              priority={false}
             />
             {imageConfig.floatingDivs}
           </div>
@@ -55,7 +58,7 @@ const ServiceSection: React.FC = () => {
         title="التغطية الصحية"
         titleClassName="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
         imageConfig={{
-          src: "../images/services-images/healthcare-coverage.png",
+          src: "/images/services-images/healthcare-coverage.png",
           alt: "تغطية الرعاية الصحية",
           className: "relative w-full sm:w-3/4 md:w-4/5 lg:w-3/4 transform",
           floatingDivs: (
@@ -84,7 +87,7 @@ const ServiceSection: React.FC = () => {
         title="شبكة مقدمي الخدمة"
         titleClassName="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
         imageConfig={{
-          src: "../images/services-images/provider-network.png",
+          src: "/images/services-images/provider-network.png",
           alt: "شبكة مقدمي الرعاية الصحية",
           className: "relative w-full md:w-4/5 lg:w-3/4 transform",
           floatingDivs: (

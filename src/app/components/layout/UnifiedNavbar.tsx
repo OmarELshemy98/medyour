@@ -1,4 +1,5 @@
 import { getTranslations } from '../../../lib/locales';
+import Image from 'next/image';
 
 type UnifiedNavbarProps = {
   lang: 'ar' | 'en';
@@ -35,11 +36,13 @@ export default function UnifiedNavbar({ lang, isHome = false }: UnifiedNavbarPro
               ☰
             </button>
             <a href={basePath} className="flex items-center justify-center">
-              <img
+              <Image
                 src="/images/logo-medyour-ar.png"
                 alt="مديور"
-                className="w-[150px] sm:w-[170px] md:w-[200px]"
-                loading="lazy"
+                width={200}
+                height={60}
+                className="w-[150px] sm:w-[170px] md:w-[200px] h-auto"
+                priority={isHome}
               />
             </a>
             <div className="w-8" />
@@ -80,15 +83,17 @@ export default function UnifiedNavbar({ lang, isHome = false }: UnifiedNavbarPro
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center justify-between w-full">
+          <div className="hidden lg:flex items-center justify-between w-full"dir="rtl">
             <div className="flex flex-1 items-center justify-between mx-auto max-w-7xl pb-4 gap-24 flex-row">
               <div className="flex flex-1 pt-8 justify-between">
                 <a href={basePath}>
-                  <img
+                  <Image
                     src="/images/logo-medyour-ar.png"
                     alt="مديور"
-                    className="w-[170px] xl:w-[190px]"
-                    loading="lazy"
+                    width={190}
+                    height={64}
+                    className="w-[170px] xl:w-[190px] h-auto"
+                    priority={isHome}
                   />
                 </a>
                 {navLinks.map((link) => (
@@ -131,11 +136,13 @@ export default function UnifiedNavbar({ lang, isHome = false }: UnifiedNavbarPro
             ☰
           </button>
           <a href={basePath} className="flex items-center justify-center">
-            <img
+            <Image
               src="/images/logo-medyour.png"
               alt="Medyour"
-              className="w-[150px] sm:w-[170px] md:w-[200px]"
-              loading="lazy"
+              width={200}
+              height={60}
+              className="w-[150px] sm:w-[170px] md:w-[200px] h-auto"
+              priority={isHome}
             />
           </a>
           <div className="w-8" />
@@ -176,15 +183,17 @@ export default function UnifiedNavbar({ lang, isHome = false }: UnifiedNavbarPro
           </div>
         </div>
 
-        <div className="hidden lg:flex items-center justify-between w-full">
-          <div className="flex flex-1 items-center gap-24 justify-between mx-auto max-w-7xl pb-4">
+        <div className="hidden  lg:flex items-center justify-between w-full" dir="ltr">
+          <div className="flex flex-1  items-center gap-24 justify-between mx-auto max-w-7xl pb-4 ">
             <div className="flex flex-1 pt-9 justify-between">
               <a href={basePath}>
-                <img
+                <Image
                   src="/images/logo-medyour.png"
                   alt="Medyour"
-                  className="w-[170px] xl:w-[180px] mt-[-5px]"
-                  loading="lazy"
+                  width={180}
+                  height={60}
+                  className="w-[170px] xl:w-[180px] mt-[-5px] h-auto"
+                  priority={isHome}
                 />
               </a>
               {navLinks.map((link) => (
