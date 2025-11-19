@@ -71,7 +71,7 @@ const PrivacyContentSectionEn: React.FC = () => {
 
             <LineSeparator />
 
-            <h2 className="text-[33px] font-semibold leading-[43px] mt-8">Children's Privacy</h2>
+            <h2 className="text-[33px] font-semibold leading-[43px] mt-8">Children&apos;s Privacy</h2>
             <p className="text-[29px] font-normal leading-[43px]">
               Our services are not intended for individuals under the age of 16. We do not knowingly collect personal information from children.
             </p>
