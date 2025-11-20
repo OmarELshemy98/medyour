@@ -35,6 +35,10 @@ html[lang="ar"] .font-ar-body {
   font-family: var(--font-arabic-body);
 }
 
+.font-roboto {
+  font-family: var(--font-english);
+}
+
 @keyframes floatAndRotate {
   0% { transform: translateY(0) rotate(0deg); opacity: .85; }
   50% { transform: translateY(-10px) rotate(180deg); opacity: 1; }

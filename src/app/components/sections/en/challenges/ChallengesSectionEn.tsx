@@ -80,7 +80,7 @@ const ChallengeSectionEn: React.FC<ChallengeSectionProps> = ({
   titleClassName = "text-[#123D46] text-[2.0625rem] font-normal leading-[4.375rem]",
   SquaresComponent,
 }) => (
-  <section className={`${className} py-12`}>
+  <section className={`${className} py-12 font-roboto`}>
     <div className="flex flex-col items-center mt-[2.5rem]">
       <div className="flex flex-col items-center gap-[2rem]">
         <h2 className={titleClassName}>{title}</h2>

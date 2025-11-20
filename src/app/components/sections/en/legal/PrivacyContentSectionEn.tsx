@@ -3,7 +3,7 @@ import LineSeparator from '../../../common/LineSeparator';
 
 const PrivacyContentSectionEn: React.FC = () => {
   return (
-    <section className="mobile-app-section py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg text-[#00313B] " dir="ltr">
+    <section className="mobile-app-section py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg text-[#00313B] font-roboto" dir="ltr">
       {/* Green square between header and section */}
       <div className="mx-auto px-6 relative">
         <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">

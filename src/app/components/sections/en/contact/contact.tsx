@@ -30,7 +30,7 @@ export default function ContactSectionEn() {
   };
 
   return (
-    <main dir="ltr">
+    <main dir="ltr" className="font-roboto">
       <div className="relative w-full overflow-hidden bg-[url('/images/background-img.png')] bg-cover bg-center bg-no-repeat h-auto pt-20 flex flex-col justify-center">
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative pt-20 pb-24 z-10 text-white w-full max-w-[90rem] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center justify-center gap-4">

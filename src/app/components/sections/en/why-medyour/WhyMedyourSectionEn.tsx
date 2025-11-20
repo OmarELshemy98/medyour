@@ -177,7 +177,7 @@ const BENEFITS = [
 
 const WhyMedyourSectionEn = () => {
   return (
-    <section className="benefits-list py-16" dir="ltr">
+    <section className="benefits-list py-16 font-roboto" dir="ltr">
       {BENEFITS.map((benefit, idx) => (
         <React.Fragment key={idx}>
           <div className="container max-w-4xl mx-auto px-6 py-5 space-y-12">

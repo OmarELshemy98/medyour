@@ -1,5 +1,5 @@
 const FirstSectionMobileSectionEn = () => (
-  <div className="py-16 mt-8 relative">
+  <div className="py-16 mt-8 relative font-roboto">
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
       {/* Background image container is hidden on mobile (block on md+) */}
       <div
