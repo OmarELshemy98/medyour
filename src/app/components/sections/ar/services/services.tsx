@@ -9,6 +9,8 @@ type ImageConfig = {
   alt: string;
   className?: string;
   floatingDivs?: React.ReactNode;
+  width?: number;
+  height?: number;
 };
 
 interface SectionBlockProps {
@@ -44,9 +46,9 @@ const SectionBlock: React.FC<SectionBlockProps & { dir?: string }> = ({
             <Image
               src={imageConfig.src}
               alt={imageConfig.alt}
-              fill
-              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 70vw, 800px"
-              className="object-contain"
+              width={imageConfig.width ?? 220}
+              height={imageConfig.height ?? 220}
+              className="object-contain w-full h-full"
               priority={false}
             />
             {imageConfig.floatingDivs}
