@@ -95,7 +95,7 @@ export default function ContactSectionEn() {
 
       <div className="mx-auto flex justify-center py-[1.5rem] sm:py-[3rem] lg:py-[4rem] w-[90%]">
         <div className="text-center">
-          <h2 className="text-[#123D46] text-[2.0625rem] font-normal leading-[4.375rem] mb-[0.5rem]">{socialSection.heading}</h2>
+          <h2 className="text-[#123D46] text-[2.0625rem] text-left font-normal leading-[4.375rem] mb-[0.5rem]">{socialSection.heading}</h2>
           <p className="text-[#123D46] text-[1.6875rem] font-normal leading-[2.0625rem] mb-[2rem]">{socialSection.text}</p>
           <div className="flex justify-center gap-[1rem] sm:gap-[1.5rem] mt-[1.5rem]">
             {socialSection.links.map((link) => (

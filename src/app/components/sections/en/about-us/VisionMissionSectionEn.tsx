@@ -47,7 +47,7 @@ const FloatSquare = ({
 
 const VisionMissionSectionEn: React.FC = () => {
   return (
-    <section className="mobile-app-section py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg font-roboto">
+    <section className="mobile-app-section py-[5rem] md:py-[8rem] bg-[rgba(0,255,212,0.11)] rounded-lg font-roboto" dir="ltr">
       <div className="w-[90%] mx-auto px-6 relative">
         <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto">
           {/* Top floating square */}

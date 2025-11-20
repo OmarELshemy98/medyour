@@ -1,6 +1,6 @@
 export default function FooterAr() {
   return (
-    <footer className="bg-[#003439] text-white py-6">
+    <footer className="bg-[#003439] text-white py-6" dir="rtl">
       <div className="max-w-7xl mx-auto px-4">
         {/* Desktop Layout */}
         <div className="hidden md:flex md:flex-row md:items-center md:justify-between">

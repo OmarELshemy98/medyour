@@ -1,6 +1,6 @@
 export default function FooterEn() {
   return (
-    <footer className="bg-[#003439] text-white py-4">
+    <footer className="bg-[#003439] text-white py-4" dir="ltr">
       <div className="max-w-7xl mx-auto px-4">
         {/* Desktop Layout */}
         <div className="hidden md:flex md:flex-row md:items-center md:justify-between">
