@@ -20,17 +20,24 @@ interface SectionBlockProps {
   containerClassName?: string;
 }
 
-const SectionBlock: React.FC<SectionBlockProps> = ({
+const SectionBlock: React.FC<SectionBlockProps & { dir?: string }> = ({
   title,
   imageConfig,
   children,
   titleClassName = "",
   sectionClassName = "flex flex-col items-center w-full py-[2rem] md:py-[3rem]",
   containerClassName = "flex flex-col items-center gap-[1.5rem] md:gap-[2rem] w-full max-w-[75rem] px-[1rem] md:px-[1.5rem] lg:px-[2rem]",
+  dir = "rtl",
 }) => (
   <section className={sectionClassName}>
     <div className={containerClassName}>
-      <h2 className={titleClassName}>{title}</h2>
+      <h2
+        className={
+          `${titleClassName} ${dir === "rtl" ? "font-ar-heading" : ""}`.trim()
+        }
+      >
+        {title}
+      </h2>
       {imageConfig && (
         <div className="w-full flex justify-center">
           <div className={(imageConfig.className || "") + " relative"}>
@@ -46,17 +53,23 @@ const SectionBlock: React.FC<SectionBlockProps> = ({
           </div>
         </div>
       )}
-      {children}
+      {/* Wrap children in a div to apply font-ar-body if dir is rtl */}
+      <div className={dir === "rtl" ? "font-ar-body w-full" : "w-full"}>
+        {children}
+      </div>
     </div>
   </section>
 );
 
 const ServiceSection: React.FC = () => {
+  // For this AR component, dir is always 'rtl'; 
+  // pass dir to SectionBlock and manually to standalone titles/content
+  const dir = "rtl";
   return (
     <>
       <SectionBlock
         title="التغطية الصحية"
-        titleClassName="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
+        titleClassName={`text-[#123D46] text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem] ${dir === "rtl" ? "font-ar-heading" : ""}`}
         imageConfig={{
           src: "/images/services-images/healthcare-coverage.png",
           alt: "تغطية الرعاية الصحية",
@@ -72,8 +85,9 @@ const ServiceSection: React.FC = () => {
             </>
           ),
         }}
+        dir={dir}
       >
-        <p className="text-[#00313B] text-center  text-[1.125rem] font-normal leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0">
+        <p className={`text-[#00313B] text-center text-[1.125rem] font-normal leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0 ${dir === "rtl" ? "font-ar-body" : ""}`}>
           نقدّم برامج رعاية صحية مرنة وشاملة تناسب الأفراد والمؤسسات، من خلال اشتراك سنوي بأسعار مخفضة ومنافسة تلائم
           جميع الفئات، وشفافة دون أي رسوم إضافية.
           تتيح ميديور إمكانية إضافة جميع أفراد الأسرة والوالدين دون حد أقصى لعددهم، كما لا يوجد حد أقصى للخدمات المغطاة
@@ -85,7 +99,7 @@ const ServiceSection: React.FC = () => {
       <LineSeparator />
       <SectionBlock
         title="شبكة مقدمي الخدمة"
-        titleClassName="text-[#123D46]  text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
+        titleClassName={`text-[#123D46] text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem] ${dir === "rtl" ? "font-ar-heading" : ""}`}
         imageConfig={{
           src: "/images/services-images/provider-network.png",
           alt: "شبكة مقدمي الرعاية الصحية",
@@ -100,8 +114,9 @@ const ServiceSection: React.FC = () => {
             </>
           ),
         }}
+        dir={dir}
       >
-        <p className="text-[#00313B] text-center  text-[1rem] md:text-[1.125rem] font-normal leading-[1.25rem] md:leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0">
+        <p className={`text-[#00313B] text-center text-[1rem] md:text-[1.125rem] font-normal leading-[1.25rem] md:leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0 ${dir === "rtl" ? "font-ar-body" : ""}`}>
           شبكة طبية واسعة تضم أكثر من 2500 مقدم خدمة معتمد تشمل معامل التحاليل، مراكز الأشعة، المستشفيات، المراكز
           الطبية، العيادات، والصيدليات في مختلف المحافظات.
           نضمن لك وصولًا سريعًا إلى خدمات موثوقة تغطي جميع التخصصات الطبية بأعلى معايير الجودة والاحترافية.
@@ -110,10 +125,10 @@ const ServiceSection: React.FC = () => {
       <LineSeparator />
       <section>
         <div className="flex flex-col items-center justify-center text-center w-[80%] mx-auto py-[3rem]">
-          <h2 className="text-[#123D46]  text-[2.0625rem] font-normal leading-[4.375rem]">
+          <h2 className={`text-[#123D46] text-[2.0625rem] font-normal leading-[4.375rem] ${dir === "rtl" ? "font-ar-heading" : ""}`}>
             منصاتنا الإلكترونية
           </h2>
-          <p className="text-[#00313B] text-center  text-[1rem] md:text-[1.125rem] font-normal leading-[1.25rem] md:leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0 mb-3">
+          <p className={`text-[#00313B] text-center text-[1rem] md:text-[1.125rem] font-normal leading-[1.25rem] md:leading-[1.5rem] max-w-4xl mx-auto px-[1rem] md:px-0 mb-3 ${dir === "rtl" ? "font-ar-body" : ""}`}>
             توفر منصات ميديور الإلكترونية التواصل المباشر والفوري بين جميع أطراف منظومة الرعاية الصحية من خلال نظام رقمي
             متكامل ومتزامن.
             تُتيح للمؤسسات إدارة اشتراكات موظفيها ومتابعة استخدام الخدمات وتحليل البيانات الصحية بسهولة ودقة، كما تُمكّن

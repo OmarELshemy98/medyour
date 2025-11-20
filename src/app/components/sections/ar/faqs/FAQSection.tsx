@@ -46,6 +46,8 @@ const faqItems: FAQItemType[] = [
   },
 ];
 
+const dir = "rtl"; // Since this is the Arabic section, dir is always 'rtl'
+
 const FAQItem: React.FC<FAQItemType & { showSeparator?: boolean }> = ({
   question,
   answer,
@@ -53,10 +55,14 @@ const FAQItem: React.FC<FAQItemType & { showSeparator?: boolean }> = ({
 }) => (
   <section className="faq-item">
     <div className="pb-[1rem] sm:pb-[1.5rem] lg:pb-[2rem] ">
-      <h3 className=" text-base sm:text-lg lg:text-xl font-medium mb-[0.5rem] sm:mb-[0.75rem] lg:mb-[1rem] text-center">
+      <h3
+        className={`text-base sm:text-lg lg:text-xl font-medium mb-[0.5rem] sm:mb-[0.75rem] lg:mb-[1rem] text-center ${dir === "rtl" ? "font-ar-heading" : ""}`}
+      >
         {question}
       </h3>
-      <div className=" text-sm sm:text-base lg:text-lg font-normal leading-5 sm:leading-6 lg:leading-7 text-center mx-auto">
+      <div
+        className={`text-sm sm:text-base lg:text-lg font-normal leading-5 sm:leading-6 lg:leading-7 text-center mx-auto ${dir === "rtl" ? "font-ar-body" : ""}`}
+      >
         {answer}
       </div>
     </div>

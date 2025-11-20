@@ -2,6 +2,9 @@
 import React from "react";
 import LineSeparator from "../../../common/LineSeparator";
 
+// Detect direction (RTL/LTR) -- for AR it's RTL
+const dir = 'rtl';
+
 // Component for repeated h2 + p section
 const TextSection = ({
   title,
@@ -16,12 +19,14 @@ const TextSection = ({
 }) => (
   <section>
     <h2
-      className={`text-right text-[1.9375rem] font-[900] leading-[4.375rem]${mt ? " mt-8" : ""}`}
+      className={`text-right text-[1.9375rem] font-[900] leading-[4.375rem]${
+        mt ? " mt-8" : ""
+      } ${dir === "rtl" ? "font-ar-heading" : ""}`}
       style={titleStyle}
     >
       {title}
     </h2>
-    <p className="text-right text-[1.125rem] font-normal leading-[1.8125rem] mt-2">
+    <p className={`text-right text-[1.125rem] font-normal leading-[1.8125rem] mt-2 ${dir === 'rtl' ? 'font-ar-body' : ''}`}>
       {paragraph}
     </p>
   </section>

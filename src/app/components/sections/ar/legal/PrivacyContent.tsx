@@ -8,7 +8,7 @@ type ListProps = {
 };
 
 const SectionList: React.FC<ListProps> = ({ items, className }) => (
-  <ul className={`text-[1.8rem] font-normal leading-[2.7rem] list-disc pl-8 ${className ?? ''}`}>
+  <ul className={`text-[1.8rem] font-normal leading-[2.7rem] list-disc pl-8 font-ar-body ${className ?? ''}`}>
     {items.map((item, idx) => (
       <li key={idx}>{item}</li>
     ))}
@@ -35,20 +35,37 @@ const ContentSection: React.FC<SectionProps> = ({
   titleClassName = '',
   paragraphClassName = '',
   containerClassName = '',
-}) => (
-  <div className={containerClassName}>
-    <h2 className={`text-[2.1rem] md:text-[2.25rem] font-semibold leading-[2.7rem]${titleClassName ? ' ' + titleClassName : ''}`}>{title}</h2>
-    {/* Imported the separator instead of duplicating the code */}
-    <LineSeparator />
-    {paragraph && (
-      <p className={`text-[1.8rem] font-normal leading-[2.7rem]${paragraphClassName ? ' ' + paragraphClassName : ''}`}>
-        {paragraph}
-      </p>
-    )}
-    {list && <SectionList items={list} className={listClassName} />}
-    {extra}
-  </div>
-);
+}) => {
+  // Since dir is always 'rtl' in this page, so dir === 'rtl'
+  const dir = 'rtl';
+  const titleFont = dir === 'rtl' ? 'font-ar-heading' : '';
+  const contentFont = dir === 'rtl' ? 'font-ar-body' : '';
+  return (
+    <div className={containerClassName}>
+      <h2 className={`text-[2.1rem] md:text-[2.25rem] font-semibold leading-[2.7rem]${titleClassName ? ' ' + titleClassName : ''} ${titleFont}`}>{title}</h2>
+      {/* Imported the separator instead of duplicating the code */}
+      <LineSeparator />
+      {paragraph && (
+        <p className={`text-[1.8rem] font-normal leading-[2.7rem]${paragraphClassName ? ' ' + paragraphClassName : ''} ${contentFont}`}>
+          {paragraph}
+        </p>
+      )}
+      {list && <SectionList items={list} className={listClassName + ` ${contentFont}`} />}
+      {extra &&
+        // Add font-ar-body to extra p if possible
+        React.isValidElement(extra) && (extra.type === 'p' || (typeof extra.type === 'function' && (extra.type as any).displayName === 'p'))
+          ? React.cloneElement(
+              extra as React.ReactElement<any>, 
+              {
+                className: extra.props && extra.props.className
+                  ? extra.props.className + ' ' + contentFont
+                  : contentFont,
+              }
+            )
+          : extra}
+    </div>
+  );
+};
 
 const privacySections: SectionProps[] = [
   {
@@ -97,7 +114,7 @@ const privacySections: SectionProps[] = [
     ],
     extra: (
       <p className="text-[1.8rem] font-normal leading-[2.7rem]">
-        يرجى التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@medyour.com" className="underline text-[#005071]">info@medyour.com</a> لممارسة هذه الحقوق.
+        يرجى التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@medyour.com" className="underline text-[#005071] font-ar-body">info@medyour.com</a> لممارسة هذه الحقوق.
       </p>
     ),
     titleClassName: "mt-8",
@@ -116,8 +133,8 @@ const privacySections: SectionProps[] = [
     title: "تواصل معنا",
     paragraph: "لأي استفسارات بخصوص الشروط أو سياسة الخصوصية، يمكنك التواصل معنا عبر:",
     list: [
-      <a key={0} href="mailto:info@medyour.com" className="inline-block underline text-[#005071]">البريد الإلكتروني: info@medyour.com</a>,
-      <a key={1} href="https://www.medyour.com" className="inline-block underline text-[#005071]">الموقع الرسمي: www.medyour.com</a>,
+      <a key={0} href="mailto:info@medyour.com" className="inline-block underline text-[#005071] font-ar-body">البريد الإلكتروني: info@medyour.com</a>,
+      <a key={1} href="https://www.medyour.com" className="inline-block underline text-[#005071] font-ar-body">الموقع الرسمي: www.medyour.com</a>,
     ],
     listClassName: "flex flex-col space-y-1",
     titleClassName: "mt-8",
@@ -127,6 +144,7 @@ const privacySections: SectionProps[] = [
 const FloatDiv: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props) => <div {...props} />;
 
 const PrivacyContentSection: React.FC = () => {
+  // dir is always 'rtl' here
   return (
     <section className="mobile-app-section py-20 md:py-32 bg-[rgba(0,255,212,0.11)] rounded-lg text-[#00313B] relative overflow-visible" dir="rtl">
       {/* Green square between header and section */}

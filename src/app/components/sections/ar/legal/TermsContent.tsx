@@ -66,16 +66,19 @@ const sections: SectionType[] = [
   },
 ];
 
+// We set dir to 'rtl', so we always want font-ar-heading for titles, font-ar-body for content
+const dir = 'rtl';
+
 const Heading: React.FC<{ children: React.ReactNode; mt?: boolean }> = ({ children, mt = false }) => (
-  <h2 className={`text-[33px] font-semibold leading-[43px]${mt ? " mt-8" : ""}`}>{children}</h2>
+  <h2 className={`text-[33px] font-semibold leading-[43px]${mt ? " mt-8" : ""} ${dir === 'rtl' ? 'font-ar-heading' : ''}`}>{children}</h2>
 );
 
 const Text: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <p className="text-[29px] font-normal leading-[43px]">{children}</p>
+  <p className={`text-[29px] font-normal leading-[43px] ${dir === 'rtl' ? 'font-ar-body' : ''}`}>{children}</p>
 );
 
 const List: React.FC<{ items: string[] }> = ({ items }) => (
-  <ul className="text-[29px] font-normal leading-[43px] list-disc pr-8 text-right">
+  <ul className={`text-[29px] font-normal leading-[43px] list-disc pr-8 text-right ${dir === 'rtl' ? 'font-ar-body' : ''}`}>
     {items.map((item, idx) => (
       <li key={idx}>{item}</li>
     ))}

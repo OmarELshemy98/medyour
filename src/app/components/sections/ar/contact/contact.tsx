@@ -1,6 +1,7 @@
 import LineSeparator from '../../../common/LineSeparator';
 
 export default function ContactSectionAr() {
+  const dir = 'rtl'; // Only "rtl" is used in this component.
   const hero = {
     title: 'تواصل معنا',
     subtitle:
@@ -28,14 +29,18 @@ export default function ContactSectionAr() {
   ];
 
   return (
-    <main dir="rtl">
+    <main dir={dir}>
       <div className="relative w-full overflow-hidden bg-[url('/images/background-img.png')] bg-cover bg-center bg-no-repeat h-auto pt-20 flex flex-col justify-center">
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative pt-20 pb-24 z-10 text-white w-full max-w-[90rem] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center justify-center gap-4 text-center">
-          <h1 className="text-center font-extrabold text-[1.5rem] xs:text-[1.75rem] sm:text-[2rem] leading-tight break-words max-w-4xl">
+          <h1
+            className={`text-center font-extrabold text-[1.5rem] xs:text-[1.75rem] sm:text-[2rem] leading-tight break-words max-w-4xl ${dir === 'rtl' ? 'font-ar-heading' : ''}`}
+          >
             {hero.title}
           </h1>
-          <p className="text-center font-light text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[1.5rem] leading-normal sm:leading-[2.1rem] md:leading-[2.4rem] lg:leading-[2.8rem] w-full max-w-3xl sm:max-w-4xl md:max-w-5xl px-1 overflow-hidden text-ellipsis whitespace-pre-line">
+          <p
+            className={`text-center font-light text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[1.5rem] leading-normal sm:leading-[2.1rem] md:leading-[2.4rem] lg:leading-[2.8rem] w-full max-w-3xl sm:max-w-4xl md:max-w-5xl px-1 overflow-hidden text-ellipsis whitespace-pre-line ${dir === 'rtl' ? 'font-ar-body' : ''}`}
+          >
             {hero.subtitle}
           </p>
         </div>
@@ -50,9 +55,10 @@ export default function ContactSectionAr() {
             >
               <label
                 className={
-                  field.type === 'textarea'
+                  (field.type === 'textarea'
                     ? 'text-[#1C6D71] text-[1.625rem] font-normal leading-[2.5rem] mb-[0.5rem] sm:mb-0 sm:w-[7.25rem]'
                     : 'text-[#1C6D71] text-[1.625rem] font-normal leading-[3.5rem] mb-[0.25rem] sm:mb-0 sm:w-[7.25rem]'
+                  ) + ` ${dir === 'rtl' ? 'font-ar-heading' : ''}`
                 }
                 htmlFor={field.name}
               >
@@ -64,7 +70,7 @@ export default function ContactSectionAr() {
                   name={field.name}
                   placeholder={field.placeholder}
                   required={field.required}
-                  className="w-full px-[0.75rem] sm:px-[1rem] py-[0.5rem] sm:py-[0.75rem] rounded-md placeholder-[#A3A3A3] focus:outline-none text-black text-[1.125rem] font-normal leading-[1.125rem] shadow-md bg-white h-[9rem] resize-none"
+                  className={`w-full px-[0.75rem] sm:px-[1rem] py-[0.5rem] sm:py-[0.75rem] rounded-md placeholder-[#A3A3A3] focus:outline-none text-black text-[1.125rem] font-normal leading-[1.125rem] shadow-md bg-white h-[9rem] resize-none ${dir === 'rtl' ? 'font-ar-body' : ''}`}
                 />
               ) : (
                 <input
@@ -73,7 +79,7 @@ export default function ContactSectionAr() {
                   name={field.name}
                   placeholder={field.placeholder}
                   required={field.required}
-                  className="w-full px-[0.75rem] sm:px-[1rem] py-[0.5rem] sm:py-[0.75rem] rounded-md placeholder-[#A3A3A3] focus:outline-none text-[#A3A3A3] text-[1.125rem] font-normal leading-[1.125rem] shadow-sm bg-[#FFFFFF]"
+                  className={`w-full px-[0.75rem] sm:px-[1rem] py-[0.5rem] sm:py-[0.75rem] rounded-md placeholder-[#A3A3A3] focus:outline-none text-[#A3A3A3] text-[1.125rem] font-normal leading-[1.125rem] shadow-sm bg-[#FFFFFF] ${dir === 'rtl' ? 'font-ar-body' : ''}`}
                 />
               )}
             </div>
@@ -81,12 +87,16 @@ export default function ContactSectionAr() {
           <div className="flex justify-start mt-[1rem]">
             <button
               type="submit"
-              className="bg-[#123D46] text-white px-[2.5rem] py-[0.3rem] rounded-md text-[1rem] font-normal leading-[1.5rem] hover:bg-[#004c52] transition-colors"
+              className={`bg-[#123D46] text-white px-[2.5rem] py-[0.3rem] rounded-md text-[1rem] font-normal leading-[1.5rem] hover:bg-[#004c52] transition-colors ${dir === 'rtl' ? 'font-ar-body' : ''}`}
             >
               {form.buttonText}
             </button>
           </div>
-          {form.note && <p className="text-sm text-gray-700 text-center mt-2">{form.note}</p>}
+          {form.note && (
+            <p className={`text-sm text-gray-700 text-center mt-2 ${dir === 'rtl' ? 'font-ar-body' : ''}`}>
+              {form.note}
+            </p>
+          )}
         </form>
       </div>
 
@@ -94,8 +104,10 @@ export default function ContactSectionAr() {
 
       <div className="mx-auto flex justify-center py-[1.5rem] sm:py-[3rem] lg:py-[4rem] w-[90%]">
         <div className="text-center">
-          <h2 className="text-[#123D46] text-[2.0625rem] font-normal leading-[4.375rem] mb-[0.5rem]">تابعنا:</h2>
-          <p className="text-[#123D46] text-[1.6875rem] font-normal leading-[2.0625rem] mb-[2rem]">
+          <h2 className={`text-[#123D46] text-[2.0625rem] font-normal leading-[4.375rem] mb-[0.5rem] ${dir === 'rtl' ? 'font-ar-heading' : ''}`}>
+            تابعنا:
+          </h2>
+          <p className={`text-[#123D46] text-[1.6875rem] font-normal leading-[2.0625rem] mb-[2rem] ${dir === 'rtl' ? 'font-ar-body' : ''}`}>
             ابق على تواصل معنا: لآخر التحديثات ومبادرات المجتمع
           </p>
           <div className="flex justify-center gap-[1rem] sm:gap-[1.5rem] mt-[1.5rem]">

@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 import LineSeparator from "../../../common/LineSeparator";
 
+// Detect direction (RTL/LTR) -- for AR it's RTL
+const dir = "rtl";
+
 type ChallengeSectionProps = {
   className: string;
   title: string;
@@ -32,7 +35,11 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
   <section className={`${className} py-12`}>
     <div className="flex flex-col items-center mt-[2.5rem]">
       <div className="flex flex-col items-center gap-[2rem]">
-        <h2 className={titleClassName}>{title}</h2>
+        <h2
+          className={`${titleClassName} ${dir === 'rtl' ? 'font-ar-heading' : ''}`}
+        >
+          {title}
+        </h2>
         <div className="w-full flex justify-center relative">
           <div className="w-full max-w-[13.75rem] relative">
             <Image
@@ -46,7 +53,11 @@ const ChallengeSection: React.FC<ChallengeSectionProps> = ({
             <DecorativeSquares />
           </div>
         </div>
-        <p className="text-[#00313B] text-center text-[1.125rem] font-normal leading-[1.5rem] max-w-5xl mx-auto mt-3">
+        <p
+          className={`text-[#00313B] text-center text-[1.125rem] font-normal leading-[1.5rem] max-w-5xl mx-auto mt-3 ${
+            dir === 'rtl' ? 'font-ar-body' : ''
+          }`}
+        >
           {paragraph}
         </p>
       </div>
@@ -113,7 +124,11 @@ const ChallengesSection: React.FC = () => {
             imgSrc={section.imgSrc}
             imgAlt={section.imgAlt}
             paragraph={section.paragraph}
-            titleClassName={section.overrideTitleClass}
+            titleClassName={
+              section.overrideTitleClass
+                ? `${section.overrideTitleClass} ${dir === 'rtl' ? 'font-ar-heading' : ''}`
+                : undefined
+            }
           />
           {idx !== SECTIONS.length - 1 && <LineSeparator />}
         </React.Fragment>

@@ -141,19 +141,28 @@ const cards: CardData[][] = [
   ]
 ];
 
+// For direction detection; in a real app this might come from context or props.
+const dir = typeof document !== "undefined"
+  ? document.documentElement.dir
+  : "rtl"; // fallback to rtl for server render/ar version
+
 const Card: React.FC<CardData> = ({ svg, title, description, mtDesc }) => (
   <div className="flex-1 flex flex-col text-right p-6 rounded-lg h-full justify-between">
     <div className="flex flex-col h-full flex-1">
       <div className="mb-2 flex flex-row items-center gap-3">
         {svg}
       </div>
-      <h3 className="text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center">
+      <h3
+        className={`text-[1.5rem] font-bold leading-[1.7rem] mt-2 mb-3 flex flex-col justify-center ${
+          dir === "rtl" ? "font-ar-heading" : ""}`}>
         {title.map((line, idx) => (
           <span key={idx} className="block">{line}</span>
         ))}
       </h3>
       <div className="flex-1"></div>
-      <p className={`text-[1.3125rem] font-light leading-[1.5rem] flex items-center ${mtDesc ?? 'mt-4'}`}>
+      <p
+        className={`text-[1.3125rem] font-light leading-[1.5rem] flex items-center ${
+          mtDesc ?? "mt-4"} ${dir === "rtl" ? "font-ar-body" : ""}`}>
         {description}
       </p>
     </div>
@@ -167,7 +176,8 @@ const thirdSectionWhatMedyour: React.FC = () => (
         <div className="flex flex-col md:flex-row items-start gap-8">
           {/* Title Div */}
           <div className="flex-1 flex items-center  mb-6 md:mb-0">
-            <h2 className="text-right text-[31px] font-[900] leading-[70px] whitespace-nowrap pr-0">
+            <h2 className={`text-right text-[31px] font-[900] leading-[70px] whitespace-nowrap pr-0 ${
+              dir === "rtl" ? "font-ar-heading" : ""}`}>
               ماذا تقدم ميديور؟
             </h2>
           </div>

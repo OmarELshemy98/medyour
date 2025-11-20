@@ -9,7 +9,7 @@
 :root {
   --font-english: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   --font-arabic-heading: 'Cairo', 'Noto Sans Arabic', 'Segoe UI', sans-serif;
-  --font-arabic-body: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-arabic-body: sans-serif;
 }
 
 html[lang="en"] body {
@@ -29,6 +29,10 @@ html[lang="ar"] h5,
 html[lang="ar"] h6,
 html[lang="ar"] .font-ar-heading {
   font-family: var(--font-arabic-heading);
+}
+
+html[lang="ar"] .font-ar-body {
+  font-family: var(--font-arabic-body);
 }
 
 @keyframes floatAndRotate {
