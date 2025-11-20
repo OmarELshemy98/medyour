@@ -12,6 +12,7 @@
 
   const run = () => {
     setupNavbar();
+    setupLangSwitch();
     highlightActiveLinks();
     initFloatingElements();
     initCarousel();
@@ -110,6 +111,23 @@
     } catch (err) {
       return value;
     }
+  }
+
+  function setupLangSwitch() {
+    try {
+      const anchors = document.querySelectorAll('a[data-nav-ignore="true"]');
+      if (!anchors || anchors.length === 0) return;
+      const p = window.location.pathname || '/';
+      let other = '';
+      if (p.startsWith('/en')) {
+        other = p.replace(/^\/en(?=\/|$)/, '/ar');
+      } else if (p.startsWith('/ar')) {
+        other = p.replace(/^\/ar(?=\/|$)/, '/en');
+      } else {
+        other = '/en' + (p === '/' ? '' : p);
+      }
+      anchors.forEach((a) => a.setAttribute('href', other));
+    } catch (_) {}
   }
 
   function highlightActiveLinks() {
