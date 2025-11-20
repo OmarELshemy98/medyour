@@ -34,7 +34,7 @@ const FirstSectionMobileSection = () => (
                 fill
                 sizes="(max-width: 768px) 100vw, 800px"
                 className="object-contain rotate-[6deg]"
-                priority={false}
+                priority
               />
             </div>
           </div>

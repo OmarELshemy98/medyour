@@ -1,12 +1,15 @@
-import type { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://www.medyour.com'
+  const baseUrl = 'https://www.medyour.com';
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
     sitemap: `${baseUrl}/sitemap.xml`,
-  }
+    host: 'www.medyour.com',
+  };
 }

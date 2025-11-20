@@ -83,10 +83,10 @@ export default function TermsPage({ params }: Props) {
       <UnifiedNavbar lang={lang} />
       <main>
         <HeroHeader
-          title={t.footer.terms}
+          title={isArabic ? 'شروط الاستخدام' : 'Medyour Terms of Service'}
           subtitle={isArabic
-            ? 'الشروط والأحكام لاستخدام منصة ميديور'
-            : 'Terms and conditions for using Medyour platform'}
+            ? 'مرحبًا بك في ميديور، منصتك الرقمية الأولى للرعاية الصحية. باستخدامك لمنصتنا أو أي من خدماتنا، فإنك تُقر بموافقتك على هذه الشروط وسياسة الخصوصية الخاصة بنا. إذا كنت لا توافق على أي من بنودها، نرجو منك عدم استخدام خدماتنا.'
+            : 'Welcome to Medyour, a digital-first healthcare platform. By accessing or using our services, you agree to comply with and be bound by these Terms of Service and our Privacy Policy. If you do not agree with any part of these terms, please do not use our services.'}
           backgroundImage="/images/background-img.png"
           dir={isArabic ? 'rtl' : 'ltr'}
         />

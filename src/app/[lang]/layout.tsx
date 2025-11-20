@@ -37,6 +37,8 @@ export default function LangLayout({ children, params }: Props) {
   return (
     <html lang={lang} dir={isRtl ? 'rtl' : 'ltr'}>
       <head>
+        <link rel="preload" as="image" href="/images/background-img.png" />
+        <link rel="preload" as="image" href="/images/navbar-background.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />

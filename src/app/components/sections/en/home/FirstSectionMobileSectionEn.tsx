@@ -4,7 +4,7 @@ const FirstSectionMobileSectionEn = () => (
       {/* Background image container is hidden on mobile (block on md+) */}
       <div
         className="rounded-tl-3xl rounded-br-3xl bg-cover bg-center hidden md:block relative overflow-visible"
-        style={{ backgroundImage: "url('../images/background-img.png')" }}
+        style={{ backgroundImage: "url('/images/background-img.png')" }}
       >
         <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-6 md:py-10 relative z-10">
           {/* Content Side (right side + vertical yellow bar on far right) */}
@@ -30,12 +30,12 @@ const FirstSectionMobileSectionEn = () => (
           <div className="hidden md:block w-full relative">
             <div className="absolute right-[-4rem] top-[-30rem] w-[50rem] h-[65rem]">
               <Image
-                src="../images/home-images/mob.png"
+                src="/images/home-images/mob.png"
                 alt="MedYour App"
                 fill
                 sizes="(max-width: 768px) 100vw, 800px"
                 className="object-contain rotate-[6deg]"
-                priority={false}
+                priority
               />
             </div>
           </div>

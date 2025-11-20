@@ -17,4 +17,11 @@ export default function Home() {
   );
 }
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
 export const dynamic = 'force-static';

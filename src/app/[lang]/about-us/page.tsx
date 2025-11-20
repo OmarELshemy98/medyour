@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: lang === 'ar' 
-      ? 'من نحن | ميديور'
+      ? 'ميديور: 15 عامًا من التميز'
       : 'About Us | Medyour',
     description: lang === 'ar'
       ? 'تعرف على ميديور ومنصتنا المتطورة للرعاية الصحية الرقمية في مصر والشرق الأوسط.'
@@ -84,10 +84,10 @@ export default function AboutUsPage({ params }: Props) {
       <UnifiedNavbar lang={lang} />
       <main>
         <HeroHeader
-          title={t.nav.aboutUs}
+          title={isArabic ? 'ميديور: 15 عامًا من التميز' : 'Medyour: 15 Years of Excellence'}
           subtitle={isArabic
-            ? 'تعرف على ميديور ومنصتنا المتطورة للرعاية الصحية الرقمية'
-            : 'Learn about Medyour and our advanced digital healthcare platform'}
+            ? 'نرتقي بتجربة الرعاية الصحية عبر دمج الحلول التقنية الذكية مع الخبرة لنقدم لك خدمة متميزة تضعك دائمًا في المقام الأول.'
+            : 'Medyour pioneers smart digital solutions that transform healthcare access, combining innovative technology with a trusted network of providers.'}
           backgroundImage="/images/background-img.png"
           dir={isArabic ? 'rtl' : 'ltr'}
         />

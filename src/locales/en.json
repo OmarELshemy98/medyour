@@ -94,8 +94,8 @@
     }
   },
   "services": {
-    "title": "Everything You Need... In One Place",
-    "subtitle": "Medyour provides an integrated digital system that redefines the healthcare experience with a seamless, secure, and precise approach. Through an easy-to-use digital app, individuals can access a wide network of healthcare providers and receive services quickly and smoothly without complications. Meanwhile, advanced electronic platforms enable organizations to efficiently manage employee subscriptions and track reports, and allow service providers to manage their operations and communicate directly with subscribers with ease. This integration brings all parties together in a unified and synchronized digital experience, making access to healthcare easier and more effective than ever before.",
+    "title": "Our Services",
+    "subtitle": "Medyour offers a fully digital ecosystem that redefines the healthcare experience, combining ease, security, and precision.",
     "backgroundImage": "/images/background-img.png",
     "seo": {
       "title": "Our Services | Medyour",

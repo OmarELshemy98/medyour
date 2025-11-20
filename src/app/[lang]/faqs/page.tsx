@@ -73,10 +73,23 @@ export default function FAQsPage({ params }: Props) {
     ],
   };
 
+  const translatedFaqs = (t.faqsSection?.faqs || []) as { question: string; answer: string }[];
+  const defaultFaqs = isArabic
+    ? [
+        { question: 'هل التغطية متاحة لجميع الأعمار؟', answer: 'نعم، خطط الرعاية الصحية لدينا تناسب جميع الفئات العمرية بدون استثناء.' },
+        { question: 'ما الذي يميز ميديور؟', answer: 'منصة رعاية صحية رقمية توفر وصولًا فوريًا لشبكة واسعة من مقدمي الخدمة عبر تقنيات متقدمة وتجربة سلسة.' },
+        { question: 'كيف أصل إلى سجلاتي الطبية؟', answer: 'يمكنك الوصول إلى سجلاتك عبر منصتنا السحابية أو من خلال تطبيق ميديور على هاتفك.' },
+      ]
+    : [
+        { question: 'Is coverage available for all ages?', answer: 'Yes, our plans are designed to accommodate all ages without exception.' },
+        { question: 'What sets Medyour apart?', answer: 'A leading digital platform providing instant access to a wide provider network through advanced technology and seamless experiences.' },
+        { question: 'How can I access my medical records?', answer: 'You can securely access your records via our cloud platform or through the Medyour mobile app.' },
+      ];
+
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: (t.faqsSection?.faqs || []).map((f: { question: string; answer: string }) => ({
+    mainEntity: (translatedFaqs.length ? translatedFaqs : defaultFaqs).map((f) => ({
       '@type': 'Question',
       name: f.question,
       acceptedAnswer: { '@type': 'Answer', text: f.answer },
