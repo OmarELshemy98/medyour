@@ -8,7 +8,7 @@ const FirstSectionMobileSection = () => (
       {/* Background image container is hidden on mobile (block on md+) */}
       {/* Background image container */}
       <div
-        className="rounded-tl-3xl rounded-br-3xl bg-cover bg-center hidden md:block relative overflow-visible"
+        className="rounded-tl-3xl rounded-br-3xl bg-cover bg-center hidden  md:block relative "
         style={{ backgroundImage: "url('/images/background-img.png')" }}
       >
         <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-6 md:py-10 relative z-10">
@@ -30,8 +30,8 @@ const FirstSectionMobileSection = () => (
 
           {/* Phone Image Side (على الشمال ومرفوعة لفوق) */}
           <div className="hidden md:block w-full relative">
-            {/* دفعت الصوره اكتر نحية الشمال بـ left-[-6rem] بدل left-0 */}
-            <div className="absolute left-[-6rem] top-[-30rem] w-[50rem] h-[65rem]">
+            {/* دفعت الصوره اكتر نحية الشمال بـ left-[-4rem] بدل left-0 */}
+            <div className="absolute left-[-4rem] top-[-15rem] w-[50rem] h-[35rem] overflow-hidden">
               <Image
                 src="/images/home-images/mob-ar.png"
                 alt="تطبيق ميديور"
