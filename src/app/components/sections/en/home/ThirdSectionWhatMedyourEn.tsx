@@ -161,7 +161,7 @@ const Card: React.FC<CardData> = ({ svg, title, description, mtDesc }) => (
 );
 
 const ThirdSectionWhatMedyourEn: React.FC = () => (
-  <section className="font-roboto">
+  <section>
     <div className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-start gap-8">

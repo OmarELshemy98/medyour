@@ -83,10 +83,10 @@ export default function PrivacyPage({ params }: Props) {
       <UnifiedNavbar lang={lang} />
       <main>
         <HeroHeader
-          title={isArabic ? t.footer.privacy : 'Medyour Privacy Policy'}
+          title={t.footer.privacy}
           subtitle={isArabic
-            ? 'في ميديور، نحرص على حماية خصوصيتك. توضح هذه السياسة كيف نقوم بجمع معلوماتك الشخصية، واستخدامها، ومشاركتها، وحمايتها.'
-            : 'At Medyour, we prioritize your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data.'}
+            ? 'سياسة الخصوصية لاستخدام منصة ميديور'
+            : 'Privacy policy for using Medyour platform'}
           backgroundImage="/images/background-img.png"
           dir={isArabic ? 'rtl' : 'ltr'}
         />

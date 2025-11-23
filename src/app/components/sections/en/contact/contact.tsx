@@ -30,7 +30,7 @@ export default function ContactSectionEn() {
   };
 
   return (
-    <main dir="ltr" className="font-roboto">
+    <main dir="ltr">
       <div className="relative w-full overflow-hidden bg-[url('/images/background-img.png')] bg-cover bg-center bg-no-repeat h-auto pt-20 flex flex-col justify-center">
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative pt-20 pb-24 z-10 text-white w-full max-w-[90rem] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center justify-center gap-4">
@@ -95,7 +95,7 @@ export default function ContactSectionEn() {
 
       <div className="mx-auto flex justify-center py-[1.5rem] sm:py-[3rem] lg:py-[4rem] w-[90%]">
         <div className="text-center">
-          <h2 className="text-[#123D46] text-[2.0625rem] text-left font-normal leading-[4.375rem] mb-[0.5rem]">{socialSection.heading}</h2>
+          <h2 className="text-[#123D46] text-[2.0625rem] font-normal leading-[4.375rem] mb-[0.5rem]">{socialSection.heading}</h2>
           <p className="text-[#123D46] text-[1.6875rem] font-normal leading-[2.0625rem] mb-[2rem]">{socialSection.text}</p>
           <div className="flex justify-center gap-[1rem] sm:gap-[1.5rem] mt-[1.5rem]">
             {socialSection.links.map((link) => (

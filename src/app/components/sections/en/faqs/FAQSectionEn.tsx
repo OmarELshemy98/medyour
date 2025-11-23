@@ -80,7 +80,7 @@ const FAQItem: React.FC<FAQItemType & { showSeparator?: boolean }> = ({
 
 const FAQSectionEn: React.FC = () => {
   return (
-    <main className="font-roboto text-[#003439]" dir="ltr">
+    <main className="text-[#003439]" dir="ltr">
       <div className="mx-auto px-[1rem] sm:px-[1.5rem] lg:px-[2rem] py-[2rem] sm:py-[3rem] lg:py-[4rem]">
         <div className="space-y-[1.5rem] sm:space-y-[2rem] lg:space-y-[2.5rem]">
           {faqItems.map((item, idx) => (

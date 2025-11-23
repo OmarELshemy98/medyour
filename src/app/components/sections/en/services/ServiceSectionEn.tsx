@@ -7,8 +7,6 @@ type ImageConfig = {
   alt: string;
   className?: string;
   floatingDivs?: React.ReactNode;
-  width?: number;
-  height?: number;
 };
 
 interface SectionBlockProps {
@@ -34,15 +32,14 @@ const SectionBlock: React.FC<SectionBlockProps> = ({
       {imageConfig && (
         <div className="w-full flex justify-center relative py-[2rem] md:py-[3rem]">
           <div className={(imageConfig.className || "") + " relative"}>
-          <Image
+            <Image
               src={imageConfig.src}
               alt={imageConfig.alt}
-              width={imageConfig.width ?? 220}
-              height={imageConfig.height ?? 220}
-              className="object-contain w-full h-full"
+              fill
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 70vw, 800px"
+              className="object-contain"
               priority={false}
             />
-            {imageConfig.floatingDivs}
             {imageConfig.floatingDivs}
           </div>
         </div>
@@ -60,7 +57,7 @@ const ServiceSectionEn: React.FC = () => {
       <SectionBlock
         title="Mobile App"
         titleClassName="text-[#123D46] font-roboto text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
-        sectionClassName="flex flex-col items-center w-full py-[2rem] md:py-[3rem] bg-[rgba(0,255,212,0.11)] rounded-lg relative font-roboto"
+        sectionClassName="flex flex-col items-center w-full py-[2rem] md:py-[3rem] bg-[rgba(0,255,212,0.11)] rounded-lg relative"
         imageConfig={{
           src: "/images/services-images/mobile-app.png",
           alt: "Mobile App",
@@ -110,7 +107,8 @@ const ServiceSectionEn: React.FC = () => {
       <SectionBlock
         title="Healthcare Coverage"
         titleClassName="text-[#123D46] font-roboto text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
-        sectionClassName="flex flex-col items-center w-full py-[2rem] md:py-[3rem] rounded-lg relative font-roboto"
+        // removing bg color for this section
+        sectionClassName="flex flex-col items-center w-full py-[2rem] md:py-[3rem] rounded-lg relative"
         imageConfig={{
           src: "/images/services-images/healthcare-coverage.png",
           alt: "Healthcare Coverage",
@@ -136,7 +134,8 @@ const ServiceSectionEn: React.FC = () => {
       <SectionBlock
         title="Provider Network"
         titleClassName="text-[#123D46] font-roboto text-[1.75rem] md:text-[2.0625rem] font-normal leading-[2.5rem] md:leading-[4.375rem]"
-        sectionClassName="flex flex-col items-center w-full py-[2rem] md:py-[3rem] rounded-lg relative font-roboto"
+        // removing bg color for this section
+        sectionClassName="flex flex-col items-center w-full py-[2rem] md:py-[3rem] rounded-lg relative"
         imageConfig={{
           src: "/images/services-images/provider-network.png",
           alt: "Provider Network",
@@ -162,7 +161,7 @@ const ServiceSectionEn: React.FC = () => {
       </SectionBlock>
       <LineSeparator/>
       {/* Digital Platforms Section */}
-      <section className="font-roboto">
+      <section>
         <div className="flex flex-col items-center justify-center text-center py-[3rem]">
           <h2 className="text-[#123D46] font-roboto text-[2.0625rem] font-normal leading-[4.375rem]">
             Digital Platforms{" "}

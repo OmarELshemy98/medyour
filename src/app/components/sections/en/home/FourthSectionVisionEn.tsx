@@ -6,7 +6,7 @@
  */
 
 const FourthSectionVisionEn = () => (
-  <section className="py-10 font-roboto" dir="ltr">
+  <section className="py-10" dir="ltr">
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 className=" text-[1.9375rem] font-[900] leading-[4.375rem]">
       Our Vision

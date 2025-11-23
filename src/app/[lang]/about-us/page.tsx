@@ -84,10 +84,10 @@ export default function AboutUsPage({ params }: Props) {
       <UnifiedNavbar lang={lang} />
       <main>
         <HeroHeader
-          title={isArabic ? 'ميديور: 15 عامًا من التميز' : 'Medyour: 15 Years of Excellence'}
+          title={t.nav.aboutUs}
           subtitle={isArabic
             ? 'نرتقي بتجربة الرعاية الصحية عبر دمج الحلول التقنية الذكية مع الخبرة لنقدم لك خدمة متميزة تضعك دائمًا في المقام الأول.'
-            : 'Medyour pioneers smart digital solutions that transform healthcare access, combining innovative technology with a trusted network of providers.'}
+            : 'Learn about Medyour and our advanced digital healthcare platform'}
           backgroundImage="/images/background-img.png"
           dir={isArabic ? 'rtl' : 'ltr'}
         />

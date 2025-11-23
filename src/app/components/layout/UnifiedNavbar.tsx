@@ -1,5 +1,7 @@
+"use client";
 import { getTranslations } from '../../../lib/locales';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 type UnifiedNavbarProps = {
   lang: 'ar' | 'en';
@@ -14,7 +16,13 @@ type NavLink = { slug: string; label: string };
 export default function UnifiedNavbar({ lang, isHome = false }: UnifiedNavbarProps) {
   const t = getTranslations(lang);
   const basePath = lang === 'en' ? '/en' : '/ar';
-  const otherLangHref = lang === 'en' ? '/ar' : '/en';
+  const pathname = usePathname();
+  const otherLangHref = (() => {
+    if (!pathname) return lang === 'en' ? '/ar' : '/en';
+    if (pathname.startsWith('/en')) return pathname.replace(/^\/en/, '/ar');
+    if (pathname.startsWith('/ar')) return pathname.replace(/^\/ar/, '/en');
+    return lang === 'en' ? '/ar' : '/en';
+  })();
   const otherLangLabel = lang === 'en' ? 'عربي' : 'English';
   const navLinks: NavLink[] = [
     { slug: '/about-us', label: t.nav.aboutUs },

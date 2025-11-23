@@ -5,7 +5,7 @@
  */
 
 const SecondSectionIntroductionEn = () => (
-  <section className="py-10 font-roboto">
+  <section className="py-10">
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 className="text-left text-[1.9375rem] font-[900] leading-[4.375rem]">
         Welcome to Medyour
