@@ -162,7 +162,7 @@ const BENEFITS = [
       </defs>
   </svg>
     ),
-    iconTitleClass: `${iconTitleBase} text-[2.1rem] md:h-[140px] leading-[2rem]`,
+    iconTitleClass: `${iconTitleBase} text-[2.1rem] md:h-[158px] leading-[2rem]`,
     iconTitle: (
       <>
         <span className="block">Direct access</span>
